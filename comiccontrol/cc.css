@@ -406,22 +406,22 @@ ul#sidebar-menu {
 
 /* components */
 /* button styles */
-.btn-row {
+.cc-btn-row {
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin-bottom: 15px; }
 
-.tall-row .btn {
+.tall-row .cc-btn {
   min-height: 100px; }
 
-.btn {
+.cc-btn {
   text-align: center;
   padding: 15px 0;
   width: 100%;
   margin-left: 15px;
   box-sizing: border-box; }
-  .btn:first-child {
+  .cc-btn:first-child {
     margin-left: 0px; }
 
 .row-col {
@@ -447,10 +447,10 @@ ul#sidebar-menu {
         content: ''; }
 
 @media screen and (max-width: 700px) {
-  .btn-row {
+  .cc-btn-row {
     flex-wrap: wrap; }
 
-  .btn, .row-col {
+  .cc-btn, .row-col {
     margin: 0 0 15px 0; }
 
   .tall-row {
@@ -567,12 +567,16 @@ textarea {
     border: 1px solid #e0e0e0;
     padding: 10px; }
 
-label {
+.formtext label, .formline label {
   background: #e0e0e0;
   vertical-align: middle;
   padding: 0 10px;
   box-sizing: border-box;
   height: 40px; }
+
+.fileinputcontainer label {
+  padding: 15px 0;
+  box-sizing: border-box; }
 
 .tooltip {
   background: #e0e0e0;
@@ -924,5 +928,12 @@ label {
   margin: auto; }
   #installlogo img {
     max-width: 100%; }
+
+/* extras */
+.bootstrap-iso {
+  display: relative; }
+
+.bootstrap-iso .modal {
+  position: absolute !important; }
 
 /*# sourceMappingURL=cc.css.map */

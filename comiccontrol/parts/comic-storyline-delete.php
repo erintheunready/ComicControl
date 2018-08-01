@@ -66,7 +66,7 @@ else{
 		<div class="msg prompt f-c"><?=str_replace("%s",$thisstoryline['name'],$lang['Are you sure you want to delete %s? This action cannot be undone.'])?> <?=$lang['Sub-storylines will be moved up to this storyline\'s level.']?></div>
 		<?
 
-		echo '<div class="btn-row">';
+		echo '<div class="cc-btn-row">';
 		buildButton(
 			"light-bg",
 			$ccurl . $navslug.'/'.$ccpage->slug.'/delete-storyline/' . $thisstoryline['id'] . '/confirmed',

@@ -62,7 +62,7 @@ quickLinks($links);
 			$result = $stmt->fetchAll();
 			
 			foreach($result as $row){
-				echo '<div class="btn-row" id="storyline_' . $row['id'] . '"><div class="btn dark-bg">' . $row['name'] . '</div></div>';
+				echo '<div class="cc-btn-row" id="storyline_' . $row['id'] . '"><div class="cc-btn dark-bg">' . $row['name'] . '</div></div>';
 			}
 		
 		?>

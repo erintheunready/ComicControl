@@ -70,7 +70,7 @@ if(isset($_POST) && $_POST['storyline-title'] != ""){
 		if($error != false){
 			?><div class="msg error f-c"><?=$error?></div><?
 		}
-		echo '<div class="btn-row">';
+		echo '<div class="cc-btn-row">';
 		buildButton(
 			"light-bg",
 			$ccurl . $navslug . '/' . $ccpage->slug . '/edit-storyline/' . $thisstoryline,

@@ -57,7 +57,7 @@ else{
 		<div class="msg prompt f-c"><?=str_replace("%s",$thiscomic['title'],$lang['Are you sure you want to delete %s? This action cannot be undone.'])?></div>
 		<?
 
-		echo '<div class="btn-row">';
+		echo '<div class="cc-btn-row">';
 		buildButton(
 			"light-bg",
 			$ccurl . $navslug.'/'.$ccpage->slug.'/delete-post/' . $thiscomic['slug'] . '/confirmed',

@@ -89,7 +89,7 @@ if(isset($_POST) && $_POST['post-title'] != ""){
 		<?		
 		
 		//give action buttons for this post
-		echo '<div class="btn-row">';
+		echo '<div class="cc-btn-row">';
 		buildButton(
 			"light-bg",
 			$ccurl . $navslug . '/' . $ccpage->slug . '/edit-post/' . $slugfinal,

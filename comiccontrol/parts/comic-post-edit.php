@@ -98,7 +98,7 @@ else{
 			?>
 			<div class="msg success f-c"><?=str_replace('%s',$title,$lang['%s has been successfully edited.'])?></div>
 			<?		
-			echo '<div class="btn-row">';
+			echo '<div class="cc-btn-row">';
 			buildButton(
 				"light-bg",
 				$ccurl . $navslug . '/' . $ccpage->slug . '/edit-post/' . $slugfinal,
@@ -118,7 +118,7 @@ else{
 			?>
 			<div class="msg error f-c"><?=$lang['There was an error editing your comic post.  Please try again.']?></div>
 			<?
-			echo '<div class="btn-row">';
+			echo '<div class="cc-btn-row">';
 			buildButton(
 				"dark-bg",
 				$navslug . '/' . $ccpage->slug . '/add-post',

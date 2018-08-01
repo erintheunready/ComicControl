@@ -35,7 +35,7 @@ else{
 	$versionnotes = file_get_contents("http://www.comicctrl.com/version-control/versionnotes.php?version=" . $currentversion);
 	echo '<p>' . $versionnotes . '</p>';
 	echo '<p>' . $lang['Please click the button below to update your version of ComicControl.  After clicking the button, please do not leave the page until you receive confirmation that ComicControl has been updated.  Please be aware that this will overwrite the main ComicControl files.'] . '</p>';
-	echo '<div class="btn-row">';
+	echo '<div class="cc-btn-row">';
 	buildButton(
 		"light-bg",
 		$ccurl . "upgrade",

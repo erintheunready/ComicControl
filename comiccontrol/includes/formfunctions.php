@@ -117,64 +117,21 @@ function buildTextArea($label,$name,$tooltip,$current = ""){
 
 //output a text editor
 function buildTextEditor($label,$name,$tooltip,$current = ""){
-	
+
 	//create header for content editor ?>
 	<div class="formtext"><label><div class="v-c"><?=$label?>:</div><div class="tooltip"><a class="f-c">?</a><div class="tooltip-help"><div class="tooltip-triangle"></div><?=$tooltip?></div></div></label>
-	
-	<? //create html editor area ?>
-	<div class="texteditor">
-	
-		<? //create toolbar ?>
-		<div class="toolbar">
-			<div class="formatoptions">
-				<div class="richtextoptions">
-					<a href="javascript:void(0);" class="undo" data-command="undo"><i class="fa fa-undo"></i></a>
-					<a href="javascript:void(0);" class="redo" data-command="redo"><i class="fa fa-repeat"></i></a> | 
-					<a href="javascript:void(0);" data-command='bold'><i class='fa fa-bold'></i></a>
-					<a href="javascript:void(0);" data-command='italic'><i class='fa fa-italic'></i></a>
-					<a href="javascript:void(0);" data-command='underline'><i class='fa fa-underline'></i></a>
-					<a href="javascript:void(0);" data-command='strikethrough'><i class='fa fa-strikethrough'></i></a> | 
-					<a href="javascript:void(0);" data-command='subscript'><i class='fa fa-subscript'></i></a>
-					<a href="javascript:void(0);" data-command='superscript'><i class='fa fa-superscript'></i></a> | 
-					<a href="javascript:void(0);" data-command='justifyLeft'><i class='fa fa-align-left'></i></a>
-					<a href="javascript:void(0);" data-command='justifyCenter'><i class='fa fa-align-center'></i></a>
-					<a href="javascript:void(0);" data-command='justifyRight'><i class='fa fa-align-right'></i></a>
-					<a href="javascript:void(0);" data-command='justifyFull'><i class='fa fa-align-justify'></i></a> | 
-					<a href="javascript:void(0);" data-command='insertUnorderedList'><i class='fa fa-list-ul'></i></a>
-					<a href="javascript:void(0);" data-command='insertOrderedList'><i class='fa fa-list-ol'></i></a>
-					<a href="javascript:void(0);" data-command='indent'><i class='fa fa-indent'></i></a>
-					<a href="javascript:void(0);" data-command='outdent'><i class='fa fa-outdent'></i></a> | 
-					<a href="javascript:void(0);" data-command='fontsize' data-value="smaller"><i class='fa fa-font'></i><i class='fa fa-caret-down' style="font-size:.5em; vertical-align:top"></i></a>
-					<a href="javascript:void(0);" data-command='fontsize' data-value="bigger"><i class='fa fa-font'></i><i class='fa fa-caret-up' style="font-size:.5em; vertical-align:top"></i></a>
-					<div href="javascript:void(0);" class="headers"><a class="headericon"><i class='fa fa-header'></i><i class='fa fa-caret-down' style="font-size:.5em; vertical-align:bottom"></i></a>
-						<div class="headerlist">
-							<a href="javascript:void(0);" data-command='formatBlock' data-value="h1">h1</a>
-							<a href="javascript:void(0);" data-command='formatBlock' data-value="h2">h2</a>
-							<a href="javascript:void(0);" data-command='formatBlock' data-value="h3">h3</a>
-							<a href="javascript:void(0);" data-command='formatBlock' data-value="h4">h4</a>
-							<a href="javascript:void(0);" data-command='formatBlock' data-value="h5">h5</a>
-						</div>
-					</div>	 | 		
-					<a href="javascript:void(0);" class="addlink" data-command='createLink'><i class='fa fa-link'></i></a>
-					<a href="javascript:void(0);" class="unlink" data-command='unlink'><i class='fa fa-unlink'></i></a>
-					<a href="javascript:void(0);" class="insertimage"><i class='fa fa-image'></i></a>	 | 		
-				</div>
-				<a href="javascript:void(0);" class="toggleHTML"><i class='fa fa-code'></i></a>
-			</div>
-			<div style="clear:both"></div>
-		</div>
-		
-		<? //place rich text editor area ?>
-		<div class="editarea">
-			<div class="editor" id="<?=$name?>" contenteditable><?=$current?></div>
-		</div>
-		
-		<? //place html editor area ?>
-		<textarea class="htmleditor" name="<?=$name?>">
-		</textarea>
-		
 	</div>
+	<div class="bootstrap-iso">
+	<textarea id="<?=$name?>" name="<?=$name?>"><?=$current?></textarea>
+	<script>
+	$(document).ready(function() {
+		$('#<?=$name?>').summernote({
+			height: 300
+		});
+	});
+	</script>
 	<?
+
 }
 
 //output image input for in-page image uploading

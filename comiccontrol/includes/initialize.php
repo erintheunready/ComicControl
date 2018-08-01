@@ -37,7 +37,7 @@ function getModuleOption($optionname){
 	return $ccpage->module->options[$optionname];
 }
 function buildButton($classes,$link,$text){
-	echo '<a class="btn f-c ' . $classes . '" href="' . $link . '">' . $text . '</a>';
+	echo '<a class="cc-btn f-c ' . $classes . '" href="' . $link . '">' . $text . '</a>';
 }
 function quickLinks($links){
 	echo '<div id="context-links">';

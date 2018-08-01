@@ -259,7 +259,7 @@ else if($action == "delete-module"){
 			<div class="msg prompt f-c"><?=str_replace("%s",$thismodule['title'],$lang['Are you sure you want to delete %s? This action cannot be undone.'])?></div>
 			<?
 
-			echo '<div class="btn-row">';
+			echo '<div class="cc-btn-row">';
 			buildButton(
 				"light-bg",
 				$ccurl . $navslug.'/delete-module/'.$thismodule['slug'].'/confirmed',
@@ -292,7 +292,7 @@ if(($action != "add-module" && $action != "delete-module") || $successmsg != "")
 	if($successmsg != "") echo '<div class="msg success f-c">' . $successmsg . '</div>';
 
 	//output button for adding a module
-	echo '<div class="btn-row">';
+	echo '<div class="cc-btn-row">';
 	buildButton(
 		"light-bg",
 		$ccurl . $navslug.'/add-module',

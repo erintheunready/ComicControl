@@ -3,7 +3,7 @@
 <main id="content">
 
 <? //output button for adding users ?>
-<div class="btn-row"><a class="btn light-bg" href="<?=$ccurl . 'users/add-user/'?>"><?=$lang['Add a user']?></a></div>
+<div class="cc-btn-row"><a class="cc-btn light-bg" href="<?=$ccurl . 'users/add-user/'?>"><?=$lang['Add a user']?></a></div>
 
 <? //output list of users ?>
 <div class="manage-container dark-bg">

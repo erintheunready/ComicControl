@@ -5,7 +5,7 @@
 <?
 
 //build action buttons (add post and manage options)
-echo '<div class="btn-row">';
+echo '<div class="cc-btn-row">';
 buildButton(
 	"light-bg",
 	$ccurl . $navslug . '/' . $ccpage->slug . '/add-post/',

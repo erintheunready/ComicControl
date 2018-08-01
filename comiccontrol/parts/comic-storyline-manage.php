@@ -20,12 +20,12 @@ quickLinks($links);
 
 <? //output buttons for adding storylines and rearranging storylines ?>
 <form method="post" action="<?=$ccurl . $navslug . '/' . $ccpage->slug . '/add-storyline'?>">
-<button type="button" class="btn light-bg addstoryline"><?=str_replace('%s',$lang['Top level'],$lang['Add a storyline to %s'])?></button>
+<button type="button" class="cc-btn light-bg addstoryline"><?=str_replace('%s',$lang['Top level'],$lang['Add a storyline to %s'])?></button>
 <input type="hidden" name="storyline" value="0" />
 </form>
 
 <form method="post" action="<?=$ccurl . $navslug . '/' . $ccpage->slug . '/rearrange-storylines'?>">
-<button type="button" class="btn dark-bg rearrangestorylines"><?=$lang['Rearrange these storylines']?></button>
+<button type="button" class="cc-btn dark-bg rearrangestorylines"><?=$lang['Rearrange these storylines']?></button>
 <input type="hidden" name="storyline" value="0" />
 </form>
 

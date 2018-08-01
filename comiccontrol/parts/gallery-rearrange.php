@@ -56,7 +56,7 @@ quickLinks($links);
 			$result = $stmt->fetchAll();
 			
 			foreach($result as $row){
-				echo '<div class="btn-row" id="image_' . $row['id'] . '"><div class="btn dark-bg"><img src="' . $ccsite->root . $ccsite->relativepath . 'uploads/' . $row['thumbname'] . '" /><div class="row-caption">' . $row['caption'] . '</div></div></div>';
+				echo '<div class="cc-btn-row" id="image_' . $row['id'] . '"><div class="cc-btn dark-bg"><img src="' . $ccsite->root . $ccsite->relativepath . 'uploads/' . $row['thumbname'] . '" /><div class="row-caption">' . $row['caption'] . '</div></div></div>';
 			}
 		
 		?>

@@ -51,7 +51,7 @@ if(isset($_POST) && $_POST['image-finalfile'] != ""){
 		?>
 		<div class="msg success f-c"><?=$lang['Your image was successfully added.']?></div>
 		<?
-		echo '<div class="btn-row">';
+		echo '<div class="cc-btn-row">';
 		buildButton(
 			"dark-bg",
 			$ccurl . $navslug . '/' . $ccpage->slug . '/edit-image/' . $imageid,

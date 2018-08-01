@@ -101,7 +101,7 @@ if(isset($_POST) && $_POST['comic-title'] != ""){
 		<?		
 		
 		//give preview and edit buttons for the new post
-		echo '<div class="btn-row">';
+		echo '<div class="cc-btn-row">';
 		buildButton(
 			"light-bg",
 			$ccurl . $navslug . '/' . $ccpage->slug . '/edit-post/' . $slugfinal,
@@ -121,7 +121,7 @@ if(isset($_POST) && $_POST['comic-title'] != ""){
 		?>
 		<div class="msg error f-c"><?=$lang['There was an error adding your comic post.  Please try again.']?></div>
 		<?
-		echo '<div class="btn-row">';
+		echo '<div class="cc-btn-row">';
 		buildButton(
 			"dark-bg",
 			$navslug . '/' . $ccpage->slug . '/add-post',

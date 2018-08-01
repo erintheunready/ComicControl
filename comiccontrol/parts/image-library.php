@@ -48,7 +48,7 @@ if(getSlug(2) == "delete-image"){
 			<div class="msg prompt f-c"><?=$lang['Are you sure you want to delete this image? This action cannot be undone.']?></div>
 			<?
 
-			echo '<div class="btn-row">';
+			echo '<div class="cc-btn-row">';
 			buildButton(
 				"light-bg",
 				$ccurl . $navslug.'/delete-image/' . $thisimage['id'] . '/confirmed',

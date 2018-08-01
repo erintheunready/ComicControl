@@ -29,7 +29,7 @@ quickLinks($links);
 
 <? // show button for adding storyline ?>
 <form method="post" action="<?=$ccurl . $navslug . '/' . $ccpage->slug . '/add-post'?>">
-<button type="button" class="btn light-bg addstoryline"><?=str_replace('%s',$lang['Top level'],$lang['Add a comic to %s'])?></button>
+<button type="button" class="cc-btn light-bg addstoryline"><?=str_replace('%s',$lang['Top level'],$lang['Add a comic to %s'])?></button>
 <input type="hidden" name="storyline" value="0" />
 </form>
 

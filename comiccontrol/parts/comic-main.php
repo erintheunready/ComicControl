@@ -22,14 +22,14 @@ function listPages($pageArr){
 <?
 
 //output buttons for going to comic module management pages
-echo '<div class="btn-row">';
+echo '<div class="cc-btn-row">';
 buildButton(
 	"light-bg",
 	$ccurl . $navslug.'/'.$ccpage->slug."/add-post",
 	$lang['Add a comic post']
 );
 echo '</div>';
-echo '<div class="btn-row tall-row">';
+echo '<div class="cc-btn-row tall-row">';
 buildButton(
 	"dark-bg",
 	$ccurl . $navslug . '/' . $ccpage->slug . '/manage-posts',
@@ -49,7 +49,7 @@ echo '</div>';
 
 //output recently published and publishing soon pages with editing options
 ?>
-<div class="btn-row tall-row">
+<div class="cc-btn-row tall-row">
 	<div class="blue-bg row-col">
 		<div class="col-header dark-bg"><?=$lang['Recently published']?></div>
 		<ul> <?

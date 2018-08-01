@@ -78,7 +78,7 @@ else{
 			?>
 			<div class="msg success f-c"><?=str_replace('%s',$title,$lang['%s has been successfully edited.'])?></div>
 			<?		
-			echo '<div class="btn-row">';
+			echo '<div class="cc-btn-row">';
 			buildButton(
 				"light-bg",
 				$ccurl . $navslug . '/' . $ccpage->slug . '/edit-post/' . $post['slug'],
