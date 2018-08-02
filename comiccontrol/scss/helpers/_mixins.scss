@@ -1,0 +1,10 @@
+@mixin generate-font($font,$font-styles){
+	@each $label, $weight, $style in $font-styles{
+		@font-face{
+		  font-family: $font;
+		  src: url('#{$font-dir}#{$font}-#{$label}.eot?#iefix') format('embedded-opentype'),  url('#{$font-dir}#{$font}-#{$label}.otf')  format('opentype'),url('#{$font-dir}#{$font}-#{$label}.woff') format('woff'), url('#{$font-dir}#{$font}-#{$label}.ttf')  format('truetype'), url('#{$font-dir}#{$font}-#{$label}.svg##{$font}-#{$label}') format('svg');
+		  font-weight: $weight;
+		  font-style: $style;
+		}
+	}
+}

@@ -1,0 +1,17 @@
+/* quick links */
+#context-links a{
+	float:right;
+	padding: 5px 10px;
+	font-size:$mid;
+	color:#fff;
+	&:hover{
+		color:$yellow;
+	}
+	
+	@extend .v-c;
+}
+#context-links{
+	clear:both;
+	padding:10px 10px;
+	background:$blue-light;
+}

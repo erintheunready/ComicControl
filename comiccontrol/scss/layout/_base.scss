@@ -1,0 +1,174 @@
+/* overall layout */
+html,body{
+	height:100%;
+	font-family:'Metropolis',sans-serif;
+	@extend %nospace;
+}
+html{
+	background: $blue-darker;
+}
+body{
+	max-width:100%;
+	width:$full-width;
+	margin:auto;
+	position:relative;
+}
+
+/* generic elements */
+button{
+	border:none;
+	font-family:'Metropolis',sans-serif;
+	font-size:$big;
+	text-align:center;
+	padding:$std 0;
+	cursor:pointer;
+	@extend %blockletters;
+}
+a{
+	cursor:pointer;
+	text-decoration:none;
+	color:$blue-light;
+}
+@mixin white-link{
+	a{
+		color:white;
+		&:hover{
+			color:$yellow;
+		}
+	}
+}
+.blue-bg{
+	color:white;
+	background:$blue-light;
+	@include white-link;
+}
+.dark-bg{
+	background:$blue-dark;
+	color:white;
+	@include white-link;
+}
+.darker-bg{
+	background:$blue-darker;
+	color:white;
+	@include white-link;
+}
+.light-bg{
+	background:$yellow;
+	color:$blue-dark;
+	a{
+		color:$blue-dark;
+		&:hover{
+			color:$blue-bright;
+		}
+	}
+}
+.gray-bg{
+	background:$gray-light;
+}
+.v-c{ /*vertical-center*/ 
+	display:flex;
+	align-items:center;
+	height:100%;
+}
+.f-c{ /*full-center*/
+	@extend .v-c;
+	width:100%;
+	justify-content:space-around;
+}
+.full-width{
+	width:100%;
+	display:block;
+}
+.col-header{
+	padding:$std;
+	font-style:italic;
+	position:relative;
+}
+
+.manage-container{
+	overflow:hidden;
+	position:relative;
+	width:100%;
+}
+.slideover{
+	width:100%;
+}
+.row-container{
+	margin:$std;
+	background:white;
+	color:black;
+}
+.zebra-row{
+	padding:$std;
+	display:flex;
+	a{
+		@extend %blockletters;
+		color:$blue-dark;
+		float:right;
+		margin-left:$std;
+		display:block;
+	}
+}
+.flex{
+	display:flex;
+}
+.row-title{
+	flex-grow:1;
+}
+.row-img{
+	width:120px;
+	height:120px;
+	display:flex;
+	align-items:center;
+	justify-content:space-around;
+	float:left;
+}
+.row-img img{
+	max-width:100%;
+	max-height:100%;
+}
+.row-caption{
+	flex-grow:1;
+	margin:0 20px;
+}
+.row-pluginname{
+	width:200px;
+	float:left;
+	a{
+		float:left !important;
+		margin-left:0 !important;
+	}
+}
+.next-arrow{
+	float:right;
+	padding:0 0 0 $std;
+}
+.back-arrow,.next-page, .prev-page{
+	position:absolute;
+	width:45px;
+	display:flex;
+	align-items:center;
+	justify-content:space-around;
+	box-sizing:border-box;
+	height:100%;
+	top:0;
+	background:$yellow;
+	color:black;
+	font-size:25px;
+	cursor:pointer;
+}
+.next-page{
+	right:0;
+}
+.prev-page,.back-arrow{
+	left:0;
+}
+.arrow-bump{
+	float:left; 
+	width:45px;
+	height:45px;
+	display:block;
+}
+.storyline{
+	cursor:pointer;
+}

@@ -1,0 +1,44 @@
+/* login styles */
+#loginwrap{
+	height:100%;
+	@extend .f-c;
+	
+	.formline{
+		margin-top:30px;
+	}
+	label{
+		width:33%;
+		font-size:.8em;
+	}
+	input{
+		width:66%;
+		border-right:$formborder;
+	}
+	button{
+		margin-top:30px;
+	}
+}
+#loginbox{
+	width:400px;
+	max-width:100%;
+	min-height:450px;
+	background:#fff;
+	box-sizing:border-box;
+	padding:30px;
+}
+#loginlogo{
+	width:90%;
+	margin: auto;
+	img{
+		max-width:100%;
+	}
+}
+.password-reset-wrap{
+	width:800px;
+	max-width:100%;
+	padding:30px;
+	background:#fff;
+	margin: 0 auto;
+	margin-top:30px;
+	box-sizing:border-box;
+}

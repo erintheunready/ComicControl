@@ -1,0 +1,43 @@
+//fonts
+
+$font-dir: 'fonts/';
+$font-styles-metropolis: (
+	('Black',900,normal),
+	('BlackItalic',900,italic),
+	('Bold',bold,normal),
+	('BoldItalic',bold,italic),
+	('Regular',normal,normal),
+	('RegularItalic',normal,italic)
+);
+
+//colors
+$blue-dark: #1B3B57;
+$blue-light: #2F6798;
+$blue-bright: #4292d8;
+$blue-darker: #112739;
+$blue-mid: #1b3b57;
+$yellow: #fbc052;
+$yellow-light: #ffe9c2;
+$success-dark: #1c5520;
+$success-light: #65c66d;
+$error-dark: #d91e18;
+$error-light: #fad5d5;
+$gray-light: #e0e0e0;
+$gray-lightest: #f2f2f2;
+$gray-dark: #8696a4;
+
+//borders
+$formborder: 1px solid  #e0e0e0;
+$yellowborder: 1px solid #f4d35e;
+
+//dimensions
+$full-width: 1230px;
+$break-mid: 800px;
+$sidebar-width: 230px;
+
+//font sizes
+$mid: .8em;
+$big: 1.1em;
+
+//margins
+$std: 15px;

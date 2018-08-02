@@ -1,0 +1,33 @@
+/* login styles */
+#install-wrapper{
+	width:600px;
+	max-width:100%;
+	background:#fff;
+	padding:30px;
+	margin:0 auto;
+	box-sizing:border-box;
+	margin-top:100px;
+	
+	.formline{
+		margin-top:30px;
+	}
+	label{
+		width:33%;
+		font-size:.8em;
+	}
+	input,select{
+		width:calc(66% - 40px);
+		border-right:$formborder;
+	}
+	button{
+		margin-top:30px;
+	}
+}
+#installlogo{
+	width:90%;
+	max-width:300px;
+	margin: auto;
+	img{
+		max-width:100%;
+	}
+}
