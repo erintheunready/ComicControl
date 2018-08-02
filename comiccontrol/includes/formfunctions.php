@@ -126,7 +126,14 @@ function buildTextEditor($label,$name,$tooltip,$current = ""){
 	<script>
 	$(document).ready(function() {
 		$('#<?=$name?>').summernote({
-			height: 300
+			height: 300,
+			callbacks: {
+				onImageUpload: function(files, editor, welEditable) {
+					for(var i = 0; i < files.length; i++){
+						uploadFile(files[i],this);
+					}
+				}
+			}
 		});
 	});
 	</script>

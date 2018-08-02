@@ -2,6 +2,7 @@
 
 //include javascript for managing general jquery on the page
 ?>	
+	</div>
 	<script>
 		$('#sidebar-menu .dropdown a').on('click',function(e){
 			$(this).parent().children('ul').slideToggle();

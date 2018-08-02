@@ -129,7 +129,6 @@
 			echo '</div>';
 		}
 	?>
-	</div>
 	
 	<? //output logout button for desktop version ?>
 	<div class="header-block dark-bg" id="logout"><a href="<?=$ccurl?>logout"><?=$lang['Logout']?></a></div>
