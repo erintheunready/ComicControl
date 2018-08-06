@@ -29,7 +29,7 @@ class CC_Site{
 		$this->timezone = self::fetchoption("timezone");
 		$this->sitetitle = self::fetchoption("sitetitle");
 		$this->commentname = self::fetchoption("commentname");
-		$this->root = self::fetchoption("root");
+		$this->root = self::setProtocol(self::fetchoption("root"));
 		$this->relativepath = self::fetchoption("relativepath");
 		$this->ccroot = self::fetchoption("ccroot");
 		$this->dateformat = self::fetchoption("dateformat");
@@ -41,6 +41,8 @@ class CC_Site{
 		$this->description = self::fetchoption("description");
 		$this->updatechecked = self::fetchoption("updatechecked");
 		$this->newestversion = self::fetchoption("newestversion");
+
+
 	}
 	private function fetchoption($option){
 		global $cc;
@@ -49,6 +51,17 @@ class CC_Site{
 		$stmt->execute(['option' => $option]);
 		$row = $stmt->fetch();
 		return $row['optionvalue'];
+	}
+	private function setProtocol($url){
+		$baseurl = substr($url,strpos($url,'/'));
+		$newurl = "";
+
+		if ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || $_SERVER['SERVER_PORT'] == 443) {
+			$newurl = "https:" . $baseurl;
+		}else{
+			$newurl = "http:" . $baseurl;
+		}
+		return $newurl;
 	}
 	
 }
