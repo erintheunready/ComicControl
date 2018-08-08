@@ -89,13 +89,13 @@ if($action == "add-module"){
 				$option['thumbwidth'] = 200;
 				$option['thumbheight'] = 200;
 				$option['touchaction'] = "hovertext";
-				$option['swipeaction'] = "navigate";
+				$option['swipeaction'] = "none";
 				$option['navorder'] = "first|prev|aux|next|last";
 				$option['perpage'] = 15;
 				$option['displaytranscript'] = "off";
 				$option['displaycomments'] = "on";
 				$option['contentwarnings'] = "off";
-				$option['chapterthumbs'] = "off";
+				$option['chapterthumbs'] = "on";
 				$option['pagethumbs'] = "off";
 				$option['pagetitles'] = "off";
 				$option['transcriptclick'] = "on";
