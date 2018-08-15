@@ -133,7 +133,15 @@ function buildTextEditor($label,$name,$tooltip,$current = ""){
 						uploadFile(files[i],this);
 					}
 				}
-			}
+			},
+			toolbar: [
+				['style', ['style']],
+				['font',['bold','underline','italic','clear','fontname','fontsize']],
+				['color', ['color']],
+				['para', ['ul', 'ol', 'paragraph']],
+				['insert',['table','link','picture','video']],
+				['view',['fullscreen','codeview','help']]
+			]
 		});
 	});
 	</script>

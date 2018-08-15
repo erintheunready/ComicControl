@@ -555,6 +555,22 @@ ul#sidebar-menu .angle {
           box-sizing: border-box;
 }
 
+.note-modal .note-modal-body label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.note-form-label {
+  width: 100%;
+}
+
 /* components */
 /* button styles */
 .cc-btn-row {

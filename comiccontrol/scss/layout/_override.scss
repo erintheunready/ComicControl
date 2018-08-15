@@ -3,3 +3,11 @@
 .note-toolbar{
     box-sizing:border-box;
 }
+.note-modal .note-modal-body label{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.note-form-label{
+    width:100%;
+}
