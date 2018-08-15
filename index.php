@@ -1,11 +1,13 @@
 <? 
 
 
-/* COMICCONTROL
-Version 4.0.5
-01/16/2017
+/* 
+COMICCONTROL
+Version 4.0.8
+08/15/2018
 Built by Erin Burt with help from others.
-See comicctrl.com/thanks for contributors.
+Copyright 2012-2018 Erin Burt.
+See comicctrl.com/thanks for contributors and included third-party MIT-licensed packages.
 */
 
 //start the output buffering
