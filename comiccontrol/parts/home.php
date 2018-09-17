@@ -3,11 +3,22 @@
 <main id="content">
 
 <?
+//get file contents function
+function get_info($url){
+	$curl = curl_init();
+	curl_setopt($curl, CURLOPT_URL, $url);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+	$output = curl_exec($curl);
+	curl_close($curl);
+	
+	return $output;
+}
 
 $lastmidnight = strtotime('today midnight');
 $updateneeded = false;
 if($ccsite->updatechecked < $lastmidnight){
-	$ccsite->newestversion = file_get_contents("http://www.comicctrl.com/version-control/getversion.php");
+	$version = get_info("http://www.comicctrl.com/version-control/getversion.php");
+	$ccsite->newestversion = $version;
 	$query = "UPDATE cc_" . $tableprefix . "options SET optionvalue=:value WHERE optionname=:option";
 	$stmt = $cc->prepare($query);
 	$stmt->execute(['value' => $ccsite->newestversion, 'option' => 'newestversion']);
