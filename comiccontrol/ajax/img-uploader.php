@@ -27,7 +27,7 @@ if($ccuser->authlevel > 0){
 		
 	//generic function for uploading images and returning info
 	function uploadImage($tmpimage,$uploadsDirectory,$filename,$returnData,$maxw,$maxh,$returnkey){
-		
+
 		if(!($source = imagecreatefromstring(file_get_contents($tmpimage)))){
 			$returnData['error'] = 1;
 		}else{

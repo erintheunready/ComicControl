@@ -17,6 +17,30 @@ function getSlug($slugnum){
 	return $ccpage->slugarr[$slugnum];
 	
 }
+//get file contents function
+function get_info($url){
+	$curl = curl_init();
+	curl_setopt($curl, CURLOPT_URL, $url);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+	$output = curl_exec($curl);
+	curl_close($curl);
+	
+	return $output;
+}
+function get_file($url,$fileloc){
+	$file = fopen($fileloc, 'w');
+	$curl = curl_init();
+	curl_setopt($curl, CURLOPT_URL,$url);
+	curl_setopt($curl, CURLOPT_FAILONERROR, true);
+	curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+	curl_setopt($curl, CURLOPT_FILE, $file);
+	curl_exec($curl);
+	curl_close($curl);
+	fclose($file);
+}
+
+//initialize the lang array
+$lang = array();
 
 //include the classes
 require_once('classes.php');

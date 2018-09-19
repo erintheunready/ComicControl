@@ -3,7 +3,7 @@
 <script>
 
 //add server URI to the form so that the AJAX knows what page made the request
-$('form').append('<input type="hidden" name="serveruri" value="<?=$_SERVER[REQUEST_URI]?>" />');
+$('form').append('<input type="hidden" name="serveruri" value="<?=$_SERVER['REQUEST_URI']?>" />');
 
 //initiate request if file input is changed
 $('.hidefileinput').on('change',function(){
@@ -86,7 +86,7 @@ $('.hidefileinput').on('change',function(){
 			data: {
 				fieldname:'imagefile',
 				moduleslug: '<?=$ccpage->slug?>',
-				serveruri: '<?=$_SERVER[REQUEST_URI]?>'
+				serveruri: '<?=$_SERVER['REQUEST_URI']?>'
 			},
 			url: "/<?=$ccsite->relativepath.$ccsite->ccroot;?>ajax/img-uploader.php"
 			

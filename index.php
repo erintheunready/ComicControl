@@ -22,12 +22,12 @@ require_once('comiccontrol/includes/initialize.php');
 //build the page
 $ccpage = new CC_Page("$_SERVER[REQUEST_URI]");
 
-
 //include admin language if logged in
 if($ccuser->authlevel > 0){
 	require_once('comiccontrol/languages/' . $ccuser->language . '.php');
 	$adminlang = $lang;
-	$lang = "";
+	unset($lang);
+	$lang = array();
 }
 
 //include page language

@@ -1,7 +1,5 @@
 <?
 
-$lang = array();
-
 //preview bar
 $lang['PREVIEW'] = 'PREVIEW';
 $lang['Add'] = 'Add';
