@@ -229,6 +229,17 @@ class CC_Page{
 		$slug = preg_replace('/[^a-zA-Z0-9\-\/%\.\?= ]/', '', $slug);
 		$this->slugarr = array();
 		$this->slugarr = explode("/",$slug);
+		foreach($this->slugarr as $key => $slug){
+			if($slug == ""){
+				unset($this->slugarr[$key]);
+			}
+			$relativepathbits = explode('/',$ccsite->relativepath);
+			foreach($relativepathbits as $bit){
+				if($bit == $slug){
+					if(array_key_exists($key,$this->slugarr)) unset($this->slugarr[$key]);
+				}
+			}
+		}
 		
 		//check if it's the index page
 		$this->isindex = (count($this->slugarr)==0) ? true : false;

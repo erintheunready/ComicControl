@@ -1,10 +1,11 @@
 # disable directory browsing
 Options -Indexes
 
+# BEGIN ComicControl
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /
+RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond $0#%{REQUEST_URI} ([^#]*)#(.*)\1$
-RewriteRule ^.*$ %2index.php [QSA,L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php [L]
 </IfModule>

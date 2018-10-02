@@ -241,7 +241,7 @@ ALTER TABLE `cc_temp_users`
 INSERT INTO `cc_temp_htaccess` (`id`, `content`) VALUES
 (1, ''),
 (2, ''),
-(3, '# disable directory browsing\r\nOptions -Indexes\r\n\r\n# Begin ComicControl mod rewrite\r\n<IfModule mod_rewrite.c>\r\nRewriteEngine On\r\nRewriteBase /\r\nRewriteRule ^index\\.php$ - [L]\r\nRewriteCond %{REQUEST_FILENAME} !-f\r\nRewriteCond %{REQUEST_FILENAME} !-d\r\n</IfModule>');
+(3, '# disable directory browsing\r\nOptions -Indexes\r\n\r\n# Begin ComicControl mod rewrite\r\n<IfModule mod_rewrite.c>\r\nRewriteEngine On\r\nRewriteRule ^index\\.php$ - [L]\r\nRewriteCond %{REQUEST_FILENAME} !-f\r\nRewriteCond %{REQUEST_FILENAME} !-d\r\n</IfModule>');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
