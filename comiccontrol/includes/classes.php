@@ -649,7 +649,7 @@ class CC_Comic extends CC_Module{
 				}
 			
 				//display hovertext div for mobile if that option is set
-				if($this->options['touchaction'] == "hovertext" && trim($comic['hovertext']) != "" && !$isfullscreen && $comic['altnext'] == ""){
+				if($this->options['touchaction'] == "hovertext" && trim($comic['hovertext']) != "" && !$isfullscreen){
 					?>
 					<script>
 						var touchOn = document.getElementById("cc-comic");
@@ -1096,13 +1096,13 @@ class CC_Comic extends CC_Module{
 		?>
 		<script>
 		function changePage(slug){
-			window.location.href='<?=$ccsite->root.$ccsite->relativepath?>'+slug;
+			window.location.href='<?=$ccsite->root.$ccsite->relativepath.$this->slug?>/'+slug;
 		}
 		</script>
 		<select name="comic" onChange="changePage(this.value)"><option value=""><?=$lang['selectacomic']?></option>
 		<?
 		foreach($comiclist as $comic){
-			echo '<option value="' . $this->slug . '/' . $comic['slug'] . '">' . date($ccsite->dateformat,$comic['publishtime']) . ' - ' . $comic['title'] . '</option>';
+			echo '<option value="' . $comic['slug'] . '">' . date($ccsite->dateformat,$comic['publishtime']) . ' - ' . $comic['title'] . '</option>';
 		}
 		?>
 		</select>
