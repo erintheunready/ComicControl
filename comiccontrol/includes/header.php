@@ -9,6 +9,7 @@
 	<script src="//ajax.googleapis.com/ajax/libs/hammerjs/2.0.8/hammer.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
 	<link href="//cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
+	<script src="<?=$ccurl?>js/summernote-image-attributes/summernote-image-attributes.js"></script>
 	<link href="<?=$ccurl?>cc.css" type="text/css" rel="stylesheet" />
 	<link rel="shortcut icon" href="<?=$ccurl?>favicon.ico" type="image/x-icon">
 	<link rel="icon" href="<?=$ccurl?>favicon.ico" type="image/x-icon">

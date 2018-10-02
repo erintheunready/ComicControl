@@ -141,7 +141,21 @@ function buildTextEditor($label,$name,$tooltip,$current = ""){
 				['para', ['ul', 'ol', 'paragraph']],
 				['insert',['table','link','picture','video']],
 				['view',['fullscreen','codeview','help']]
-			]
+			],
+			popover: {
+				image: [
+					['custom', ['imageAttributes']],
+					['imagesize', ['imageSize100', 'imageSize50', 'imageSize25']],
+					['float', ['floatLeft', 'floatRight', 'floatNone']],
+					['remove', ['removeMedia']]
+				]
+			},
+			lang: 'en-US',
+			imageAttributes:{
+				icon:'<i class="note-icon-link"/>',
+				removeEmpty:true, // true = remove attributes | false = leave empty if present
+				disableUpload: true // true = don't display Upload Options | Display Upload Options
+			}
 		});
 	});
 	</script>

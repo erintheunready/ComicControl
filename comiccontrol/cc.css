@@ -571,6 +571,10 @@ ul#sidebar-menu .angle {
   width: 100%;
 }
 
+.note-modal {
+  overflow-y: visible;
+}
+
 /* components */
 /* button styles */
 .cc-btn-row {
