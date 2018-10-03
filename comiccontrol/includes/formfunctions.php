@@ -25,7 +25,7 @@ function buildFormInput($options){
 		
 		//put in datepicker code if a date input
 		if($type == "date"){
-			echo '<script>$(\'input[name="' . $name . '"\').datepicker({
+			echo '<script>$(\'input[name="' . $name . '"]\').datepicker({
     beforeShow: function (input, inst) {
         setTimeout(function () {
             inst.dpDiv.css("left","-=" + ($("html").width() - $("body").width())/2 + "px");
