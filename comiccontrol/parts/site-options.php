@@ -39,8 +39,6 @@ if(isset($_POST) && $_POST['sitetitle'] != ""){
 	$append = array_shift($parts);
 	$mainhtaccess = array_shift($parts);
 	
-	$rewriteexclude = 'RewriteRule . /' . $ccsite->relativepath . 'index.php [L]';
-	
 	$htaccesstext = $prepend['content'] . PHP_EOL . $mainhtaccess['content'] . PHP_EOL . $rewriteexclude . PHP_EOL . $append['content'];
 	file_put_contents('../.htaccess', $htaccesstext);
 	
