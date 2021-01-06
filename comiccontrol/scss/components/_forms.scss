@@ -1,0 +1,347 @@
+/* form styling */
+.formheader{
+	font-size:1.2em;
+	font-style:italic;
+	font-weight:normal;
+	color:$blue-dark;
+}
+.formcontain{
+	width:100%;
+	box-sizing:border-box;
+	background:white;
+}
+.fileselect{
+	border:none;
+	font-family:'Metropolis',sans-serif;
+	font-size:$big;
+	text-align:center;
+	padding:$std;
+	cursor:pointer;
+	height:50px;
+	width:100%;
+	display:block;
+	
+	@extend %blockletters;
+}
+input,select{
+	font-family:'Metropolis',sans-serif;
+}
+textarea{
+	width:100%;
+	min-height:500px;
+	box-sizing:border-box;
+}
+.formerror{
+	background:$error-dark;
+	color:$error-light;
+	padding:10px;
+	display:none;
+}
+.formline{
+	display:flex;
+	width:100%;
+	label{
+		width:160px;
+		float:left;
+		font-size:$mid;
+	}
+	.tooltip{
+		font-size:$mid;
+	}
+	input,select{
+		border:none;
+		border:$formborder;
+		width:calc(100% - 200px);
+		height:40px;
+		padding:10px;
+		box-sizing:border-box;
+		vertical-align:top;
+		background:$gray-lightest;
+	}
+	.forminput{
+		width:100%;
+		margin-left:$std;
+		@media screen and (max-width:1000px){
+			margin-left:0;
+			margin-top:$std;
+			&:first-child{
+				margin-top:0;
+			}
+		}
+	}
+	.forminput:first-child{
+		margin:0;
+	}
+	select{
+		border-top:$formborder;
+		border-bottom:$formborder;
+		vertical-align:top;
+		height:40px;
+		box-sizing:border-box;
+		width:calc(100% - 200px);
+	}
+	.timeselect,.navselect{
+		display:flex;
+		height:40px;
+		vertical-align:top;
+		width:calc(100% - 200px);
+		float:left;
+		background:$gray-lightest;
+	}
+	.timeselect select,.navselect select{
+		width:100%;
+		height:40px;
+		border:none;
+		padding:0;
+	}
+	.timecolon{
+		width:50px;
+		height:40px;
+	}
+	@media screen and (max-width:1000px){
+		display:block;
+	}
+}
+.formtext{
+	width:100%;
+	margin-top:$std;
+	label{
+		width:100%;
+		position:relative;
+		display:block;
+		font-size:$mid;
+	}
+	.tooltip{
+		position:absolute;
+		top:0px;
+		right:0px;
+	}
+	textarea{
+		width:100%;
+		min-height:200px;
+		box-sizing:border-box;
+		resize:none;
+		border:$formborder;
+		padding:10px;
+	}
+}
+label{
+	background:$gray-light;
+	vertical-align:middle;
+	padding:0 10px;
+	box-sizing:border-box;
+	height:40px;
+}
+.tooltip{
+	background:$gray-light;
+	color:$gray-dark;
+	width:40px;
+	display:inline-block;
+	height:40px;
+	position:relative;
+	a{
+		color:$gray-dark;
+	}
+	.tooltip-help{
+		width:300px;
+		display:none;
+		position:absolute;
+		right:25px;
+		top:70px;
+		background:$yellow;
+		color:$blue-dark;
+		padding:20px;
+		opacity:0;
+		z-index:10;
+	}
+	.tooltip-triangle{
+		width: 0;
+		height: 0;
+		border-top: 25px solid transparent;
+		border-left: 25px solid transparent;
+		border-bottom: 25px solid $yellow;
+		position:absolute;
+		top:-45px;
+		right:0;
+	}
+}
+.fileselect .tooltip{
+	height:auto;
+	float:right;
+	width:auto;
+	background:none;
+	color:$blue-dark;
+	font-weight:normal;
+}
+.formline{
+	margin-top:$std;
+	&:first-child{
+		margin-top:0;
+	}
+}
+.hidefileinput{
+	opacity:0;
+	height:0.1px;
+	display:none;
+}
+.fileinputcontainer{
+	position:relative;
+}
+.filenameholder{
+	padding:10px;
+	background:#fff;
+	color:#000;
+	text-align:center;
+	display:none;
+	font-style:italic;
+	border: $yellowborder;
+	img{
+		max-width:100%;
+	}
+}
+#comic-upload-bar,#image-upload-bar{
+	background:$yellow;
+	position:absolute;
+	top:0;
+	padding:$std 0;
+}
+.upload-progress{
+	width:100%;
+	display:none;
+	height:50px;
+	box-sizing:border-box;
+	position:relative;
+	.bar,.percent{
+		position:absolute;
+		top:0;
+		left:0;
+		height:50px;
+	}
+	.bar{
+		width:0;
+		background-color:$blue-dark;
+	}
+	.percent{
+		color:white;
+		text-align:center;
+		width:100%;
+		padding:$std 0;
+	}
+}
+.currentfile{
+	display:none;
+	padding:$std;
+	background:#fff;
+	text-align:center;
+	border: $formborder;
+	img{
+		max-width:100%;
+	}
+}
+.texteditor{
+	.toolbar{
+		background: $gray-dark;
+		font-size:$big;
+		padding:3px;
+		color:white;
+		a{
+			padding:5px;
+			display:inline-block;
+			color:white;
+		}
+		.richtextoptions,.togglehtml,.headers{
+			display:inline-block;
+		}
+		.headers{
+			position:relative;
+		}
+		.headerlist{
+			background:$blue-bright;
+			position:absolute;
+			top:100%;
+			left:0;
+			padding:5px 2px;
+			display:none;
+			a{
+				display:block;
+			}
+		}
+		.formatoptions{
+			float:left;
+			margin-right:10px;
+		}
+		.insertoptions{
+			text-align:right;
+			float:right;
+			margin-left:10px;
+		}
+	}
+	.editor,.htmleditor{
+		width:100%;
+		box-sizing:border-box;
+		padding: $std;
+		resize: vertical;
+		min-height:200px;
+		border:1px solid $blue-dark;
+	}
+	.htmleditor{
+		font-family:monospace;
+		display:none;
+	}
+}
+
+@media screen and (max-width:800px){
+	.formheader{
+		padding-left:20px;
+	}
+}
+@media screen and (max-width:600px){
+	.formline label{
+		width:100%;
+	}
+	.formline input, .formline select, .formline .timeselect{
+		width:calc(100% - 40px);
+	}
+	.tooltip .tooltip-help{
+		width:200px;
+	}
+}
+
+/* add image prompt */
+.overlay{
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.8);
+	position:fixed;
+	top:0;
+	z-index:80;
+	left:0;
+	
+	.prompt{
+		width:500px;
+		max-width:100%;
+		background:white;
+		position:fixed;
+		padding:$std;
+		box-sizing:border-box;
+		left:calc(50% - 150px);
+		top:calc(50% - 150px);
+	}
+	input[type=text],select{
+		border:none;
+		border:$formborder;
+		width:100%;
+		height:40px;
+		padding:10px;
+		box-sizing:border-box;
+		vertical-align:top;
+	}
+	.closethis{
+		position:absolute;
+		top:$std;
+		right:$std;
+		font-size:1.5em;
+		color:$blue-dark;
+		cursor:pointer;
+	}
+}

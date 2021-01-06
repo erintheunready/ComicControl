@@ -1,0 +1,35 @@
+.msg{
+	text-align:center;
+	padding:$std;
+	width:100%;
+	box-sizing:border-box;
+	margin-bottom:$std;
+}
+.error{
+	border:1px solid $error-dark;
+	background:$error-light;
+	color:$error-dark;
+}
+.alert{
+	background:$error-dark;
+	a{
+		color:white;
+		&:hover{
+			color:white;
+		}
+	}
+}
+.success{
+	border:1px solid $success-dark;
+	background:$success-light;
+	color:$success-dark;
+}
+.prompt{
+	border:1px solid $blue-dark;
+}
+.module-url{
+	width:100%;
+	text-align:right;
+	font-style:italic;
+	font-size:.9em;
+}

@@ -1,0 +1,114 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+  
+  body {
+    background: #ddd;
+    font-family: "Open sans", sans-serif;
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+  }
+  img {
+    max-width: 100%;
+  }
+  a{
+    color:#000;
+  }
+  #wrapper {
+    background: #fff;
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin-top:30px;
+    max-width: 1100px;
+  }
+  #content {
+    padding: 30px;
+  }
+  #header {
+    text-align: center;
+    padding: 30px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .site-title{
+      text-align:center;
+      font-weight:bold;
+      display:block;
+  }
+  a.site-title {
+      text-decoration:none;
+      color:black;
+      font-size:3em;
+  }
+  #menu a {
+    text-decoration: none;
+  }
+  #menu {
+    text-align: center;
+    background: #ccc;
+    display: flex;
+    padding:0;
+    margin:0;
+    justify-content: center;
+  }
+  #menu div {
+    position: relative;
+  }
+  #menu a {
+    padding: 20px;
+    display: inline-block;
+    color: #000;
+    font-size: 1.2em;
+    cursor: pointer;
+  }
+  a {
+    color: #000;
+  }
+  #comic-area{
+    margin-bottom:30px;
+    text-align:center;
+  }
+  .cc-nav{
+      max-width:600px;
+      margin: 0 auto;
+      padding:20px;
+      display:flex;
+  }
+  .cc-nav a, .cc-nav div{
+      margin:0 10px;
+      display:block;
+      background-size:100%;
+      width:100%;
+  }
+  .cc-nav a{
+    opacity:.7;
+  }
+  .cc-nav a:before, .cc-nav div:before{
+      content:'';
+      display:block;
+      padding-bottom:calc((4/5) * 100%);
+  }
+  .cc-nav a:hover{
+    opacity:1;
+  }
+  .cc-first, .cc-first-dis{
+      background-image:url('images/first.png');
+  }
+  .cc-prev, .cc-prev-dis{
+      background-image:url('images/prev.png');
+  }
+  .cc-next,.cc-next-dis{
+      background-image:url('images/next.png');
+  }
+  .cc-last,.cc-last-dis{
+      background-image:url('images/last.png');
+  }
+  .cc-navaux{
+      background-image:url('images/rss.png');
+  }
+  .cc-nav div{
+      opacity:.5;
+  }
+  #cc-comicbody{
+    text-align:center;
+  }

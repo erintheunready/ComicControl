@@ -1,0 +1,25 @@
+/* content area */
+#rightside{
+	position:relative;
+	left:$sidebar-width;
+	box-sizing:border-box;
+	padding:50px 0 0 0;
+	width:calc(100% - #{$sidebar-width});
+	background:white;
+	min-height:100vh;
+}
+#content{
+	width:100%;
+	box-sizing:border-box;
+	padding:$std;
+}
+@media screen and (max-width: $break-mid){
+	#rightside{
+		width:100%;
+		left:0;
+		padding:0;
+	}
+	#content{
+		padding:$std 0;
+	}
+}
