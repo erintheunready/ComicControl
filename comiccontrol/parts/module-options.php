@@ -19,7 +19,7 @@ $stmt->execute();
 $result = $stmt->fetchAll();
 $displaylangs = array();
 foreach($result as $value){
-	$displaylangs[$value['shortname']] = $value['language'];
+	if(file_exists('languages/user-' . $value['shortname'] . '.php')) $displaylangs[$value['shortname']] = $value['language'];
 }
 
 echo '<form name="moduleoptions" action="" method="post" id="moduleoptions">';

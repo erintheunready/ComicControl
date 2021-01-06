@@ -79,7 +79,7 @@ $stmt->execute();
 $result = $stmt->fetchAll();
 $displaylangs = array();
 foreach($result as $value){
-	$displaylangs[$value['shortname']] = $value['language'];
+	if(file_exists('languages/' . $value['shortname'] . '.php')) $displaylangs[$value['shortname']] = $value['language'];
 }
 
 // get time zones
