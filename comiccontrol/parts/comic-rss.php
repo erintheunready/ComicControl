@@ -31,7 +31,7 @@ $recent = $stmt->fetchAll();
 foreach($recent as $row){
 	$str .= '<item><title><![CDATA[' . $ccpage->title . ' - ' . html_entity_decode($row['title'],ENT_QUOTES) . ']]></title>';
 	$desc_data = $row['newscontent'];
-	$desc_data = preg_replace("#(<\s*a\s+[^>]*href\s*=\s*[\"'])(?!http)([^\"'>]+)([\"'>]+)#", $ccsite->root . $ccsite->relativepath . '$2$3', $desc_data);
+	$desc_data = preg_replace("#(<\s*a\s+[^>]*href\s*=\s*[\"'])(?!http)([^\"'>]+)([\"'>]+)#", '<a href="' . $ccsite->root . $ccsite->relativepath . '$2$3', $desc_data);
 	$desc_data = preg_replace("<html>", '', $desc_data);
 	$desc_data = preg_replace("<body>", '', $desc_data);
 	$desc_data = preg_replace("</html>", '', $desc_data);
