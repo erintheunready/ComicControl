@@ -75,7 +75,7 @@ if(filter_var($ccpage->slugarr[4], FILTER_VALIDATE_INT)) $storyline = $ccpage->s
 	</div>
 	
 	<? //close out the form ?>
-	<button type="button" class="full-width light-bg" id="savechanges">Save changes</button>
+	<button type="button" class="full-width light-bg" id="savechanges"><?=$lang['Save changes']?></button>
 
 </form>
 

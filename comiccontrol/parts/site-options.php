@@ -209,7 +209,7 @@ array_push($forminputs,
 		array(
 			'type' => "text",
 			'label' => $lang['Meta description'],
-			'tooltip' => $lang['tooltip-description'],
+			'tooltip' => $lang['tooltip-sitedescription'],
 			'name' => "description",
 			'current' => $ccsite->description
 		)

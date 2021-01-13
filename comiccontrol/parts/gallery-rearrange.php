@@ -64,7 +64,7 @@ quickLinks($links);
 	</div>
 	
 	<? //close out the form ?>
-	<button type="button" class="full-width light-bg" id="savechanges">Save changes</button>
+	<button type="button" class="full-width light-bg" id="savechanges"><?=$lang['Save changes']?></button>
 
 </form>
 

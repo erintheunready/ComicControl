@@ -51,7 +51,6 @@ $lang['Rearrange images'] = 'Rearrange images';
 
 //module-options
 $lang['Module options'] = 'Module options';
-$lang['Display as page'] = 'Display as page';
 $lang['Module URL:'] = 'Module URL:';
 $lang['Meta description'] = 'Meta description';
 $lang['tooltip-metadescription'] = 'This option contains the meta description for this page.  If left blank, the default meta description for the site will be used.  It is recommended that this field be less than 160 characters, but this field can hold up to 256 characters.';
@@ -65,8 +64,6 @@ $lang['Edit a different comic post'] = 'Edit a different comic post';
 //blog contextual links
 $lang['Add another blog post'] = 'Add another blog post';
 $lang['Edit another blog post'] = 'Edit another blog post';
-$lang['Add a new blog post'] = 'Add a new blog post';
-$lang['Edit a different blog post'] = 'Edit a different blog post';
 
 //comic-main
 $lang['Edit'] = "Edit";
@@ -80,7 +77,6 @@ $lang['Publishing soon'] = "Publishing soon";
 
 //comic-post-add
 $lang['Choose file...'] = "Choose file...";
-$lang['New file'] = "New file";
 $lang['Comic info'] = "Comic info";
 $lang['Comic title'] = "Comic title";
 $lang['Hovertext'] = "Hovertext";
@@ -113,21 +109,18 @@ $lang['Are you sure you want to delete %s? This action cannot be undone.'] = 'Ar
 $lang['%s has been deleted.'] = '%s has been deleted.';
 
 //comic-post-manage
-$lang['Add a comic to %s'] = 'Add a comic to %s';
 $lang['Top level'] = 'Top level';
 $lang['Storylines'] = 'Storylines';
 $lang['Pages'] = 'Pages';
 $lang['Add a storyline here'] = 'Add a storyline here';
 
 //comic-storyline-manage
-$lang['Add a storyline to %s'] = 'Add a storyline to %s';
 $lang['Rearrange these storylines'] = 'Rearrange these storylines';
 
 //comic-storyline-add
 $lang['Storyline title'] = 'Storyline title';
 $lang['Parent storyline'] = 'Parent storyline';
 $lang['Submit new storyline'] = 'Submit new storyline';
-$lang['Return to managing storylines'] = 'Return to managing storylines';
 $lang['No parent storyline'] = 'No parent storyline';
 $lang['There was an error adding your storyline.  Please try again.'] = 'There was an error adding your storyline.  Please try again.';
 $lang['Add another storyline'] = "Add another storyline";
@@ -135,13 +128,11 @@ $lang['Storyline caption'] = "Storyline caption";
 $lang['Choose custom thumbnail...'] = "Choose custom thumbnail...";
 $lang['There is currently no custom thumbnail.  The thumbnail of the first page in this chapter will be used as the thumbnail.'] = 'There is currently no custom thumbnail.  The thumbnail of the first page in this chapter will be used as the thumbnail.';
 $lang['View current custom thumbnail'] = 'View current custom thumbnail';
-$lang['Hide current custom thumbnail'] = 'Hide current custom thumbnail';
 $lang['Remove custom thumbnail'] = 'Remove custom thumbnail';
 
 //comic-storyline-edit
 $lang['No storyline was found with this information.'] = 'No storyline was found with this information.';
 $lang['NOTE: You cannot make a storyline a sub-storyline of itself. The parent storyline was not changed.'] = 'NOTE: You cannot make a storyline a sub-storyline of itself. The parent storyline was not changed.';
-$lang['Add a new storyline'] = 'Add a new storyline';
 $lang['Edit a different storyline'] = 'Edit a different storyline';
 $lang['There was an error editing your storyline.  Please try again.'] = 'There was an error editing your storyline.  Please try again.';
 
@@ -149,7 +140,6 @@ $lang['There was an error editing your storyline.  Please try again.'] = 'There 
 $lang['Sub-storylines will be moved up to this storyline\'s level.'] = 'Sub-storylines will be moved up to this storyline\'s level.';
 
 //comic-storyline-rearrange
-$lang['Return to storyline management'] = 'Return to storyline management';
 $lang['Drag and drop storylines to rearrange them.  Click "Save Changes" to save the new order.'] = 'Drag and drop storylines to rearrange them.  Click "Save Changes" to save the new order.';
 $lang['Your changes have been saved.'] = 'Your changes have been saved.';
 
@@ -185,9 +175,6 @@ $lang['Enlarge comic'] = 'Enlarge comic';
 $lang['Action on tapping comic'] = 'Action on tapping comic';
 $lang['View hovertext'] = 'View hovertext';
 $lang['Advance to next page'] = 'Advance to next page';
-$lang['Action on swiping'] = 'Action on swiping';
-$lang['Navigate comic'] = 'Navigate comic';
-$lang['Do nothing'] = 'Do nothing';
 $lang['Arrow key navigation'] = 'Arrow key navigation';
 $lang['On'] = 'On';
 $lang['Off'] = 'Off';
@@ -209,9 +196,6 @@ $lang['Auxiliary button text'] = 'Auxiliary button text';
 
 //image upload errors
 $lang['Change File'] = 'Change File';
-$lang['The selected file is not a valid image.  Please choose a different file.'] = 'The selected file is not a valid image.  Please choose a different file.';
-$lang['The selected image was too large.  Please choose a different file.'] = 'The selected image was too large.  Please choose a different file.';
-$lang['The destination directory does not have sufficient permissions for this upload.'] = 'The destination directory does not have sufficient permissions for this upload.';
 
 //form error messages
 $lang['error-normaltext'] = 'This field must have at least one character.';
@@ -221,12 +205,7 @@ $lang['error-int'] = 'This field must be a positive integer.';
 $lang['No comic was found with this information.'] = 'No comic was found with this information.';
 
 //content-editor-js.php & img-upload-js.php
-$lang['Uploading page'] = 'Uploading page';
-$lang['Insert image'] = 'Insert image';
 $lang['Add image'] = 'Add image';
-$lang['Open link in same window'] = 'Open link in same window';
-$lang['Open link in new window'] = 'Open link in new window';
-$lang['Add link'] = 'Add link';
 $lang['Uploading image'] = 'Uploading image';
 $lang['Processing image...'] = 'Processing image...';
 
@@ -373,14 +352,10 @@ $lang['Add image...'] = 'Add image...';
 
 //site-options
 $lang['Site title'] = 'Site title';
-$lang['Site options'] = 'Site options';
 $lang['Admin language'] = 'Admin language';
 $lang['Time zone'] = 'Time zone';
 $lang['Date format'] = 'Date format';
 $lang['Time format'] = 'Time format';
-$lang['Root URL'] = 'Root URL';
-$lang['Relative path'] = 'Relative path';
-$lang['ComicControl path'] = 'ComicControl path';
 $lang['Disqus shortname'] = 'Disqus shortname';
 $lang['Home page'] = 'Home page';
 $lang['.htaccess prepend code'] = '.htaccess prepend code';
@@ -394,20 +369,15 @@ $lang['tooltip-adminlanguage'] = 'This is the language that the ComicControl adm
 $lang['tooltip-timezone'] = 'This is the time zone that your site will run in.  Blog posts and comic posts will be published according to the time zone you set here.';
 $lang['tooltip-dateformat'] = 'This option determines the format that dates will be displayed in on comic and blog posts.';
 $lang['tooltip-timeformat'] = 'This option determines the format that times will be displayed in on comic and blog posts.';
-$lang['tooltip-rooturl'] = 'This option tells ComicControl what the root URL of your website is.  This should be the root URL of your site without any folders, including either http: or https: depending on whether or not your site has an SSL certificate installed. This option should end with a trailing slash (/).  For example, if your site is found at example.com/my-comic and does not have an SSL certificate, this option will be http://example.com/.';
-$lang['tooltip-relativepath'] = 'This option tells ComicControl what folder your site is in within your website.  If your site is at the root level of its URL, this will be empty.  This option should end with a trailing slash (/).  For example, if your site is found at example.com/my-comic, this option will be my-comic/.';
-$lang['tooltip-ccpath'] = 'This option tells ComicControl what folder ComicControl is installed in within your website.  The default folder with a standard installation is comiccontrol/.  This option should end with a trailing slash (/).  For example, if your site is found at example.com/my-comic and the ComicControl admin area is at example.com/my-comic/comiccontrol, then this option would be comiccontrol/.';
 $lang['tooltip-disqusshortname'] = 'This option determines the Disqus shortname that will be used for your comic and blog posts\' comment sections.  If your Disqus comment forum is at example-comic.disqus.com, for example, your Disqus shortname is example-comic.';
 $lang['tooltip-htaccessprepend'] = 'This area contains any code you want to put BEFORE the main .htaccess code that is used for the main folder you place ComicControl in.  Use this if there are any special .htaccess directives you need to have in this folder, such as redirects or 404 pages.  Leave empty unless you know what you\'re doing! (No, seriously, you\'ll completely bork your site.)';
 $lang['tooltip-htaccessappend'] = 'This area contains any code you want to put AFTER the main .htaccess code that is used for the main folder you place ComicControl in.  Use this if there are any special .htaccess directives you need to have in this folder, such as redirects or 404 pages.  Leave empty unless you know what you\'re doing! (No, seriously, you\'ll completely bork your site.)';
 $lang['tooltip-sitedescription'] = 'This option contains the default meta description for your site.  This meta description will be used on pages that do not have another specific meta description specified in their options.  It is recommended that this field be less than 160 characters, but this field can hold up to 256 characters.';
 
 //page/module management
-$lang['Add a page'] = 'Add a page';
 $lang['Add a module'] = 'Add a module';
 $lang['Module type'] = 'Module type';
 $lang['createmodule-success'] = 'Your module has successfully been created with default options.  Please check and modify the module\'s options before adding content to the module.';
-$lang['deletemodule-success'] = 'Your module has successfully been deleted.';
 $lang['There was no module found with this information.'] = 'There was no module found with this information.';
 $lang['Return to module management'] = 'Return to module management';
 $lang['Add another module'] = 'Add another module';
@@ -505,7 +475,6 @@ $lang['Your version of ComicControl is up to date!'] = 'Your version of ComicCon
 $lang['Your version of ComicControl needs updating!  Here are change notes for this update:'] = 'Your version of ComicControl needs updating!  Here are change notes for this update:';
 $lang['Please click the button below to update your version of ComicControl.  After clicking the button, please do not leave the page until you receive confirmation that ComicControl has been updated.  Please be aware that this will overwrite the main ComicControl files.'] = 'Please click the button below to update your version of ComicControl.  After clicking the button, please do not leave the page until you receive confirmation that ComicControl has been updated.  Please be aware that this will overwrite the main ComicControl files.';
 $lang['Upgrade ComicControl'] = 'Upgrade ComicControl';
-$lang['Your version of ComicControl has been successfully updated.'] = 'Your version of ComicControl has been successfully updated.';
 
 //plugins
 $lang['Plugins'] = 'Plugins';
