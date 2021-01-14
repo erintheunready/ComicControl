@@ -3,7 +3,7 @@
 
 /* 
 COMICCONTROL
-Version 4.2
+Version 4.2.0
 1/15/2021
 Built by Erin Burt with help from others.
 Copyright 2012-2021 Erin Burt.

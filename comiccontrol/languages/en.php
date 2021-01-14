@@ -23,12 +23,10 @@ $lang['You do not have permission to access this page.'] = 'You do not have perm
 //standard language
 $lang['Yes'] = 'Yes';
 $lang['No'] = 'No';
+$lang['On'] = 'On';
+$lang['Off'] = 'Off';
 
 //breadcrumbs titles
-$lang['Image Library'] = 'Image Library';
-$lang['Site Options'] = 'Site Options';
-$lang['Users'] = 'Users';
-$lang['Check for Updates'] = 'Check for Updates';
 $lang['Home'] = 'Home';
 $lang['%s Module'] = '%s Module';
 $lang['Add post'] = 'Add post';
@@ -48,6 +46,10 @@ $lang['Delete module'] = 'Delete module';
 $lang['Edit image'] = 'Edit image';
 $lang['Delete image'] = 'Delete image';
 $lang['Rearrange images'] = 'Rearrange images';
+$lang['Image Library'] = 'Image Library';
+$lang['Site Options'] = 'Site Options';
+$lang['Users'] = 'Users';
+$lang['Check for Updates'] = 'Check for Updates';
 
 //module-options
 $lang['Module options'] = 'Module options';
@@ -176,8 +178,6 @@ $lang['Action on tapping comic'] = 'Action on tapping comic';
 $lang['View hovertext'] = 'View hovertext';
 $lang['Advance to next page'] = 'Advance to next page';
 $lang['Arrow key navigation'] = 'Arrow key navigation';
-$lang['On'] = 'On';
-$lang['Off'] = 'Off';
 $lang['Mobile navigation options'] = 'Mobile navigation options';
 $lang['Maximum thumbnail width'] = 'Maximum thumbnail width';
 $lang['Maximum thumbnail height'] = 'Maximum thumbnail height';
@@ -224,9 +224,9 @@ $lang['tooltip-storylinetitle'] = "This will be the name of the storyline.  The 
 $lang['tooltip-parentstoryline'] = "This will be the parent storyline of the created storyline.  If a parent storyline is selected, this storyline will be a sub-storyline of the parent storyline.  For example, a chapter can be created with a volume as a parent storyline.";
 
 //page option tooltips
-$lang['tooltip-pagetitle'] = "This is the title that will be associated with this page.  It will be displayed in the tab or window title when the user navigates to this page.";
-$lang['tooltip-pagetemplate'] = "This is the template file with will be used to display this page.";
-$lang['tooltip-displaylanguage'] = "This option determines the ComicControl-specific language that the page will be displayed in to the user.";
+$lang['tooltip-pagetitle'] = "This is the title that will be associated with this module.  It will be displayed in the tab or window title when the user navigates to this module.";
+$lang['tooltip-pagetemplate'] = "This is the template file with will be used to display this module.";
+$lang['tooltip-displaylanguage'] = "This option determines the ComicControl-specific language that the module will be displayed in to the user.";
 
 //comic option tooltips
 $lang['tooltip-maxcomicwidth'] = "This option determines how wide, in pixels, the comic will be saved as.  If you upload a high resolution version of your comic, it will be resized down to this for display on your website.  If you have the option selected to display an enlarged version of the comic when the page is clicked, the higher resolution, non-resized version of your comic will be displayed.";
