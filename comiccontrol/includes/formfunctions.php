@@ -2,7 +2,7 @@
 //formfunctions.php - builds php functions for building forms
 
 //build individual form input based on info
-function buildFormInput($options){
+function buildFormInput($options, $current = ""){
 	
 	global $ccpage;
 	
