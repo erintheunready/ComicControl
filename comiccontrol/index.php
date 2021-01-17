@@ -4,7 +4,7 @@
 
 //start output buffering so we can set cookies whenever we feel like it
 ob_start();
-
+error_reporting(E_ALL & ~E_NOTICE);
 require_once('includes/formfunctions.php');
 
 //go through installation checks

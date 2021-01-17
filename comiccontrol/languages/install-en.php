@@ -32,7 +32,7 @@ $ilang['E-mail'] = 'E-mail';
 $ilang['Password'] = 'Password';
 $ilang['Confirm your password'] = 'Confirm your password';
 
-$ilang['Page title'] = 'Page title';
+$ilang['Module title'] = 'Module title';
 $ilang['Module type'] = 'Module type';
 $ilang['Display language'] = 'Display language';
 $ilang['Page template'] = 'Page template';

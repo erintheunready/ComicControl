@@ -40,8 +40,8 @@ array_push($forminputs,
 	array(
 		array(
 			'type' => "text",
-			'label' => $ilang['Page title'],
-			'tooltip' => $ilang['pagetitle-tooltip'],
+			'label' => $ilang['Module title'],
+			'tooltip' => $ilang['moduletitle-tooltip'],
 			'name' => "install-pagetitle",
 			'regex' => "normal-text"
 		)

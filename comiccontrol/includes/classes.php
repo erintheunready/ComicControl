@@ -44,7 +44,7 @@ class CC_Site{
 		$this->newestversion = self::fetchoption("newestversion");
 		$this->comments = self::fetchoption("comments");
 
-
+		if($this->timezone == '') $this->timezone = "America/Chicago";
 	}
 	private function fetchoption($option){
 		global $cc;

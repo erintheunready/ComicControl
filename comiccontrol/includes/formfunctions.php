@@ -7,6 +7,8 @@ function buildFormInput($options){
 	global $ccpage;
 	
 	extract($options);
+	if(!isset($current)) $current = "";
+	if(!isset($regex)) $regex = "";
 	
 	//display input label
 	echo '<div class="forminput"><label><div class="v-c">' . $label . ':';

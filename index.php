@@ -13,6 +13,7 @@ See github.com/erintheunready/ComicControl for current source and development br
 
 //start the output buffering
 ob_start();
+error_reporting(E_ALL & ~E_NOTICE);
 header('X-Frame-Options: sameorigin');
 
 //include main ComicControl scripts

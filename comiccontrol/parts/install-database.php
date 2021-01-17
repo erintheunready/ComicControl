@@ -2,7 +2,7 @@
 
 <?=$ilang['firststep']?>
 
-<? if($failed) echo '<div class="msg error">' . $ilang['dbbuilderror'] . '</div>'; ?>
+<? if(isset($failed) && $failed) echo '<div class="msg error">' . $ilang['dbbuilderror'] . '</div>'; ?>
 <form action="" method="post">
 <?
 
