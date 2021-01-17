@@ -3,8 +3,8 @@
 
 /* 
 COMICCONTROL
-Version 4.2.0
-1/15/2021
+Version 4.2.1
+1/17/2021
 Built by Erin Burt with help from others.
 Copyright 2012-2021 Erin Burt.
 See comicctrl.com/thanks for contributors and included third-party MIT-licensed packages.
