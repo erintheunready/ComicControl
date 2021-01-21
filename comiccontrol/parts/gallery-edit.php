@@ -5,11 +5,11 @@
 //create and output quick links
 $links = array(
 	array(
-		'link' => $ccurl . $navslug . '/' . $ccpage->slug,
+		'link' => $ccurl . $navslug . '/' . $ccpage->module->slug,
 		'text' => str_replace('%s',$ccpage->title,$lang['Return to managing %s'])
 	),
 	array(
-		'link' => $ccurl . $navslug . '/' . $ccpage->slug . '/add-image',
+		'link' => $ccurl . $navslug . '/' . $ccpage->module->slug . '/add-image',
 		'text' => $lang['Add another image']
 	)
 );
@@ -54,7 +54,7 @@ if(isset($_POST) && $_POST['submitted'] != ""){
 		echo '<div class="cc-btn-row">';
 		buildButton(
 			"dark-bg",
-			$ccurl . $navslug . '/' . $ccpage->slug . '/edit-image/' . $thisimage['id'],
+			$ccurl . $navslug . '/' . $ccpage->module->slug . '/edit-image/' . $thisimage['id'],
 			$lang['Edit this image again']
 		);
 		echo '</div>';
@@ -75,7 +75,7 @@ if(isset($_POST) && $_POST['submitted'] != ""){
 		
 		<? // image uploader area ?>
 		<div class="currentfileholder"><button class="full-width dark-bg toggle-current-file"><span class="current-file-text"><?=$lang['View current file']?></span> <i class="fa fa-angle-down"></i></button>
-			<div class="currentfile"><img src="<?=$ccsite->root . $ccsite->relativepath . 'uploads/' . $thisimage['imgname']?>" /></div>
+			<div class="currentfile"><img src="<?=$ccsite->root . 'uploads/' . $thisimage['imgname']?>" /></div>
 		</div>
 		<? buildImageInput($lang['Change file...'],false); 
 		

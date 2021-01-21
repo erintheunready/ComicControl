@@ -5,15 +5,15 @@
 //create and output quick links
 $links = array(
 	array(
-		'link' => $ccurl . $navslug . '/' . $ccpage->slug,
+		'link' => $ccurl . $navslug . '/' . $ccpage->module->slug,
 		'text' => str_replace('%s',$ccpage->title,$lang['Return to managing %s'])
 	),
 	array(
-		'link' => $ccurl . $navslug.'/'.$ccpage->slug."/manage-storylines",
+		'link' => $ccurl . $navslug.'/'.$ccpage->module->slug."/manage-storylines",
 		'text' => $lang['Edit a different storyline']
 	),
 	array(
-		'link' => $ccurl . $navslug.'/'.$ccpage->slug."/add-storyline",
+		'link' => $ccurl . $navslug.'/'.$ccpage->module->slug."/add-storyline",
 		'text' => $lang['Add another storyline']
 	)
 );
@@ -69,12 +69,12 @@ else{
 		echo '<div class="cc-btn-row">';
 		buildButton(
 			"light-bg",
-			$ccurl . $navslug.'/'.$ccpage->slug.'/delete-storyline/' . $thisstoryline['id'] . '/confirmed',
+			$ccurl . $navslug.'/'.$ccpage->module->slug.'/delete-storyline/' . $thisstoryline['id'] . '/confirmed',
 			$lang['Yes']
 		);
 		buildButton(
 			"dark-bg",
-			$ccurl . $navslug.'/'.$ccpage->slug."/manage-storylines",
+			$ccurl . $navslug.'/'.$ccpage->module->slug."/manage-storylines",
 			$lang['No']
 		);
 		echo '</div>';

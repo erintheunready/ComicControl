@@ -13,7 +13,7 @@ if($ccpage->subslug == "rss"){
 	if($ccpage->subslug == "archive"){ 		?>
 		<div id="text-area">
 		<h1><?=$user_lang['Latest Page'];?></h1>
-		<p><?=str_replace('%l', $ccsite->root.$ccsite->relativepath.$ccpage->slug, $user_lang['You can read the newest page by going <a href="%l">here!</a>'])?></p>
+		<p><?=str_replace('%l', $ccsite->root.$ccsite->relativepath.$ccpage->module->slug, $user_lang['You can read the newest page by going <a href="%l">here!</a>'])?></p>
 		<h1><?=$user_lang['Archive']?></h1>
 		<p><?=$user_lang['Select a page from the drop-down menu to start reading the comic.'];?></p>
 		<? $ccpage->module->displayDropdown(); ?><p><?=$lang['Or, you can select a chapter to start from:'];?></p>

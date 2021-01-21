@@ -5,11 +5,11 @@
 //create and output quick links
 $links = array(
 	array(
-		'link' => $ccurl . $navslug . '/' . $ccpage->slug,
+		'link' => $ccurl . $navslug . '/' . $ccpage->module->slug,
 		'text' => str_replace('%s',$ccpage->title,$lang['Return to managing %s'])
 	),
 	array(
-		'link' => $ccurl . $navslug . '/' . $ccpage->slug . '/add-image',
+		'link' => $ccurl . $navslug . '/' . $ccpage->module->slug . '/add-image',
 		'text' => $lang['Add another image']
 	)
 );
@@ -57,12 +57,12 @@ else{
 		echo '<div class="cc-btn-row">';
 		buildButton(
 			"light-bg",
-			$ccurl . $navslug.'/'.$ccpage->slug.'/delete-image/' . $thisimage['id'] . '/confirmed',
+			$ccurl . $navslug.'/'.$ccpage->module->slug.'/delete-image/' . $thisimage['id'] . '/confirmed',
 			$lang['Yes']
 		);
 		buildButton(
 			"dark-bg",
-			$ccurl . $navslug.'/'.$ccpage->slug."/",
+			$ccurl . $navslug.'/'.$ccpage->module->slug."/",
 			$lang['No']
 		);
 		echo '</div>';

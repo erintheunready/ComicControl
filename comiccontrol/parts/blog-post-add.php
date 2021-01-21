@@ -12,15 +12,15 @@
 //create and output quick links
 $links = array(
 	array(
-		'link' => $ccurl . $navslug . '/' . $ccpage->slug,
+		'link' => $ccurl . $navslug . '/' . $ccpage->module->slug,
 		'text' => str_replace('%s',$ccpage->title,$lang['Return to managing %s'])
 	),
 	array(
-		'link' => $ccurl . $navslug.'/'.$ccpage->slug.'/',
+		'link' => $ccurl . $navslug.'/'.$ccpage->module->slug.'/',
 		'text' => $lang['Edit another blog post']
 	),
 	array(
-		'link' => $ccurl . $navslug.'/'.$ccpage->slug.'/add-post',
+		'link' => $ccurl . $navslug.'/'.$ccpage->module->slug.'/add-post',
 		'text' => $lang['Add another blog post']
 	)
 );
@@ -68,7 +68,7 @@ if(isset($_POST) && $_POST['post-title'] != ""){
 		$postid = $cc->lastInsertId();
 	
 		//set comment ID based on post id
-		$commentid = $ccpage->slug . '-' . $postid;
+		$commentid = $ccpage->module->slug . '-' . $postid;
 		$stmt = $cc->prepare("UPDATE cc_" . $tableprefix . "blogs SET commentid=:commentid WHERE id=:postid LIMIT 1");
 		$stmt->execute(['commentid' => $commentid, 'postid' => $postid]);
 		
@@ -92,12 +92,12 @@ if(isset($_POST) && $_POST['post-title'] != ""){
 		echo '<div class="cc-btn-row">';
 		buildButton(
 			"light-bg",
-			$ccurl . $navslug . '/' . $ccpage->slug . '/edit-post/' . $slugfinal,
+			$ccurl . $navslug . '/' . $ccpage->module->slug . '/edit-post/' . $slugfinal,
 			str_replace('%s',htmlentities($title),$lang['Edit %s'])
 		);
 		buildButton(
 			"light-bg",
-			$ccsite->root . $ccsite->relativepath . $ccpage->slug . '/' . $slugfinal,
+			$ccsite->root . $ccpage->module->slug . '/' . $slugfinal,
 			str_replace('%s',htmlentities($title),$lang['Preview %s'])
 		);
 		echo '</div>';

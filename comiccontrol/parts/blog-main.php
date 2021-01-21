@@ -8,12 +8,12 @@
 echo '<div class="cc-btn-row">';
 buildButton(
 	"light-bg",
-	$ccurl . $navslug . '/' . $ccpage->slug . '/add-post/',
+	$ccurl . $navslug . '/' . $ccpage->module->slug . '/add-post/',
 	$lang['Add a blog post']
 );
 buildButton(
 	"dark-bg",
-	$ccurl . $navslug . '/' . $ccpage->slug . '/manage-options/',
+	$ccurl . $navslug . '/' . $ccpage->module->slug . '/manage-options/',
 	$lang['Manage blog options']
 );
 echo '</div>';

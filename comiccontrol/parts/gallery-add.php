@@ -5,11 +5,11 @@
 //create and output quick links
 $links = array(
 	array(
-		'link' => $ccurl . $navslug . '/' . $ccpage->slug,
+		'link' => $ccurl . $navslug . '/' . $ccpage->module->slug,
 		'text' => str_replace('%s',$ccpage->title,$lang['Return to managing %s'])
 	),
 	array(
-		'link' => $ccurl . $navslug . '/' . $ccpage->slug . '/add-image',
+		'link' => $ccurl . $navslug . '/' . $ccpage->module->slug . '/add-image',
 		'text' => $lang['Add another image']
 	)
 );
@@ -54,7 +54,7 @@ if(isset($_POST) && $_POST['image-finalfile'] != ""){
 		echo '<div class="cc-btn-row">';
 		buildButton(
 			"dark-bg",
-			$ccurl . $navslug . '/' . $ccpage->slug . '/edit-image/' . $imageid,
+			$ccurl . $navslug . '/' . $ccpage->module->slug . '/edit-image/' . $imageid,
 			$lang['Edit this image']
 		);
 		echo '</div>';

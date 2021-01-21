@@ -13,19 +13,19 @@ $thiscomic = $ccpage->module->getPost(getSlug(4));
 //create and output quick links
 $links = array(
 	array(
-		'link' => $ccurl . $navslug . '/' . $ccpage->slug,
+		'link' => $ccurl . $navslug . '/' . $ccpage->module->slug,
 		'text' => str_replace('%s',$ccpage->title,$lang['Return to managing %s'])
 	),
 	array(
-		'link' => $ccurl . $navslug.'/'.$ccpage->slug."/manage-posts",
+		'link' => $ccurl . $navslug.'/'.$ccpage->module->slug."/manage-posts",
 		'text' => $lang['Edit another comic post']
 	),
 	array(
-		'link' => $ccurl . $navslug.'/'.$ccpage->slug."/add-post",
+		'link' => $ccurl . $navslug.'/'.$ccpage->module->slug."/add-post",
 		'text' => $lang['Add another comic post']
 	),
 	array(
-		'link' => $ccsite->root . $ccsite->relativepath . $ccpage->slug . '/' . $thiscomic['slug'],
+		'link' => $ccsite->root . $ccpage->module->slug . '/' . $thiscomic['slug'],
 		'text' => str_replace('%s',htmlentities($thiscomic['title']),$lang['Preview %s'])
 	)
 );
@@ -101,12 +101,12 @@ else{
 			echo '<div class="cc-btn-row">';
 			buildButton(
 				"light-bg",
-				$ccurl . $navslug . '/' . $ccpage->slug . '/edit-post/' . $slugfinal,
+				$ccurl . $navslug . '/' . $ccpage->module->slug . '/edit-post/' . $slugfinal,
 				str_replace('%s',htmlentities($title),$lang['Edit %s again'])
 			);
 			buildButton(
 				"light-bg",
-				$ccsite->root . $ccsite->relativepath . $ccpage->slug . '/' . $slugfinal,
+				$ccsite->root . $ccpage->module->slug . '/' . $slugfinal,
 				str_replace('%s',htmlentities($title),$lang['Preview %s'])
 			);
 			echo '</div>';
@@ -121,17 +121,17 @@ else{
 			echo '<div class="cc-btn-row">';
 			buildButton(
 				"dark-bg",
-				$navslug . '/' . $ccpage->slug . '/add-post',
+				$navslug . '/' . $ccpage->module->slug . '/add-post',
 				$lang['Add a new comic post']
 			);
 			buildButton(
 				"dark-bg",
-				$navslug . '/' . $ccpage->slug . '/manage-posts',
+				$navslug . '/' . $ccpage->module->slug . '/manage-posts',
 				$lang['Edit a different comic post']
 			);
 			buildButton(
 				"dark-bg",
-				$navslug . '/' . $ccpage->slug . '/',
+				$navslug . '/' . $ccpage->module->slug . '/',
 				str_replace('%s',$ccpage->title,$lang['Return to managing %s'])
 			);
 			echo '</div>';
@@ -145,7 +145,7 @@ else{
 			
 			<? // comic uploader area ?>
 			<div class="currentfileholder"><button class="full-width dark-bg toggle-current-file"><span class="current-file-text"><?=$lang['View current file']?></span> <i class="fa fa-angle-down"></i></button>
-				<div class="currentfile"><img src="<?=$ccsite->root . $ccsite->relativepath . 'comics/' . $thiscomic['imgname']?>" /></div>
+				<div class="currentfile"><img src="<?=$ccsite->root . 'comics/' . $thiscomic['imgname']?>" /></div>
 			</div>
 			<? buildImageInput($lang['Change file...'],false); ?>
 				

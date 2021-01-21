@@ -7,15 +7,15 @@
 //create and output quick links
 $links = array(
 	array(
-		'link' => $ccurl . $navslug . '/' . $ccpage->slug,
+		'link' => $ccurl . $navslug . '/' . $ccpage->module->slug,
 		'text' => str_replace('%s',$ccpage->title,$lang['Return to managing %s'])
 	),
 	array(
-		'link' => $ccurl . $navslug.'/'.$ccpage->slug."/manage-storylines",
+		'link' => $ccurl . $navslug.'/'.$ccpage->module->slug."/manage-storylines",
 		'text' => $lang['Edit a different storyline']
 	),
 	array(
-		'link' => $ccurl . $navslug.'/'.$ccpage->slug."/add-storyline",
+		'link' => $ccurl . $navslug.'/'.$ccpage->module->slug."/add-storyline",
 		'text' => $lang['Add another storyline']
 	)
 );
@@ -113,7 +113,7 @@ if(isset($_POST) && $_POST['storyline-title'] != ""){
 		echo '<div class="cc-btn-row">';
 		buildButton(
 			"light-bg",
-			$ccurl . $navslug . '/' . $ccpage->slug . '/edit-storyline/' . $thisstoryline['id'],
+			$ccurl . $navslug . '/' . $ccpage->module->slug . '/edit-storyline/' . $thisstoryline['id'],
 			str_replace('%s',htmlentities($title),$lang['Edit %s again'])
 		);
 		echo '</div>';
@@ -197,7 +197,7 @@ if(isset($_POST) && $_POST['storyline-title'] != ""){
 				else{
 					?>
 					<div class="currentfileholder"><button class="full-width dark-bg toggle-current-file"><span class="current-file-text"><?=$lang['View current custom thumbnail']?></span> <i class="fa fa-angle-down"></i></button>
-						<div class="currentfile"><img src="<?=$ccsite->root . $ccsite->relativepath . 'comicsthumbs/' . $thisstoryline['thumbnail']?>" /></div>
+						<div class="currentfile"><img src="<?=$ccsite->root . 'comicsthumbs/' . $thisstoryline['thumbnail']?>" /></div>
 					</div>
 					<?
 				}
@@ -209,7 +209,7 @@ if(isset($_POST) && $_POST['storyline-title'] != ""){
 				<script>
 				$('#remove-thumbnail').click(function(e){
 					e.preventDefault();
-					window.location.href='<? echo $ccurl . $navslug . '/' . $ccpage->slug . '/edit-storyline/' . $thisstoryline['id'] . '/remove-thumbnail';?>';
+					window.location.href='<? echo $ccurl . $navslug . '/' . $ccpage->module->slug . '/edit-storyline/' . $thisstoryline['id'] . '/remove-thumbnail';?>';
 				});
 				</script>
 				<?}

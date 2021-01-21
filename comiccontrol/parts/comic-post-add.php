@@ -10,15 +10,15 @@
 //create and output quick links
 $links = array(
 	array(
-		'link' => $ccurl . $navslug . '/' . $ccpage->slug,
+		'link' => $ccurl . $navslug . '/' . $ccpage->module->slug,
 		'text' => str_replace('%s',$ccpage->title,$lang['Return to managing %s'])
 	),
 	array(
-		'link' => $ccurl . $navslug.'/'.$ccpage->slug."/manage-posts",
+		'link' => $ccurl . $navslug.'/'.$ccpage->module->slug."/manage-posts",
 		'text' => $lang['Edit another comic post']
 	),
 	array(
-		'link' => $ccurl . $navslug.'/'.$ccpage->slug."/add-post",
+		'link' => $ccurl . $navslug.'/'.$ccpage->module->slug."/add-post",
 		'text' => $lang['Add another comic post']
 	)
 );
@@ -34,7 +34,7 @@ quickLinks($links);
 $stmt = $cc->prepare("SELECT * FROM cc_" . $tableprefix . "comics_storyline WHERE comic=:moduleid");
 $stmt->execute(['moduleid' => $ccpage->module->id]);
 if($stmt->rowCount() < 1){
-	echo '<p>' . str_replace('%l',$ccurl . $navslug . '/' . $ccpage->slug . '/add-storyline/',$lang['There are currently no storylines in this comic.  In order to add a comic, you must first add a storyline. <a href="%l">Click here to add your first storyline.</a>']) . '</p>';
+	echo '<p>' . str_replace('%l',$ccurl . $navslug . '/' . $ccpage->module->slug . '/add-storyline/',$lang['There are currently no storylines in this comic.  In order to add a comic, you must first add a storyline. <a href="%l">Click here to add your first storyline.</a>']) . '</p>';
 }else{
 
 //submit page if posted
@@ -87,7 +87,7 @@ if(isset($_POST) && $_POST['comic-title'] != ""){
 		$postid = $cc->lastInsertId();
 	
 		//set comment ID based on post id
-		$commentid = $ccpage->slug . '-' . $postid;
+		$commentid = $ccpage->module->slug . '-' . $postid;
 		$stmt = $cc->prepare("UPDATE cc_" . $tableprefix . "comics SET commentid=:commentid WHERE id=:postid LIMIT 1");
 		$stmt->execute(['commentid' => $commentid, 'postid' => $postid]);
 		
@@ -111,12 +111,12 @@ if(isset($_POST) && $_POST['comic-title'] != ""){
 		echo '<div class="cc-btn-row">';
 		buildButton(
 			"light-bg",
-			$ccurl . $navslug . '/' . $ccpage->slug . '/edit-post/' . $slugfinal,
+			$ccurl . $navslug . '/' . $ccpage->module->slug . '/edit-post/' . $slugfinal,
 			str_replace('%s',htmlentities($title),$lang['Edit %s'])
 		);
 		buildButton(
 			"light-bg",
-			$ccsite->root . $ccsite->relativepath . $ccpage->slug . '/' . $slugfinal,
+			$ccsite->root . $ccpage->module->slug . '/' . $slugfinal,
 			str_replace('%s',htmlentities($title),$lang['Preview %s'])
 		);
 		echo '</div>';
@@ -131,17 +131,17 @@ if(isset($_POST) && $_POST['comic-title'] != ""){
 		echo '<div class="cc-btn-row">';
 		buildButton(
 			"dark-bg",
-			$navslug . '/' . $ccpage->slug . '/add-post',
+			$navslug . '/' . $ccpage->module->slug . '/add-post',
 			$lang['Add a new comic post']
 		);
 		buildButton(
 			"dark-bg",
-			$navslug . '/' . $ccpage->slug . '/manage-posts',
+			$navslug . '/' . $ccpage->module->slug . '/manage-posts',
 			$lang['Edit a different comic post']
 		);
 		buildButton(
 			"dark-bg",
-			$navslug . '/' . $ccpage->slug . '/',
+			$navslug . '/' . $ccpage->module->slug . '/',
 			str_replace('%s',$ccpage->title,$lang['Return to managing %s'])
 		);
 		echo '</div>';

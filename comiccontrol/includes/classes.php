@@ -195,7 +195,7 @@ class CC_User{
 		
 		$avatar = $this->avatar;
 		if($avatar == "") $avatar = "default.png";
-		echo '<img src="' . $ccsite->root . $ccsite->relativepath . $ccsite->ccroot . 'avatars/' . $avatar . '" />';
+		echo '<img src="' . $ccsite->root . $ccsite->ccroot . 'avatars/' . $avatar . '" />';
 		
 	}
 }
@@ -478,17 +478,17 @@ class CC_Module{
 		echo '<div class="cc-pagelist">' . $user_lang["Page"] . ' ';
 		for($i=1; $i<=$numpages; $i++){
 			if($i < $page-4 && $ellipsis1 == false){
-				echo '<a href="' . $ccsite->root . $ccsite->relativepath . $this->slug . '/' . $pagedir . '/1">1 ...</a> ';
+				echo '<a href="' . $ccsite->root . $this->slug . '/' . $pagedir . '/1">1 ...</a> ';
 				$ellipsis1 = true;
 			}
 			if($page != $i && ($i >= $page-4 && $i < $page+4)){
-				echo '<a href="' . $ccsite->root . $ccsite->relativepath . $this->slug . '/' . $pagedir .'/' . $i . '">' . $i . '</a> ';
+				echo '<a href="' . $ccsite->root . $this->slug . '/' . $pagedir .'/' . $i . '">' . $i . '</a> ';
 			}
 			if($page == $i){
 				echo $i . ' ';
 			}
 			if($i >= $page+4 && $ellipsis2 == false){
-				echo '<a href="' . $ccsite->root . $ccsite->relativepath . $this->slug . '/' . $pagedir . '/' . $numpages . '">... ' . $numpages . '</a>';
+				echo '<a href="' . $ccsite->root . $this->slug . '/' . $pagedir . '/' . $numpages . '">... ' . $numpages . '</a>';
 				$ellipsis2 = true;
 			}
 		}
@@ -578,7 +578,7 @@ class CC_Comic extends CC_Module{
 			//handle displaying swf comics
 			if($comic['mime'] == "application/x-shockwave-flash"){
 				echo '<div id="cc-comic" style="height:' . $comic['height'] . 'px; width:' . $comic['width'] . 'px; display:inline-block;">';
-				echo '<embed height="' . $comic['height'] . '" width="' . $comic['width'] . '" src="' . $ccsite->root . $ccsite->relativepath . 'comics/' . $comic['imgname'] . '" />';
+				echo '<embed height="' . $comic['height'] . '" width="' . $comic['width'] . '" src="' . $ccsite->root . 'comics/' . $comic['imgname'] . '" />';
 				echo '</div>';
 			}
 			
@@ -590,7 +590,7 @@ class CC_Comic extends CC_Module{
 				//link to the next page if available
 				if($comic != $this->getSeq("last") && $comic['altnext'] == ""){
 					$nextcomic = $this->getSeq("next");
-					echo '<a href="' . $ccsite->root . $ccsite->relativepath . $this->slug . '/' . $nextcomic['slug'] . $tagadd . '">';
+					echo '<a href="' . $ccsite->root . $this->slug . '/' . $nextcomic['slug'] . $tagadd . '">';
 				}
 				
 				//if there's an alternative link given, link to that
@@ -601,7 +601,7 @@ class CC_Comic extends CC_Module{
 				//output the comic image and close the link
 				$hovertext = $comic['hovertext'];
 				if($hovertext == "") $hovertext = $comic['title'];
-				echo '<img title="' . str_replace('"','&quot;',$hovertext) . '" src="' . $ccsite->root . $ccsite->relativepath . 'comics/' . $comic['imgname'] . '" id="cc-comic" />';
+				echo '<img title="' . str_replace('"','&quot;',$hovertext) . '" src="' . $ccsite->root . 'comics/' . $comic['imgname'] . '" id="cc-comic" />';
 				if($comic != $this->getSeq("last") || $comic['altnext'] != ""){
 					echo '</a>';
 				}
@@ -640,7 +640,7 @@ class CC_Comic extends CC_Module{
 							var htmlheight = $('html').css('height');
 							var bodyheight = $('body').css('height');
 							
-							$('body').append('<div class="cc-fullscreen-overlay"><img src="<?=$ccsite->root . $ccsite->relativepath . "comicshighres/" . $comic['comichighres']?>" /></div>');
+							$('body').append('<div class="cc-fullscreen-overlay"><img src="<?=$ccsite->root . "comicshighres/" . $comic['comichighres']?>" /></div>');
 								
 							$('#cc-comicbody').on('click',function(e){
 								e.preventDefault();
@@ -727,12 +727,12 @@ class CC_Comic extends CC_Module{
 				?>
 				<script>
 				function leftArrowPressed() {
-					var prev = "<?=$ccsite->root . $ccsite->relativepath . $this->slug . '/' . $prevslug . $tagadd?>";
+					var prev = "<?=$ccsite->root . $this->slug . '/' . $prevslug . $tagadd?>";
 					window.location = prev;
 				}
 
 				function rightArrowPressed() {
-					var next = "<?=$ccsite->root . $ccsite->relativepath . $this->slug . '/' . $nextslug . $tagadd?>";
+					var next = "<?=$ccsite->root . $this->slug . '/' . $nextslug . $tagadd?>";
 					window.location = next;
 				}
 
@@ -923,10 +923,10 @@ class CC_Comic extends CC_Module{
 			}
 			//if it's not, generate the first and previous comic buttons
 			else{
-				$firstbutton = '<a class="cc-first" rel="first" href="' . $ccsite->root . $ccsite->relativepath . $this->slug . '/' . $firstcomic['slug'] . $tagadd . '">' . $this->options['firsttext'] . '</a>';
+				$firstbutton = '<a class="cc-first" rel="first" href="' . $ccsite->root . $this->slug . '/' . $firstcomic['slug'] . $tagadd . '">' . $this->options['firsttext'] . '</a>';
 			
 				$prevcomic = $this->getSeq("prev");
-				$prevbutton = '<a class="cc-prev" rel="prev" href="' . $ccsite->root . $ccsite->relativepath . $this->slug . '/' . $prevcomic['slug'] . $tagadd . '">' . $this->options['prevtext'] . '</a>';
+				$prevbutton = '<a class="cc-prev" rel="prev" href="' . $ccsite->root . $this->slug . '/' . $prevcomic['slug'] . $tagadd . '">' . $this->options['prevtext'] . '</a>';
 			}
 			
 			//if this the last comic, then the last and next buttons will be disabled
@@ -936,14 +936,14 @@ class CC_Comic extends CC_Module{
 			}
 			//if it's not, generate the last and next comic buttons
 			else{
-				$lastbutton = '<a class="cc-last" rel="last" href="' . $ccsite->root . $ccsite->relativepath . $this->slug . '/' . $lastcomic['slug'] . $tagadd . '">' . $this->options['lasttext'] . '</a>';
+				$lastbutton = '<a class="cc-last" rel="last" href="' . $ccsite->root . $this->slug . '/' . $lastcomic['slug'] . $tagadd . '">' . $this->options['lasttext'] . '</a>';
 			
 				$nextcomic = $this->getSeq("next");
-				$nextbutton = '<a class="cc-next" rel="next" href="' . $ccsite->root . $ccsite->relativepath . $this->slug . '/' . $nextcomic['slug'] . $tagadd . '">' . $this->options['nexttext'] . '</a>';
+				$nextbutton = '<a class="cc-next" rel="next" href="' . $ccsite->root . $this->slug . '/' . $nextcomic['slug'] . $tagadd . '">' . $this->options['nexttext'] . '</a>';
 			}
 			
 			//generate auxiliary button
-			$auxbutton = '<a class="cc-navaux" href="' . $ccsite->root . $ccsite->relativepath . $this->options['navaux'] . '">' . $this->options['auxtext'] . '</a>';
+			$auxbutton = '<a class="cc-navaux" href="' . $ccsite->root . $this->options['navaux'] . '">' . $this->options['auxtext'] . '</a>';
 			
 			$buttonstring = "";
 			
@@ -1021,7 +1021,7 @@ class CC_Comic extends CC_Module{
 			//output news post based on whatever news is selected
 			echo '<div class="cc-newsarea">';
 			echo '<div class="cc-newsheader">';
-			if($ccpage->isindex) echo '<a href="' . $ccsite->root . $ccsite->relativepath . $ccplug->slug . '/' . $news['slug'] . '">';
+			if($ccpage->isindex) echo '<a href="' . $ccsite->root . $ccplug->slug . '/' . $news['slug'] . '">';
 			echo $news['newstitle'];
 			if($ccpage->isindex) echo '</a>';
 			echo '</div>';
@@ -1068,7 +1068,7 @@ class CC_Comic extends CC_Module{
 				foreach($tags as $tag){
 					if($divided) echo ", ";
 					$divided = true;
-					echo '<a href="' . $ccsite->root . $ccsite->relativepath . $this->slug . "/search/" . $tag['tag'] . '">' . $tag['tag'] . '</a>';
+					echo '<a href="' . $ccsite->root . $this->slug . "/search/" . $tag['tag'] . '">' . $tag['tag'] . '</a>';
 				}
 				echo '</div>';
 			}
@@ -1123,10 +1123,10 @@ class CC_Comic extends CC_Module{
 				switch($ccsite->comments){
 					case "commento":
 						echo '<script src="https://cdn.commento.io/js/count.js"></script>';
-						echo '<div class="cc-commentlink"><a href="' . $ccsite->root . $ccsite->relativepath . $this->slug . '/' . $comic['slug'] . '#commento">' . $user_lang['View/Post Comments'] . '</a></div>';
+						echo '<div class="cc-commentlink"><a href="' . $ccsite->root . $this->slug . '/' . $comic['slug'] . '#commento">' . $user_lang['View/Post Comments'] . '</a></div>';
 					break;
 					case "disqus":
-						echo '<div class="cc-commentlink"><a href="' . $ccsite->root . $ccsite->relativepath . $this->slug . '/' . $comic['slug'] . '#disqus_thread" data-disqus-identifier="' . $comic['commentid'] . '">' . $user_lang['View/Post Comments'] . '</a></div>';
+						echo '<div class="cc-commentlink"><a href="' . $ccsite->root . $this->slug . '/' . $comic['slug'] . '#disqus_thread" data-disqus-identifier="' . $comic['commentid'] . '">' . $user_lang['View/Post Comments'] . '</a></div>';
 						echo '<script id="dsq-count-scr" src="//' . $ccsite->commentname . '.disqus.com/count.js" async></script>';
 						break;
 
@@ -1147,7 +1147,7 @@ class CC_Comic extends CC_Module{
 						<div id="disqus_thread"></div>
 						<script>
 							var disqus_config = function () {
-								this.page.url = '<?=$ccsite->root . $ccsite->relativepath . $this->slug?>/<?=$comic['slug']?>';
+								this.page.url = '<?=$ccsite->root . $this->slug?>/<?=$comic['slug']?>';
 								this.page.identifier = '<?=$comic['commentid']?>';
 							};
 							(function() {  
@@ -1264,19 +1264,19 @@ class CC_Comic extends CC_Module{
 					if($this->options['pagethumbs'] == "off" && $this->options['chapterthumbs'] == "on"){
 						$thumbnail = $firstpage['comicthumb'];
 						if($arr['thumbnail'] != "") $thumbnail = $arr['thumbnail'];
-						echo '<div class="cc-storyline-thumb"><a href="' . $ccsite->root . $ccsite->relativepath . $this->slug . '/' . $firstpage['slug'] . '"><img src="' . $ccsite->root . $ccsite->relativepath . 'comicsthumbs/' . $thumbnail . '" /></a></div>';
+						echo '<div class="cc-storyline-thumb"><a href="' . $ccsite->root . $this->slug . '/' . $firstpage['slug'] . '"><img src="' . $ccsite->root . 'comicsthumbs/' . $thumbnail . '" /></a></div>';
 					}
 				
 					//display the chapter name
 					$stmt->execute(['storyline' => $arr['id']]);
 					$pages = $stmt->fetchAll();
-					echo '<div class="cc-storyline-text"><div class="cc-storyline-header"><a href="' . $ccsite->root . $ccsite->relativepath . $this->slug . '/' . $firstpage['slug'] . '">' . 
+					echo '<div class="cc-storyline-text"><div class="cc-storyline-header"><a href="' . $ccsite->root . $this->slug . '/' . $firstpage['slug'] . '">' . 
 					$arr['name'] . '</a></div>';
 					if($arr['caption'] != "") echo '<div class="cc-storyline-caption">' . $arr['caption'] . '</div>';
 					if($ccpage->module->options['pagetitles'] == "on" && $ccpage->module->options['pagethumbs'] == "off"){
 						echo '<div class="cc-storyline-pagetitles">';
 						foreach($pages as $page){
-							echo '<div class="cc-pagerow"><a href="' . $ccsite->root . $ccsite->relativepath . $this->slug . '/' . $page['slug'] . '">' . $page['title']  . '</a></div>';
+							echo '<div class="cc-pagerow"><a href="' . $ccsite->root . $this->slug . '/' . $page['slug'] . '">' . $page['title']  . '</a></div>';
 						}
 						echo '</div>';
 					}
@@ -1286,7 +1286,7 @@ class CC_Comic extends CC_Module{
 					if($this->options['pagethumbs'] == "on"){
 						echo '<div class="cc-storyline-thumbwrapper">';
 						foreach($pages as $page){
-							echo '<div class="cc-storyline-pagethumb"><a href="' . $ccsite->root . $ccsite->relativepath . $this->slug . '/' . $page['slug'] . '"><img src="' . $ccsite->root . $ccsite->relativepath . 'comicsthumbs/' . $page['comicthumb'] . '" />';
+							echo '<div class="cc-storyline-pagethumb"><a href="' . $ccsite->root . $this->slug . '/' . $page['slug'] . '"><img src="' . $ccsite->root . 'comicsthumbs/' . $page['comicthumb'] . '" />';
 							if($this->options['pagetitles'] == "on") echo '<br /><br />' . $page['title'];
 							echo '</a></div>';
 						}
@@ -1365,7 +1365,7 @@ class CC_Comic extends CC_Module{
 		if($numposts > 0){
 	
 			foreach($posts as $post){
-				echo '<div class="cc-searchbox"><a href="' . $ccsite->root . $ccsite->relativepath . $this->slug . '/' . $post['slug'] . '"><div class="cc-searchcomicname">' . $post['title'] . '</div><div class="cc-searchcomicimgbox"><img class="cc-searchcomicimage" src="' . $ccsite->root . $ccsite->relativepath . 'comicsthumbs/' . $post['comicthumb'] . '" /></div></a></div>';
+				echo '<div class="cc-searchbox"><a href="' . $ccsite->root . $this->slug . '/' . $post['slug'] . '"><div class="cc-searchcomicname">' . $post['title'] . '</div><div class="cc-searchcomicimgbox"><img class="cc-searchcomicimage" src="' . $ccsite->root . 'comicsthumbs/' . $post['comicthumb'] . '" /></div></a></div>';
 			}
 			
 		}
@@ -1438,8 +1438,8 @@ class CC_Gallery extends CC_Module{
 		//if the gallery scripts aren't loaded, load them
 		if(!$ccpage->galleryloaded){
 			?>
-			<script type="text/javascript" src="<?=$ccsite->root . $ccsite->relativepath?>lightbox/js/lightbox.js"></script>
-			<link rel="stylesheet" href="<?=$ccsite->root . $ccsite->relativepath?>lightbox/css/lightbox.css" type="text/css" media="screen" />
+			<script type="text/javascript" src="<?=$ccsite->root?>lightbox/js/lightbox.js"></script>
+			<link rel="stylesheet" href="<?=$ccsite->root?>lightbox/css/lightbox.css" type="text/css" media="screen" />
 			<?php
 			$ccpage->galleryloaded = true;
 		}
@@ -1454,7 +1454,7 @@ class CC_Gallery extends CC_Module{
 		//output the images
 		if($images[0]['imgname'] != ""){
 			foreach($images as $image){
-				echo '<a href="' . $ccsite->root . $ccsite->relativepath . 'uploads/' . $image['imgname'] . '" data-lightbox="' . $ccpage->title . '" data-title="<div class=\'customHtml\'>' . str_replace('"','&quot;',$image['caption']) . '</div>"><img src="' . $ccsite->root . $ccsite->relativepath . 'uploads/' . $image['thumbname'] . '" /></a>';
+				echo '<a href="' . $ccsite->root . 'uploads/' . $image['imgname'] . '" data-lightbox="' . $ccpage->title . '" data-title="<div class=\'customHtml\'>' . str_replace('"','&quot;',$image['caption']) . '</div>"><img src="' . $ccsite->root . 'uploads/' . $image['thumbname'] . '" /></a>';
 			}
 		}
 		
@@ -1588,7 +1588,7 @@ class CC_Blog extends CC_Module{
 		
 		$this->displayPosts($allposts);
 		
-		echo '<div style="clear:both;"></div><div class="cc-readmore"><a href="' . $ccsite->root . $ccsite->relativepath . $this->slug . '">' . $user_lang['View more posts...'] . '</a></div>';
+		echo '<div style="clear:both;"></div><div class="cc-readmore"><a href="' . $ccsite->root . $this->slug . '">' . $user_lang['View more posts...'] . '</a></div>';
 	}
 	
 	//display just one post
@@ -1606,7 +1606,7 @@ class CC_Blog extends CC_Module{
 			//output the post
 			echo '<article class="cc-blogpost">';
 			echo '<div class="cc-blogtitle">';
-			echo '<a href="' . $ccsite->root . $ccsite->relativepath . $this->slug . '/' . $post['slug'] . '">' . $post['title'] . '</a></div>';
+			echo '<a href="' . $ccsite->root . $this->slug . '/' . $post['slug'] . '">' . $post['title'] . '</a></div>';
 			echo '<div class="cc-blog-publishtime">' . str_replace('%t',date($ccsite->timeformat,$post['publishtime']),str_replace('%d',date($ccsite->dateformat,$post['publishtime']),$user_lang['Posted %d at %t'])) . '</div>';
 			echo '<div class="cc-blogcontent">' . $post['content'] . '</div>';
 			
@@ -1648,7 +1648,7 @@ class CC_Blog extends CC_Module{
 			foreach($tags as $tag){
 				if($divided) echo ", ";
 				$divided = true;
-				echo '<a href="' . $ccsite->root . $ccsite->relativepath . $this->slug . "/search/" . $tag['tag'] . '">' . $tag['tag'] . '</a>';
+				echo '<a href="' . $ccsite->root . $this->slug . "/search/" . $tag['tag'] . '">' . $tag['tag'] . '</a>';
 			}
 			echo '</div>';
 			
@@ -1668,10 +1668,10 @@ class CC_Blog extends CC_Module{
 			switch($ccsite->comments){
 				case "commento":
 					echo '<script src="https://cdn.commento.io/js/count.js"></script>';
-					echo '<div class="cc-commentlink"><a href="' . $ccsite->root . $ccsite->relativepath . $this->slug . '/' . $post['slug'] . '#commento">' . $user_lang['View/Post Comments'] . '</a></div>';
+					echo '<div class="cc-commentlink"><a href="' . $ccsite->root . $this->slug . '/' . $post['slug'] . '#commento">' . $user_lang['View/Post Comments'] . '</a></div>';
 				break;
 				case "disqus":
-					echo '<div class="cc-commentlink"><a href="' . $ccsite->root . $ccsite->relativepath . $this->slug . '/' . $post['slug'] . '#disqus_thread" data-disqus-identifier="' . $post['commentid'] . '">' . $user_lang['View/Post Comments'] . '</a></div>';
+					echo '<div class="cc-commentlink"><a href="' . $ccsite->root . $this->slug . '/' . $post['slug'] . '#disqus_thread" data-disqus-identifier="' . $post['commentid'] . '">' . $user_lang['View/Post Comments'] . '</a></div>';
 					echo '<script id="dsq-count-scr" src="//' . $ccsite->commentname . '.disqus.com/count.js" async></script>';
 					break;
 			}
@@ -1690,7 +1690,7 @@ class CC_Blog extends CC_Module{
 					<div id="disqus_thread"></div>
 					<script>
 						var disqus_config = function () {
-							this.page.url = '<?=$ccsite->root . $ccsite->relativepath . $this->slug?>/<?=$post['slug']?>';
+							this.page.url = '<?=$ccsite->root . $this->slug?>/<?=$post['slug']?>';
 							this.page.identifier = '<?=$post['commentid']?>';
 						};
 						(function() {  

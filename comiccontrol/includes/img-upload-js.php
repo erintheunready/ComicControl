@@ -67,7 +67,7 @@ $('.hidefileinput').on('change',function(){
 				
 				//if not the image library, put the image in the page
 				<? if(getSlug(1) != "image-library"){ ?>
-				$imagearea.append('<img src="<?=$ccsite->root.$ccsite->relativepath?><?=$imgfolder?>' + data.final + '" />');
+				$imagearea.append('<img src="<?=$ccsite->root?><?=$imgfolder?>' + data.final + '" />');
 				$imagearea.find('img').on('load', function(){
 					$fileholder.find('.fileselect').html('<?=$lang['Change File']?>');
 					progress.css('display','none');
@@ -85,7 +85,7 @@ $('.hidefileinput').on('change',function(){
 			//set the data that's going to be set to the ajax script
 			data: {
 				fieldname:'imagefile',
-				moduleslug: '<?=$ccpage->slug?>',
+				moduleslug: '<?=$ccpage->module->slug?>',
 				serveruri: '<?=$_SERVER['REQUEST_URI']?>'
 			},
 			url: "/<?=$ccsite->relativepath.$ccsite->ccroot;?>ajax/img-uploader.php"

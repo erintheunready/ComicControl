@@ -105,7 +105,7 @@ class Container {
     this.state = Object.assign(this.state, newData);
     let sendData = Object.assign(this.state, { rows: [] });
     console.log(sendData);
-    $.post("/" + this.state.ccroot + "ajax/get-page.php", sendData, (data) =>
+    $.post(this.state.root + this.state.ccroot + "ajax/get-page.php", sendData, (data) =>
       this.updateContainer(data)
     );
   }

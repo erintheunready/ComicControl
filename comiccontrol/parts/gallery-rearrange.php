@@ -5,11 +5,11 @@
 //create and output quick links
 $links = array(
 	array(
-		'link' => $ccurl . $navslug . '/' . $ccpage->slug,
+		'link' => $ccurl . $navslug . '/' . $ccpage->module->slug,
 		'text' => str_replace('%s',$ccpage->title,$lang['Return to managing %s'])
 	),
 	array(
-		'link' => $ccurl . $navslug . '/' . $ccpage->slug . '/add-image',
+		'link' => $ccurl . $navslug . '/' . $ccpage->module->slug . '/add-image',
 		'text' => $lang['Add an image']
 	)
 );
@@ -56,7 +56,7 @@ quickLinks($links);
 			$result = $stmt->fetchAll();
 			
 			foreach($result as $row){
-				echo '<div class="cc-btn-row" id="image_' . $row['id'] . '"><div class="cc-btn dark-bg"><img src="' . $ccsite->root . $ccsite->relativepath . 'uploads/' . $row['thumbname'] . '" /><div class="row-caption">' . $row['caption'] . '</div></div></div>';
+				echo '<div class="cc-btn-row" id="image_' . $row['id'] . '"><div class="cc-btn dark-bg"><img src="' . $ccsite->root . 'uploads/' . $row['thumbname'] . '" /><div class="row-caption">' . $row['caption'] . '</div></div></div>';
 			}
 		
 		?>

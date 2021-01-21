@@ -74,7 +74,7 @@ array_push($forminputs,
 echo '<h2 class="formheader">' . $lang['Module options'] . '</h2>';
 buildForm($forminputs);
 
-echo '<div class="formline"><div class="module-url">' . $lang['Module URL:'] . ' ' . $siteurl . $ccpage->slug . '</div></div>';
+echo '<div class="formline"><div class="module-url">' . $lang['Module URL:'] . ' ' . $siteurl . $ccpage->module->slug . '</div></div>';
 
 //function to recurse through directories to get templates
 function recurseDirectories($dir,$arr){

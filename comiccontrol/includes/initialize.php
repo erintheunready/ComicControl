@@ -51,8 +51,8 @@ $ccuser = new CC_User();
 date_default_timezone_set($ccsite->timezone);
 
 //quick access URL string
-$siteurl = $ccsite->root.$ccsite->relativepath;
-$ccurl = $ccsite->root.$ccsite->relativepath.$ccsite->ccroot;
+$siteurl = $ccsite->root;
+$ccurl = $ccsite->root.$ccsite->ccroot;
 
 //quick access functions
 function getModuleOption($optionname){

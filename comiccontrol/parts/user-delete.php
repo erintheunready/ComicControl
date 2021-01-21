@@ -68,7 +68,7 @@ else{
 			);
 			buildButton(
 				"dark-bg",
-				$ccurl . $navslug.'/'.$ccpage->slug."/",
+				$ccurl . $navslug.'/'.$ccpage->module->slug."/",
 				$lang['No']
 			);
 			echo '</div>';

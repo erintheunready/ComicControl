@@ -11,7 +11,7 @@ function listPages($pageArr){
 	global $lang;
 	
 	foreach($pageArr as $post){
-		echo '<li class="normal"><a class="arrow-toggle">' . $post['title'] . '</a><ul><li><a href="' . $ccurl . $navslug . '/' . $ccpage->slug . '/edit-post/' . $post['slug'] . '">' . $lang['Edit'] . '</a></li><li><a href="' . $ccurl . $navslug . '/' . $ccpage->slug . '/delete-post/' . $post['slug'] . '">' . $lang['Delete'] . '</a></li><li><a href="' . $ccsite->root . $ccsite->relativepath . $ccpage->slug . '/' . $post['slug']. '">' . $lang['Preview'] . '</a></li></ul></li>';
+		echo '<li class="normal"><a class="arrow-toggle">' . $post['title'] . '</a><ul><li><a href="' . $ccurl . $navslug . '/' . $ccpage->module->slug . '/edit-post/' . $post['slug'] . '">' . $lang['Edit'] . '</a></li><li><a href="' . $ccurl . $navslug . '/' . $ccpage->module->slug . '/delete-post/' . $post['slug'] . '">' . $lang['Delete'] . '</a></li><li><a href="' . $ccsite->root . $ccpage->module->slug . '/' . $post['slug']. '">' . $lang['Preview'] . '</a></li></ul></li>';
 	}
 }
 
@@ -25,19 +25,19 @@ function listPages($pageArr){
 echo '<div class="cc-btn-row">';
 buildButton(
 	"light-bg",
-	$ccurl . $navslug.'/'.$ccpage->slug."/add-post",
+	$ccurl . $navslug.'/'.$ccpage->module->slug."/add-post",
 	$lang['Add a comic post']
 );
 echo '</div>';
 echo '<div class="cc-btn-row tall-row">';
 buildButton(
 	"dark-bg",
-	$ccurl . $navslug . '/' . $ccpage->slug . '/manage-posts',
+	$ccurl . $navslug . '/' . $ccpage->module->slug . '/manage-posts',
 	$lang['Manage comic posts and storylines']
 );
 buildButton(
 	"dark-bg",
-	$ccurl . $navslug . '/' . $ccpage->slug . '/manage-options',
+	$ccurl . $navslug . '/' . $ccpage->module->slug . '/manage-options',
 	$lang['Manage options']
 );
 echo '</div>';

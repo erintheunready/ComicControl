@@ -20,7 +20,7 @@ $str = '<?xml version="1.0" encoding="UTF-8" ?>
 	<channel>
 		<title>' . $ccsite->sitetitle . ' - ' . $ccpage->title . '</title>
 		<atom:link href="' . selfURL() . '" rel="self" type="application/rss+xml" />
-		<link>' . $ccsite->root . $ccsite->relativepath . '</link>
+		<link>' . $ccsite->root . '</link>
 		<description>Latest posts from ' . $ccpage->title . '</description>
 		<language>en-us</language>';
 $items = array();
@@ -31,7 +31,7 @@ $recent = $stmt->fetchAll();
 foreach($recent as $row){
 	$str .= '<item><title><![CDATA[' . $ccpage->title . ' - ' . html_entity_decode($row['title'],ENT_QUOTES) . ']]></title>';
 	$desc_data = $row['content'];
-	$desc_data = preg_replace("#(<\s*a\s+[^>]*href\s*=\s*[\"'])(?!http)([^\"'>]+)([\"'>]+)#", $ccsite->root . $ccsite->relativepath . '$2$3', $desc_data);
+	$desc_data = preg_replace("#(<\s*a\s+[^>]*href\s*=\s*[\"'])(?!http)([^\"'>]+)([\"'>]+)#", $ccsite->root .  '$2$3', $desc_data);
 	$desc_data = preg_replace("<html>", '', $desc_data);
 	$desc_data = preg_replace("<body>", '', $desc_data);
 	$desc_data = preg_replace("</html>", '', $desc_data);
@@ -53,12 +53,12 @@ foreach($recent as $row){
 	$desc_data = str_replace("<body>", '', $desc_data);
 	$desc_data = str_replace("</html>", '', $desc_data);
 	$desc_data = str_replace("</body>", '', $desc_data);
-	$desc_data = '<h2><a href="' . $ccsite->root . $ccsite->relativepath . $ccpage->slug . '/' . $row['slug'] . '">' . $row['title'] . '</a></h2><div>' . $desc_data . '</div>';
+	$desc_data = '<h2><a href="' . $ccsite->root . $ccpage->module->slug . '/' . $row['slug'] . '">' . $row['title'] . '</a></h2><div>' . $desc_data . '</div>';
 	$str .= '<description><![CDATA[' . $desc_data . ']]></description>';
-	$str .= '<link>' . $ccsite->root . $ccsite->relativepath . $ccpage->slug . '/' . $row['slug'] . '</link>';
+	$str .= '<link>' . $ccsite->root . $ccpage->module->slug . '/' . $row['slug'] . '</link>';
 	$str .= '<author>tech@thehiveworks.com</author>';
 	$str .= '<pubDate>' . date("D, d M Y H:i:s O", $row['publishtime']) . '</pubDate>';
-	$str .= '<guid>' . $ccsite->root . $ccsite->relativepath . $ccpage->slug . '/' . $row['slug'] . '</guid>';
+	$str .= '<guid>' . $ccsite->root . $ccpage->module->slug . '/' . $row['slug'] . '</guid>';
 	$str .= '</item>';
 }
 $str .= '</channel></rss>';

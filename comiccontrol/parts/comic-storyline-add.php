@@ -8,15 +8,15 @@
 //create and output quick links
 $links = array(
 	array(
-		'link' => $ccurl . $navslug . '/' . $ccpage->slug,
+		'link' => $ccurl . $navslug . '/' . $ccpage->module->slug,
 		'text' => str_replace('%s',$ccpage->title,$lang['Return to managing %s'])
 	),
 	array(
-		'link' => $ccurl . $navslug.'/'.$ccpage->slug."/manage-storylines",
+		'link' => $ccurl . $navslug.'/'.$ccpage->module->slug."/manage-storylines",
 		'text' => $lang['Edit a different storyline']
 	),
 	array(
-		'link' => $ccurl . $navslug.'/'.$ccpage->slug."/add-storyline",
+		'link' => $ccurl . $navslug.'/'.$ccpage->module->slug."/add-storyline",
 		'text' => $lang['Add another storyline']
 	)
 );
@@ -79,7 +79,7 @@ if(isset($_POST) && $_POST['storyline-title'] != ""){
 		echo '<div class="cc-btn-row">';
 		buildButton(
 			"light-bg",
-			$ccurl . $navslug . '/' . $ccpage->slug . '/edit-storyline/' . $thisstoryline,
+			$ccurl . $navslug . '/' . $ccpage->module->slug . '/edit-storyline/' . $thisstoryline,
 			str_replace('%s',htmlentities($name),$lang['Edit %s'])
 		);
 		echo '</div>';

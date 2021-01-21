@@ -3,11 +3,11 @@
 //create and output quick links
 $links = array(
 	array(
-		'link' => $ccurl . $navslug.'/'.$ccpage->slug.'/manage-options',
+		'link' => $ccurl . $navslug.'/'.$ccpage->module->slug.'/manage-options',
 		'text' => $lang['Manage options']
 	),
 	array(
-		'link' => $ccsite->root . $ccsite->relativepath . $ccpage->slug . '/' . $ccpage->slug,
+		'link' => $ccsite->root . $ccpage->module->slug . '/' . $ccpage->module->slug,
 		'text' => str_replace('%s',htmlentities($ccpage->title),$lang['Preview %s'])
 	)
 );
