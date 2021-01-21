@@ -64,4 +64,5 @@ $ilang['moduletype-tooltip'] = 'This option determines the type of module that w
 $ilang['displaylang-tooltip'] = "This option determines the ComicControl-specific language that the page will be displayed in to the user.";
 $ilang['template-tooltip'] = "This is the template file that will be used to display this page.";
 
+
 ?>

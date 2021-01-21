@@ -30,6 +30,13 @@ quickLinks($links);
 
 <? 
 
+//check if storylines exist
+$stmt = $cc->prepare("SELECT * FROM cc_" . $tableprefix . "comics_storyline WHERE comic=:moduleid");
+$stmt->execute(['moduleid' => $ccpage->module->id]);
+if($stmt->rowCount() < 1){
+	echo '<p>' . str_replace('%l',$ccurl . $navslug . '/' . $ccpage->slug . '/add-storyline/',$lang['There are currently no storylines in this comic.  In order to add a comic, you must first add a storyline. <a href="%l">Click here to add your first storyline.</a>']) . '</p>';
+}else{
+
 //submit page if posted
 if(isset($_POST) && $_POST['comic-title'] != ""){
 	
@@ -279,6 +286,7 @@ if(isset($_POST) && $_POST['comic-title'] != ""){
 	include('includes/form-submit-js.php');
 	include('includes/img-upload-js.php');
 	include('includes/content-editor-js.php');
+}
 }
 ?>
 

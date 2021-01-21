@@ -78,6 +78,7 @@ $lang['Recently published'] = "Recently published";
 $lang['Publishing soon'] = "Publishing soon";
 
 //comic-post-add
+$lang['There are currently no storylines in this comic.  In order to add a comic, you must first add a storyline. <a href="%l">Click here to add your first storyline.</a>'] = 'There are currently no storylines in this comic.  In order to add a comic, you must first add a storyline. <a href="%l">Click here to add your first storyline.</a>';
 $lang['Choose file...'] = "Choose file...";
 $lang['Comic info'] = "Comic info";
 $lang['Comic title'] = "Comic title";
@@ -495,5 +496,4 @@ $lang['Updates from @ComicCtrl'] = 'Updates from @ComicCtrl';
 $lang['Scheduled post calendar'] = 'Scheduled post calendar';
 $lang['Posted'] = 'Posted';
 $lang['Scheduled'] = 'Scheduled';
-
 ?>
