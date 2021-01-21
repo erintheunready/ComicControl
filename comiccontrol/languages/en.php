@@ -476,6 +476,7 @@ $lang['Your version of ComicControl is up to date!'] = 'Your version of ComicCon
 $lang['Your version of ComicControl needs updating!  Here are change notes for this update:'] = 'Your version of ComicControl needs updating!  Here are change notes for this update:';
 $lang['Please click the button below to update your version of ComicControl.  After clicking the button, please do not leave the page until you receive confirmation that ComicControl has been updated.  Please be aware that this will overwrite the main ComicControl files.'] = 'Please click the button below to update your version of ComicControl.  After clicking the button, please do not leave the page until you receive confirmation that ComicControl has been updated.  Please be aware that this will overwrite the main ComicControl files.';
 $lang['Upgrade ComicControl'] = 'Upgrade ComicControl';
+$lang['Your version of ComicControl has been successfully updated.'] = 'Your version of ComicControl has been successfully updated.';
 
 //plugins
 $lang['Plugins'] = 'Plugins';
