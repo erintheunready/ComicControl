@@ -1,4 +1,4 @@
-<?
+<?php
 	
 //save-options.php - generic option saving for module options
 

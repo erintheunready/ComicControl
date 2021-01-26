@@ -1,6 +1,6 @@
-<? //comic-storyline-delete.php - handles deleting existing storylines ?>
+<?php //comic-storyline-delete.php - handles deleting existing storylines ?>
 
-<?
+<?php
 
 //create and output quick links
 $links = array(
@@ -23,7 +23,7 @@ quickLinks($links);
 
 <main id="content">
 
-<? //get selected page 
+<?php //get selected page 
 $storylineid = getSlug(4);
 $query = "SELECT * FROM cc_" . $tableprefix . "comics_storyline WHERE id=:id LIMIT 1";
 $stmt = $cc->prepare($query);
@@ -56,7 +56,7 @@ else{
 		?>
 		<div class="msg success f-c"><?=str_replace("%s",$thisstoryline['name'],$lang['%s has been deleted.'])?></div>
 		
-		<?
+		<?php
 		
 		
 	}else{
@@ -64,7 +64,7 @@ else{
 		//prompt user to delete page ?>
 
 		<div class="msg prompt f-c"><?=str_replace("%s",$thisstoryline['name'],$lang['Are you sure you want to delete %s? This action cannot be undone.'])?> <?=$lang['Sub-storylines will be moved up to this storyline\'s level.']?></div>
-		<?
+		<?php
 
 		echo '<div class="cc-btn-row">';
 		buildButton(

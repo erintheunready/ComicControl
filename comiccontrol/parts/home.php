@@ -1,8 +1,8 @@
-<? //blog-main.php - the main page for any blog module. ?>
+<?php //blog-main.php - the main page for any blog module. ?>
 
 <main id="content">
 
-<?
+<?php
 
 $lastmidnight = strtotime('today midnight');
 $updateneeded = false;
@@ -17,7 +17,7 @@ if($ccsite->updatechecked < $lastmidnight){
 if($ccsite->version != $ccsite->newestversion){
 	?>
 	<div class="msg alert"><a href="<?=$ccurl?>update-check"><?=$lang['Your version of ComicControl needs updating! Click here to update your site!']?></a></div>
-	<?
+	<?php
 }
 
 ?>
@@ -45,7 +45,7 @@ if($ccsite->version != $ccsite->newestversion){
 				<div class="home-tableheader">
 					<?=$lang['Scheduled post calendar']?>
 				</div>
-				<?
+				<?php
 					$query = "SELECT slug,publishtime,title,comic as moduleid FROM cc_" . $tableprefix . "comics WHERE publishtime >= " . time() . " UNION SELECT slug,publishtime,title,blog as moduleid FROM cc_" . $tableprefix . "blogs WHERE publishtime >= " . time() . " ORDER BY publishtime ASC LIMIT 5";
 					$stmt = $cc->prepare($query);
 					$stmt->execute();

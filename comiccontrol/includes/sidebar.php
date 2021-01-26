@@ -1,5 +1,5 @@
-<? //sidebar.php - display layout sidebar ?>
-<?
+<?php //sidebar.php - display layout sidebar ?>
+<?php
 	//determine if admin, if not fetch modules permitted
 	$admin = false;
 	$permMods = array();
@@ -14,23 +14,23 @@
 	}
 ?>
 <nav id="sidebar" class="dark-bg">
-	<? //show the avatar ?>
+	<?php //show the avatar ?>
 	<div id="sidebar-avatar">
-		<? $ccuser->showAvatar(); ?>
+		<?php $ccuser->showAvatar(); ?>
 		<div id="sidebar-avatar-bottom"></div>
 	</div>
 	
-	<? //display site title ?>
+	<?php //display site title ?>
 	<a id="sidebar-header" href="<?=$ccurl?>"><div class="f-c"><div><i class="fa fa-home"></i> <?=$ccsite->sitetitle?></div></div></a>
 	<a id="menu-expand"><div class="f-c"><i class="fa fa-bars"></i></div></a>
 	
-	<? //show main menu ?>
+	<?php //show main menu ?>
 	<ul id="sidebar-menu">
 		<li class="dropdown">
-			<? //display list of modules ?>
+			<?php //display list of modules ?>
 			<a><span class="li-contain"><i class="fa fa-puzzle-piece"></i><?=$lang['Modules']?><i class="fa fa-angle-right angle"></i></span></a>
 			<ul>
-				<?
+				<?php
 					$query = "SELECT * FROM cc_" . $tableprefix . "modules";
 					$stmt = $cc->prepare($query);
 					$stmt->execute();
@@ -61,16 +61,16 @@
 					if($admin){
 				?>
 				<li><a href="<?=$ccurl?>manage-modules"><i class="fa fa-cog"></i><?=$lang['Manage modules...']?></a></li>
-					<? } ?>
+					<?php } ?>
 			</ul>
 		</li>
-		<? //restrict these options if not admin 
+		<?php //restrict these options if not admin 
 		if($admin){ ?>
 		<li class="dropdown">
-			<? //display list of plugins ?>
+			<?php //display list of plugins ?>
 			<a><span class="li-contain"><i class="fa fa-plug"></i><?=$lang['Plugins']?><i class="fa fa-angle-right angle"></i></span></a>
 			<ul>
-				<?
+				<?php
 					$query = "SELECT * FROM cc_" . $tableprefix . "plugins";
 					$stmt = $cc->prepare($query);
 					$stmt->execute();
@@ -83,7 +83,7 @@
 				<li><a href="<?=$ccurl?>plugins"><i class="fa fa-cog"></i><?=$lang['Manage plugins...']?></a></li>
 			</ul>
 		</li>
-		<? //give rest of actions ?>
+		<?php //give rest of actions ?>
 		<li>
 			<a href="<?=$ccurl?>image-library"><span class="li-contain"><i class="fa fa-image"></i><?=$lang['Image Library']?></span></a>
 		</li>
@@ -96,18 +96,18 @@
 		<li>
 			<a href="<?=$ccurl?>update-check"><span class="li-contain"><i class="fa fa-refresh"></i><?=$lang['Check for Updates']?></span></a>
 		</li>
-				<? } ?>
+				<?php } ?>
 		<li>
 			<a href="<?=$ccurl?>users"><span class="li-contain"><i class="fa fa-user"></i>
-		<? //give user management if top-level user; if not, only allow self-management ?>	
-		<? if($ccuser->authlevel == 2){ ?><?=$lang['Users']?>
-		<? }else{ ?><?=$lang['Profile']?><? } ?></span></a></a>
+		<?php //give user management if top-level user; if not, only allow self-management ?>	
+		<?php if($ccuser->authlevel == 2){ ?><?=$lang['Users']?>
+		<?php }else{ ?><?=$lang['Profile']?><?php } ?></span></a></a>
 		</li>
 		<li>
 			<a href="http://www.comicctrl.com/"><span class="li-contain"><i class="fa fa-support"></i><?=$lang['Support']?></span></a>
 		</li>
 		
-		<? //logout button to display if on mobile ?>
+		<?php //logout button to display if on mobile ?>
 		<li id="left-logout">
 			<a href="<?=$ccurl?>logout"><span class="li-contain light-bg"><i class="fa fa-sign-out"></i><?=$lang['Logout']?></span></a>
 		</li>

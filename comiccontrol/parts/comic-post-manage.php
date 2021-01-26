@@ -1,6 +1,6 @@
-<? //comic-storyline-manage.php - handles navigating through storylines for editing and deletion ?>
+<?php //comic-storyline-manage.php - handles navigating through storylines for editing and deletion ?>
 
-<?
+<?php
 
 //create and output quick links
 $links = array(
@@ -15,7 +15,7 @@ quickLinks($links);
 
 <main id="content">
 
-<? //output container for holding AJAX request results ?>
+<?php //output container for holding AJAX request results ?>
 <div class="manage-container dark-bg"></div>
 
 	<script src="<?=$ccurl?>js/container.js"></script>

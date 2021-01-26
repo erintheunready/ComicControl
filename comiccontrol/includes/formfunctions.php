@@ -1,4 +1,4 @@
-<?
+<?php
 //formfunctions.php - builds php functions for building forms
 
 //build individual form input based on info
@@ -107,14 +107,14 @@ function buildTextArea($label,$name,$tooltip,$current = ""){
 	//create header for content editor ?>
 	<div class="formtext"><label><div class="v-c"><?=$label?>:</div><div class="tooltip"><a class="f-c">?</a><div class="tooltip-help"><div class="tooltip-triangle"></div><?=$tooltip?></div></div></label>
 	
-	<? //create html editor area ?>
+	<?php //create html editor area ?>
 	<div class="texteditor">
 		
-		<? //place html editor area ?>
+		<?php //place html editor area ?>
 		<textarea name="<?=$name?>"><?=htmlspecialchars($current)?></textarea>
 		
 	</div>
-	<?
+	<?php
 }
 
 //output a text editor
@@ -161,7 +161,7 @@ function buildTextEditor($label,$name,$tooltip,$current = ""){
 		});
 	});
 	</script>
-	<?
+	<?php
 
 }
 

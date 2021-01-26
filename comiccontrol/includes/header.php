@@ -1,4 +1,4 @@
-<? //header.php - backend page header ?>
+<?php //header.php - backend page header ?>
 
 <!DOCTYPE html>
 <html>

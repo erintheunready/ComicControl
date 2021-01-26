@@ -1,4 +1,4 @@
-<? //user-permissions.php - form for editing user info 
+<?php //user-permissions.php - form for editing user info 
 
 if($ccuser->authlevel == 2){
 	//create and output quick links if top level user
@@ -18,7 +18,7 @@ if($ccuser->authlevel == 2){
 ?>
 
 <main id="content">
-<? 
+<?php 
 //get selected user
 $query = "SELECT * FROM cc_" . $tableprefix . "users WHERE id=:id LIMIT 1";
 $stmt = $cc->prepare($query);

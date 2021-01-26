@@ -1,4 +1,4 @@
-<?
+<?php
 
 //import db and initialize
 require_once('../includes/dbconfig.php');

@@ -1,8 +1,8 @@
-<? //plugins.php - main page for switching between plugins ?>
+<?php //plugins.php - main page for switching between plugins ?>
 
 <main id="content">
 
-<?
+<?php
 
 
 if($ccuser->authlevel != 2){

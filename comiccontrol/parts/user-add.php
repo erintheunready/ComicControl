@@ -1,4 +1,4 @@
-<? //user-add.php - handles adding new users
+<?php //user-add.php - handles adding new users
 
 //create and output quick links
 $links = array(
@@ -17,10 +17,10 @@ quickLinks($links);
 
 <main id="content">
 
-<? //include necessary libraries ?>
+<?php //include necessary libraries ?>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js" type="text/javascript" /></script>
 
-<? 
+<?php 
 
 //submit the new user if posted
 if(isset($_POST) && $_POST['user-username'] != "" && $ccuser->authlevel == 2){
@@ -51,7 +51,7 @@ if(isset($_POST) && $_POST['user-username'] != "" && $ccuser->authlevel == 2){
 	if($stmt->rowCount() > 0){
 		?>
 		<div class="msg error f-c"><?=$lang['Sorry, there is already a user with this username.  Please go back and select a different username.']?></div>
-		<?
+		<?php
 	}else{
 		
 		//check that the e-mail isn't already taken
@@ -63,7 +63,7 @@ if(isset($_POST) && $_POST['user-username'] != "" && $ccuser->authlevel == 2){
 		if($stmt->rowCount() > 0){
 			?>
 			<div class="msg error f-c"><?=$lang['Sorry, there is already a user with this e-mail address.  Please go back and user a different e-mail address.']?></div>
-			<?
+			<?php
 		}
 		
 		//if all is well, submit the user
@@ -79,14 +79,14 @@ if(isset($_POST) && $_POST['user-username'] != "" && $ccuser->authlevel == 2){
 			if($stmt->rowCount() > 0){
 				?>
 				<div class="msg success f-c"><?=$lang['This user was successfully added.']?></div>
-				<?
+				<?php
 			}
 				
 			//output error message if failed
 			else{
 				?>
 				<div class="msg error f-c"><?=$lang['There was an error added this user.  Please try again.']?></div>
-				<?
+				<?php
 			}
 		
 		}
@@ -101,9 +101,9 @@ else{
 
 	<form action="" method="post" enctype="multipart/form-data">
 		
-		<? // image uploader area for avatar ?>
-		<? buildImageInput($lang['Choose avatar image...'],false,$lang['tooltip-avatarimage']); ?>
-		<?
+		<?php // image uploader area for avatar ?>
+		<?php buildImageInput($lang['Choose avatar image...'],false,$lang['tooltip-avatarimage']); ?>
+		<?php
 		
 			//build array of form info
 			$forminputs = array();
@@ -235,7 +235,7 @@ else{
 	});
 	</script>
 
-	<? 
+	<?php 
 	//include relevant javascript
 	$imgfolder = "comiccontrol/avatars/";
 	include('includes/img-upload-js.php');

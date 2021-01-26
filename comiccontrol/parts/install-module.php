@@ -1,9 +1,9 @@
-<? include('includes/install-header.php');  ?>
+<?php include('includes/install-header.php');  ?>
 
 <?=$ilang['fourthstep']?>
 
 <form action="" method="post">
-<?
+<?php
 
 //get available module types
 $moduletypes = array();
@@ -83,11 +83,11 @@ buildForm($forminputs);
 
 ?>
 
-<? // close the form ?>
+<?php // close the form ?>
 <button class="full-width light-bg" style="margin-top:20px;" type="button" id="submitform"><?=$ilang['next']?></button>
 
 </form>
-<?
+<?php
 
 //include relevant javascript
 include('includes/form-submit-js.php'); 
@@ -105,4 +105,4 @@ function recurseDirectories($dir,$arr){
 }
 
 ?>
-<? include('includes/install-footer.php'); ?>
+<?php include('includes/install-footer.php'); ?>

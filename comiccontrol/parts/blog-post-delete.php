@@ -1,4 +1,4 @@
-<?
+<?php
 //blog-post-delete.php
 //handles deletion of existing blog posts.
 
@@ -22,7 +22,7 @@ quickLinks($links);
 
 <main id="content">
 
-<? 
+<?php 
 
 //get selected post
 $thispost = $ccpage->module->getPost(getSlug(4));
@@ -45,7 +45,7 @@ else{
 		
 		<div class="msg success f-c"><?=str_replace("%s",$thispost['title'],$lang['%s has been deleted.'])?></div>
 		
-		<?
+		<?php
 		
 		
 	}else{
@@ -53,7 +53,7 @@ else{
 		//prompt user to delete post ?>
 
 		<div class="msg prompt f-c"><?=str_replace("%s",$thispost['title'],$lang['Are you sure you want to delete %s? This action cannot be undone.'])?></div>
-		<?
+		<?php
 
 		echo '<div class="cc-btn-row">';
 		buildButton(

@@ -1,4 +1,4 @@
-<? //manage-modules.php - handles all module management except options 
+<?php //manage-modules.php - handles all module management except options 
 
 $action = getSlug(2);
 
@@ -196,7 +196,7 @@ if($action == "add-module"){
 		<button class="full-width light-bg" style="margin-top:20px;" type="button" id="submitform"><?=$lang['Submit changes']?></button>
 		</form>
 		
-		<?
+		<?php
 		
 		//include relevant javascript
 		include('includes/form-submit-js.php');
@@ -259,7 +259,7 @@ else if($action == "delete-module"){
 		else{
 			?>
 			<div class="msg prompt f-c"><?=str_replace("%s",$thismodule['title'],$lang['Are you sure you want to delete %s? This action cannot be undone.'])?></div>
-			<?
+			<?php
 
 			echo '<div class="cc-btn-row">';
 			buildButton(
@@ -306,7 +306,7 @@ if(($action != "add-module" && $action != "delete-module") || $successmsg != "")
 	?>
 	<div class="manage-container dark-bg">
 		<div class="row-container">
-			<?
+			<?php
 
 			$gray = false;
 
@@ -328,7 +328,7 @@ if(($action != "add-module" && $action != "delete-module") || $successmsg != "")
 		</div>
 	</div>
 
-	<? 
+	<?php 
 
 } 
 

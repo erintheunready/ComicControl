@@ -1,11 +1,11 @@
-<? //comic-post-add.php - handles adding new comic posts ?>
+<?php //comic-post-add.php - handles adding new comic posts ?>
 
-<? //include necessary libraries ?>
+<?php //include necessary libraries ?>
 <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js" type="text/javascript" /></script>
 
-<?
+<?php
 
 //create and output quick links
 $links = array(
@@ -28,7 +28,7 @@ quickLinks($links);
 
 <main id="content">
 
-<? 
+<?php 
 
 //check if storylines exist
 $stmt = $cc->prepare("SELECT * FROM cc_" . $tableprefix . "comics_storyline WHERE comic=:moduleid");
@@ -105,7 +105,7 @@ if(isset($_POST) && $_POST['comic-title'] != ""){
 		//give success message
 		?>
 		<div class="msg success f-c"><?=str_replace('%s',$title,$lang['%s has been successfully added.'])?></div>
-		<?		
+		<?php		
 		
 		//give preview and edit buttons for the new post
 		echo '<div class="cc-btn-row">';
@@ -127,7 +127,7 @@ if(isset($_POST) && $_POST['comic-title'] != ""){
 	else{
 		?>
 		<div class="msg error f-c"><?=$lang['There was an error adding your comic post.  Please try again.']?></div>
-		<?
+		<?php
 		echo '<div class="cc-btn-row">';
 		buildButton(
 			"dark-bg",
@@ -153,13 +153,13 @@ if(isset($_POST) && $_POST['comic-title'] != ""){
 
 	<form action="" method="post" enctype="multipart/form-data">
 		
-		<? // comic uploader area ?>
-		<? buildImageInput($lang['Choose file...'],true); ?>
+		<?php // comic uploader area ?>
+		<?php buildImageInput($lang['Choose file...'],true); ?>
 			
-		<? //build the comic info form ?>
+		<?php //build the comic info form ?>
 		<h2 class="formheader"><?=$lang['Comic info']?></h2>
 		<div class="formcontain">
-			<?
+			<?php
 				//check storyline is set
 				$storyline = 0;
 				if(filter_var($_POST['storyline'], FILTER_VALIDATE_INT)) $storyline = $_POST['storyline'];
@@ -233,10 +233,10 @@ if(isset($_POST) && $_POST['comic-title'] != ""){
 			?>
 		</div>
 		
-		<? //build the news post form ?>
+		<?php //build the news post form ?>
 		<h2 class="formheader">News post</h2>
 		<div class="formcontain">
-		<?
+		<?php
 			//build array of form info
 			$forminputs = array();
 			array_push($forminputs,
@@ -280,7 +280,7 @@ if(isset($_POST) && $_POST['comic-title'] != ""){
 		$errordiv.slideDown();
 	}
 	</script>
-	<? 
+	<?php 
 	//include relevant javascript
 	$imgfolder = "comics/";
 	include('includes/form-submit-js.php');

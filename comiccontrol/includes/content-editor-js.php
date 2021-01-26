@@ -1,4 +1,4 @@
-<? //content-editor-js.php - outputs all the javascript for the rich text editor ?>
+<?php //content-editor-js.php - outputs all the javascript for the rich text editor ?>
 
 <script>
 var uploadFile = function(file,el){

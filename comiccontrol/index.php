@@ -1,4 +1,4 @@
-<? 
+<?php
 
 //index.php - handles the whole site.  Builds page based on the URL slugs.
 
@@ -109,7 +109,7 @@ if(!file_exists('includes/dbconfig.php') && !isset($_POST['install-dbname'])){
 							require_once('includes/sidebar.php');
 							require_once('includes/breadcrumbs.php'); ?>
 							<section id="rightside">
-								<? 
+								<?php 
 									switch($navslug){
 									case "modules":
 										require_once('parts/module.php');
@@ -143,7 +143,7 @@ if(!file_exists('includes/dbconfig.php') && !isset($_POST['install-dbname'])){
 										break;
 								}	?>	
 							</section>
-							<? 
+							<?php 
 						}
 					}
 				}

@@ -1,8 +1,8 @@
-<? //password-reset.php - handles all parts of the password reset process ?>
+<?php //password-reset.php - handles all parts of the password reset process ?>
 
 <div class="password-reset-wrap">
 
-<?
+<?php
 
 //set variables based on URL
 $action = getSlug(2);
@@ -21,7 +21,7 @@ if($action == "validate"){
 	if($stmt->rowCount() < 1){
 		?>
 		<div class="msg error"><?=$lang['There is no user with this information.']?></div>
-		<?
+		<?php
 	}
 	
 	//if the user was found, proceed
@@ -38,7 +38,7 @@ if($action == "validate"){
 		if($stmt->rowCount() < 1){
 			?>
 			<div class="msg error"><?=$lang['No user was found with this information.']?></div>
-			<?
+			<?php
 		}
 		
 		//if the validate matched, proceed
@@ -59,14 +59,14 @@ if($action == "validate"){
 				if($stmt->rowCount() > 0){
 					?>
 					<div class="msg success"><?=$lang['Your password has successfully been changed.  Click here to return to the login page.']?></div>
-					<?
+					<?php
 				}
 				
 				//throw error if the password wasn't changed
 				else{
 					?>
 					<div class="msg error"><?=$lang['There was an error changing your password.  Please go back and try again.']?></div>
-					<?
+					<?php
 				}
 				
 			}
@@ -76,7 +76,7 @@ if($action == "validate"){
 				?>
 				<div class="msg prompt"><?=$lang['To reset your password, please type in a new password and confirm it below.']?></div>
 				<form action="" method="post" enctype="multipart/form-data">
-					<?
+					<?php
 			
 					//build the password reset form
 					$forminputs = array();
@@ -154,7 +154,7 @@ if($action == "validate"){
 						
 					});
 				</script>
-				<?
+				<?php
 				
 			}
 		}
@@ -230,7 +230,7 @@ else{
 		?>
 		<div class="msg prompt"><?=$lang['To reset your password, please submit your e-mail address.  An e-mail will be sent to your account with a link to reset your password.']?></div>
 		<form action="" method="post" enctype="multipart/form-data">
-			<?
+			<?php
 			
 			//build the e-mail submission form
 			$forminputs = array();
@@ -292,7 +292,7 @@ else{
 				
 			});
 		</script>
-		<?
+		<?php
 	}
 	
 }

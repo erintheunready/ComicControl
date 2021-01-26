@@ -1,8 +1,8 @@
-<? //site-options.php - handles overal site options ?>
+<?php //site-options.php - handles overal site options ?>
 
 <main id="content">
 
-<?
+<?php
 
 if($ccuser->authlevel != 2){
 	echo '<div class="msg error f-c">' . $lang['You do not have permission to access this page.'] . '</div>';
@@ -230,7 +230,7 @@ buildTextArea($lang['.htaccess append code'],"htaccess-append",$lang['tooltip-ht
 <button class="full-width light-bg" style="margin-top:20px;" type="button" id="submitform"><?=$lang['Submit changes']?></button>
 </form>
 
-<?
+<?php
 //include relevant javascript
 include('includes/form-submit-js.php');
 }

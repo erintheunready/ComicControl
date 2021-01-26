@@ -1,10 +1,10 @@
-<? include('includes/install-header.php');  ?>
+<?php include('includes/install-header.php');  ?>
 
 <?=$ilang['firststep']?>
 
-<? if(isset($failed) && $failed) echo '<div class="msg error">' . $ilang['dbbuilderror'] . '</div>'; ?>
+<?php if(isset($failed) && $failed) echo '<div class="msg error">' . $ilang['dbbuilderror'] . '</div>'; ?>
 <form action="" method="post">
-<?
+<?php
 
 $forminputs = array();
 array_push($forminputs,
@@ -56,15 +56,15 @@ buildForm($forminputs);
 
 ?>
 
-<? // close the form ?>
+<?php // close the form ?>
 <button class="full-width light-bg" style="margin-top:20px;" type="button" id="submitform"><?=$ilang['next']?></button>
 
 </form>
-<?
+<?php
 
 //include relevant javascript
 include('includes/form-submit-js.php'); 
 
 ?>
 
-<? include('includes/install-footer.php'); ?>
+<?php include('includes/install-footer.php'); ?>

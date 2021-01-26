@@ -1,4 +1,4 @@
-<?
+<?php
 
 //classes.php - base classes - called in initialize.php
 
@@ -624,7 +624,7 @@ class CC_Comic extends CC_Module{
 							$('#cc-comicbody .cc-contentwarning').remove();
 					});
 					</script>
-					<?
+					<?php
 				}
 				
 				//check if fullscreen will be displayed
@@ -657,7 +657,7 @@ class CC_Comic extends CC_Module{
 						});
 						</script>
 							
-					<?
+					<?php
 				}
 			
 				//display hovertext div for mobile if that option is set
@@ -748,7 +748,7 @@ class CC_Comic extends CC_Module{
 					}
 				};
 				</script>
-				<?
+				<?php
 			}
 				
 		}
@@ -1101,7 +1101,7 @@ class CC_Comic extends CC_Module{
 						$("#cc-transcripttogglediv").slideToggle();
 					});
 				</script>
-				<?
+				<?php
 			}
 		}
 	}
@@ -1140,7 +1140,7 @@ class CC_Comic extends CC_Module{
 				switch($ccsite->comments){
 					case "commento":
 						?><div id="commento"></div>
-						<script src="https://cdn.commento.io/js/commento.js"></script><?
+						<script src="https://cdn.commento.io/js/commento.js"></script><?php
 						break;
 					case "disqus":
 						?>
@@ -1160,7 +1160,7 @@ class CC_Comic extends CC_Module{
 							})();
 						</script>
 						<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-						<?
+						<?php
 					break;
 				}
 				
@@ -1196,13 +1196,13 @@ class CC_Comic extends CC_Module{
 		}
 		</script>
 		<select name="comic" onChange="changePage(this.value)"><option value=""><?=$user_lang['Select a comic...']?></option>
-		<?
+		<?php
 		foreach($comiclist as $comic){
 			echo '<option value="' . $this->slug . '/' . $comic['slug'] . '">' . date($ccsite->dateformat,$comic['publishtime']) . ' - ' . $comic['title'] . '</option>';
 		}
 		?>
 		</select>
-		<?
+		<?php
 	}
 	
 	//display a list of chapters in the archive
@@ -1683,7 +1683,7 @@ class CC_Blog extends CC_Module{
 			switch($ccsite->comments){
 				case "commento":
 					?><div id="commento"></div>
-					<script src="https://cdn.commento.io/js/commento.js"></script><?
+					<script src="https://cdn.commento.io/js/commento.js"></script><?php
 					break;
 				case "disqus":
 					?>
@@ -1703,7 +1703,7 @@ class CC_Blog extends CC_Module{
 						})();
 					</script>
 					<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-					<?
+					<?php
 				break;
 			}
 			

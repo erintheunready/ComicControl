@@ -1,8 +1,8 @@
-<? //comic-storyline-edit.php - handles editing existing storylines ?>
-<? //include necessary libraries ?>
+<?php //comic-storyline-edit.php - handles editing existing storylines ?>
+<?php //include necessary libraries ?>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js" type="text/javascript" /></script>
 
-<?
+<?php
 
 //create and output quick links
 $links = array(
@@ -25,7 +25,7 @@ quickLinks($links);
 
 <main id="content">
 
-<?
+<?php
 
 //submit page if posted
 if(isset($_POST) && $_POST['storyline-title'] != ""){
@@ -106,9 +106,9 @@ if(isset($_POST) && $_POST['storyline-title'] != ""){
 		//output results
 		?>
 		<div class="msg success f-c"><?=str_replace('%s',$name,$lang['%s has been successfully edited.'])?></div>
-		<?		
+		<?php		
 		if($error != false){
-			?><div class="msg error f-c"><?=$error?></div><?
+			?><div class="msg error f-c"><?=$error?></div><?php
 		}
 		echo '<div class="cc-btn-row">';
 		buildButton(
@@ -124,7 +124,7 @@ if(isset($_POST) && $_POST['storyline-title'] != ""){
 	else{
 		?>
 		<div class="msg error f-c"><?=$lang['There was an error editing your storyline.  Please try again.']?></div>
-		<?
+		<?php
 	}
 
 }else{
@@ -154,7 +154,7 @@ if(isset($_POST) && $_POST['storyline-title'] != ""){
 		<form action="" method="post" enctype="multipart/form-data">
 			<div class="formcontain">
 				<input type="hidden" name="storyline-id" value="<?=$thisstoryline['id']?>" />
-				<?
+				<?php
 				
 				//build array of form info
 				$forminputs = array();
@@ -192,14 +192,14 @@ if(isset($_POST) && $_POST['storyline-title'] != ""){
 				//build the form
 				buildForm($forminputs);
 
-				?><div class="custom-thumbnail"><?
+				?><div class="custom-thumbnail"><?php
 				if($thisstoryline['thumbnail'] == "") echo '<p>' . $lang['There is currently no custom thumbnail.  The thumbnail of the first page in this chapter will be used as the thumbnail.'] . '</p>';
 				else{
 					?>
 					<div class="currentfileholder"><button class="full-width dark-bg toggle-current-file"><span class="current-file-text"><?=$lang['View current custom thumbnail']?></span> <i class="fa fa-angle-down"></i></button>
 						<div class="currentfile"><img src="<?=$ccsite->root . 'comicsthumbs/' . $thisstoryline['thumbnail']?>" /></div>
 					</div>
-					<?
+					<?php
 				}
 				
 				// image uploader area 
@@ -209,10 +209,10 @@ if(isset($_POST) && $_POST['storyline-title'] != ""){
 				<script>
 				$('#remove-thumbnail').click(function(e){
 					e.preventDefault();
-					window.location.href='<? echo $ccurl . $navslug . '/' . $ccpage->module->slug . '/edit-storyline/' . $thisstoryline['id'] . '/remove-thumbnail';?>';
+					window.location.href='<?php echo $ccurl . $navslug . '/' . $ccpage->module->slug . '/edit-storyline/' . $thisstoryline['id'] . '/remove-thumbnail';?>';
 				});
 				</script>
-				<?}
+				<?php }
 				
 				//close out the form
 				?>
@@ -231,7 +231,7 @@ if(isset($_POST) && $_POST['storyline-title'] != ""){
 			$(this).find('i').toggleClass('fa-angle-down fa-angle-up');
 		});
 		</script>
-		<? 
+		<?php 
 	}
 }
 

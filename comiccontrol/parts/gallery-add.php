@@ -1,6 +1,6 @@
-<? //gallery-add.php - handles adding new images ?>
+<?php //gallery-add.php - handles adding new images ?>
 
-<?
+<?php
 
 //create and output quick links
 $links = array(
@@ -19,10 +19,10 @@ quickLinks($links);
 
 <main id="content">
 
-<? //include necessary libraries ?>
+<?php //include necessary libraries ?>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js" type="text/javascript" /></script>
 
-<? 
+<?php 
 
 //submit page if posted
 if(isset($_POST) && $_POST['image-finalfile'] != ""){
@@ -50,7 +50,7 @@ if(isset($_POST) && $_POST['image-finalfile'] != ""){
 	if($stmt->rowCount() > 0){
 		?>
 		<div class="msg success f-c"><?=$lang['Your image was successfully added.']?></div>
-		<?
+		<?php
 		echo '<div class="cc-btn-row">';
 		buildButton(
 			"dark-bg",
@@ -64,7 +64,7 @@ if(isset($_POST) && $_POST['image-finalfile'] != ""){
 	else{
 		?>
 		<div class="msg error f-c"><?=$lang['There was an error adding your image.  Please try again.']?></div>
-		<?
+		<?php
 	}
 	
 }else{
@@ -73,7 +73,7 @@ if(isset($_POST) && $_POST['image-finalfile'] != ""){
 
 	<form action="" method="post" enctype="multipart/form-data">
 		
-		<? 
+		<?php 
 		// image uploader area 
 		buildImageInput($lang['Choose file...'],true);
 		
@@ -84,7 +84,7 @@ if(isset($_POST) && $_POST['image-finalfile'] != ""){
 		?>
 		<button class="full-width light-bg" style="margin-top:20px;" type="button" id="submitform"><?=$lang['Submit image']?></button>
 	</form>
-	<? 
+	<?php 
 	
 	//include relevant javascript
 	$imgfolder = "uploads/";

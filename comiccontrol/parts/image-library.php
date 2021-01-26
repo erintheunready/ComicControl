@@ -1,4 +1,4 @@
-<?
+<?php
 
 //image-library.php - manages all functions for the image library
 
@@ -42,14 +42,14 @@ if(getSlug(2) == "delete-image"){
 			
 			<div class="msg success f-c"><?=$lang['This image has been deleted.']?></div>
 			
-			<?			
+			<?php			
 			
 		}else{
 		
 			//prompt user to delete page ?>
 
 			<div class="msg prompt f-c"><?=$lang['Are you sure you want to delete this image? This action cannot be undone.']?></div>
-			<?
+			<?php
 
 			echo '<div class="cc-btn-row">';
 			buildButton(
@@ -72,7 +72,7 @@ if(getSlug(2) == "delete-image"){
 	echo '<main id="content">';
 
 	//include necessary libraries
-	?><script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js" type="text/javascript" /></script><?
+	?><script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js" type="text/javascript" /></script><?php
 
 	//submit image if posted
 	if(isset($_POST) && $_POST['image-finalfile'] != ""){
@@ -91,14 +91,14 @@ if(getSlug(2) == "delete-image"){
 		if($stmt->rowCount() > 0){
 			?>
 			<div class="msg success f-c"><?=$lang['Your image was successfully added.']?></div>
-			<?
+			<?php
 		}
 			
 		//output error message if failed
 		else{
 			?>
 			<div class="msg error f-c"><?=$lang['There was an error adding your image.  Please try again.']?></div>
-			<?
+			<?php
 		}
 		
 	}
@@ -107,12 +107,12 @@ if(getSlug(2) == "delete-image"){
 
 	<form action="" method="post" enctype="multipart/form-data">
 		
-	<? // image uploader area ?>
-	<? buildImageInput($lang['Add image...'],false); ?>
+	<?php // image uploader area ?>
+	<?php buildImageInput($lang['Add image...'],false); ?>
 	</form>
 	<div style="clear:both; height:15px;"></div>
 	
-	<? 
+	<?php 
 	//include relevant javascript
 	$imgfolder = "uploads";
 	include('includes/form-submit-js.php');
@@ -143,7 +143,7 @@ if(getSlug(2) == "delete-image"){
 
 	</script>
 
-<? 
+<?php 
 
 }
 }

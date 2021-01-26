@@ -1,4 +1,4 @@
-<? //install-footer.php - outputs footer for installation pages 
+<?php //install-footer.php - outputs footer for installation pages 
 
 
 //include javascript for managing general jquery on the page

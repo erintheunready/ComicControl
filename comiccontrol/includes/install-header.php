@@ -1,6 +1,6 @@
-<? //install-header.php - installation page header ?>
-<? include('languages/install-en.php'); ?>
-<? include('languages/en.php'); ?>
+<?php //install-header.php - installation page header ?>
+<?php include('languages/install-en.php'); ?>
+<?php include('languages/en.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>

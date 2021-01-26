@@ -1,11 +1,11 @@
-<? //comic-post-edit.php - handles editing existing comic posts ?>
+<?php //comic-post-edit.php - handles editing existing comic posts ?>
 
-<? //include necessary libraries ?>
+<?php //include necessary libraries ?>
 <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js" type="text/javascript" /></script>
 
-<?
+<?php
 
 //get the requested post
 $thiscomic = $ccpage->module->getPost(getSlug(4));
@@ -35,7 +35,7 @@ quickLinks($links);
 
 <main id="content">
 
-<? 
+<?php 
 
 //if post not found, return error
 if(empty($thiscomic)){
@@ -97,7 +97,7 @@ else{
 			
 			?>
 			<div class="msg success f-c"><?=str_replace('%s',$title,$lang['%s has been successfully edited.'])?></div>
-			<?		
+			<?php		
 			echo '<div class="cc-btn-row">';
 			buildButton(
 				"light-bg",
@@ -117,7 +117,7 @@ else{
 		else{
 			?>
 			<div class="msg error f-c"><?=$lang['There was an error editing your comic post.  Please try again.']?></div>
-			<?
+			<?php
 			echo '<div class="cc-btn-row">';
 			buildButton(
 				"dark-bg",
@@ -143,16 +143,16 @@ else{
 
 		<form action="" method="post" enctype="multipart/form-data">
 			
-			<? // comic uploader area ?>
+			<?php // comic uploader area ?>
 			<div class="currentfileholder"><button class="full-width dark-bg toggle-current-file"><span class="current-file-text"><?=$lang['View current file']?></span> <i class="fa fa-angle-down"></i></button>
 				<div class="currentfile"><img src="<?=$ccsite->root . 'comics/' . $thiscomic['imgname']?>" /></div>
 			</div>
-			<? buildImageInput($lang['Change file...'],false); ?>
+			<?php buildImageInput($lang['Change file...'],false); ?>
 				
-			<? //build the comic info form ?>
+			<?php //build the comic info form ?>
 			<h2 class="formheader"><?=$lang['Comic info']?></h2>
 			<div class="formcontain">
-				<?
+				<?php
 					//build array of form info
 					$forminputs = array();
 					array_push($forminputs,
@@ -228,10 +228,10 @@ else{
 				?>
 			</div>
 			
-			<? //build the news post form ?>
+			<?php //build the news post form ?>
 			<h2 class="formheader">News post</h2>
 			<div class="formcontain">
-			<?
+			<?php
 				//get tags
 				$stmt = $cc->prepare("SELECT * FROM cc_" . $tableprefix . "comics_tags WHERE comic=:comic AND comicid=:comicid");
 				$stmt->execute(['comic' => $thiscomic['comic'],'comicid' => $thiscomic['id']]);
@@ -288,7 +288,7 @@ else{
 			$(this).find('i').toggleClass('fa-angle-down fa-angle-up');
 		});
 		</script>
-		<? 
+		<?php 
 		//include relevant javascript
 		$imgfolder = "comics/";
 		include('includes/form-submit-js.php');

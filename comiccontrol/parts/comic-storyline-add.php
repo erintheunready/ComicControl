@@ -1,9 +1,9 @@
-<? //comic-storyline-add.php - handles adding new storylines ?>
-<? //include necessary libraries ?>
+<?php //comic-storyline-add.php - handles adding new storylines ?>
+<?php //include necessary libraries ?>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js" type="text/javascript" /></script>
 
 
-<?
+<?php
 
 //create and output quick links
 $links = array(
@@ -26,7 +26,7 @@ quickLinks($links);
 
 <main id="content">
 
-<?
+<?php
 
 //submit page if posted
 if(isset($_POST) && $_POST['storyline-title'] != ""){
@@ -72,9 +72,9 @@ if(isset($_POST) && $_POST['storyline-title'] != ""){
 		
 		?>
 		<div class="msg success f-c"><?=str_replace('%s',$name,$lang['%s has been successfully added.'])?></div>
-		<?		
+		<?php		
 		if($error != false){
-			?><div class="msg error f-c"><?=$error?></div><?
+			?><div class="msg error f-c"><?=$error?></div><?php
 		}
 		echo '<div class="cc-btn-row">';
 		buildButton(
@@ -90,7 +90,7 @@ if(isset($_POST) && $_POST['storyline-title'] != ""){
 	else{
 		?>
 		<div class="msg error f-c"><?=$lang['There was an error adding your storyline.  Please try again.']?></div>
-		<?
+		<?php
 	}
 
 }else{
@@ -98,7 +98,7 @@ if(isset($_POST) && $_POST['storyline-title'] != ""){
 
 <form action="" method="post" enctype="multipart/form-data">
 	<div class="formcontain">
-		<?
+		<?php
 
 		//check storyline is set
 		$storyline = 0;
@@ -138,7 +138,7 @@ if(isset($_POST) && $_POST['storyline-title'] != ""){
 		//build the form
 		buildForm($forminputs) 
 
-			?><div class="custom-thumbnail"><?
+			?><div class="custom-thumbnail"><?php
 			
 				// image uploader area 
 				buildImageInput($lang['Choose custom thumbnail...'],false);
@@ -149,7 +149,7 @@ if(isset($_POST) && $_POST['storyline-title'] != ""){
 		<button class="full-width light-bg" style="margin:20px 0;" type="button" id="submitform"><?=$lang['Submit new storyline']?></button>
 	</div>
 </form>
-<? 
+<?php 
 }
 
 //include relevant javascript

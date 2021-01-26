@@ -1,8 +1,8 @@
-<? //blog-main.php - the main page for any blog module. ?>
+<?php //blog-main.php - the main page for any blog module. ?>
 
 <main id="content">
 
-<?
+<?php
 
 //build action buttons (add post and manage options)
 echo '<div class="cc-btn-row">';
@@ -19,7 +19,7 @@ buildButton(
 echo '</div>';
 ?>
 
-<? //container to hold blog posts from AJAX request ?>
+<?php //container to hold blog posts from AJAX request ?>
 <div class="manage-container dark-bg"></div>
 
 

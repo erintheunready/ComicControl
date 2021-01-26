@@ -1,4 +1,4 @@
-<?
+<?php
 //initialize.php - builds base classes and objects for both front and backend
 
 //universal functions

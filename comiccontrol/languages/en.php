@@ -1,4 +1,4 @@
-<?
+<?php
 
 //preview bar
 $lang['PREVIEW'] = 'PREVIEW';

@@ -1,6 +1,6 @@
-<?
+<?php
 include('templates/main/includes/header.php'); ?>
 
-<? $ccpage->module->display(); ?>
+<?php $ccpage->module->display(); ?>
 
-<? include('templates/main/includes/footer.php'); ?>
+<?php include('templates/main/includes/footer.php'); ?>

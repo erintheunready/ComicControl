@@ -1,6 +1,6 @@
-<? //gallery-delete.php - handles deleting existing images ?>
+<?php //gallery-delete.php - handles deleting existing images ?>
 
-<?
+<?php
 
 //create and output quick links
 $links = array(
@@ -19,7 +19,7 @@ quickLinks($links);
 
 <main id="content">
 
-<?
+<?php
 
 //get selected image
 $query = "SELECT * FROM cc_" . $tableprefix . "galleries WHERE id=:id";
@@ -44,7 +44,7 @@ else{
 		
 		<div class="msg success f-c"><?=$lang['This image has been deleted.']?></div>
 		
-		<?
+		<?php
 		
 		
 	}else{
@@ -52,7 +52,7 @@ else{
 		//prompt user to delete image ?>
 
 		<div class="msg prompt f-c"><?=$lang['Are you sure you want to delete this image? This action cannot be undone.']?></div>
-		<?
+		<?php
 
 		echo '<div class="cc-btn-row">';
 		buildButton(

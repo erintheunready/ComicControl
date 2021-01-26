@@ -1,4 +1,4 @@
-<? 	
+<?php 	
 //start RSS feed
 header("Content-Type: application/xml; charset=UTF-8");
 

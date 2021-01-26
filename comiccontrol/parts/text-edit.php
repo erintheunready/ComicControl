@@ -1,4 +1,4 @@
-<? //text-edit.php - handles editing text modules 
+<?php //text-edit.php - handles editing text modules 
 
 //create and output quick links
 $links = array(
@@ -17,12 +17,12 @@ quickLinks($links);
 
 <main id="content">
 
-<? //include necessary libraries ?>
+<?php //include necessary libraries ?>
 <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js" type="text/javascript" /></script>
 
-<? 
+<?php 
 
 //get the text content
 $query = "SELECT * FROM cc_" . $tableprefix . "text WHERE id=:id";
@@ -46,7 +46,7 @@ if(isset($_POST) && $_POST['submitted'] != ""){
 		
 		?>
 		<div class="msg success f-c"><?=str_replace('%s',$title,$lang['Your changes have been saved.'])?></div>
-		<?		
+		<?php		
 		
 		//get the edited text
 		$query = "SELECT * FROM cc_" . $tableprefix . "text WHERE id=:id";
@@ -59,7 +59,7 @@ if(isset($_POST) && $_POST['submitted'] != ""){
 	else{
 		?>
 		<div class="msg error f-c"><?=$lang['There was an error editing your text page.  Please try again.']?></div>
-		<?
+		<?php
 	}
 	
 }
@@ -73,7 +73,7 @@ if(isset($_POST) && $_POST['submitted'] != ""){
 	<input type="hidden" value="submitted" name="submitted" />	
 		
 	<div class="formcontain">
-		<?
+		<?php
 			buildTextEditor($lang['Text content'],"text-content",$lang['tooltip-textcontent'],$text['content']);
 		?>
 	</div>
@@ -81,7 +81,7 @@ if(isset($_POST) && $_POST['submitted'] != ""){
 	<button class="full-width light-bg" style="margin-top:20px;" type="button" id="submitform"><?=$lang['Submit changes']?></button>
 </form>
 
-<? 
+<?php 
 //include relevant javascript
 include('includes/content-editor-js.php');
 include('includes/form-submit-js.php');

@@ -1,4 +1,4 @@
-<?
+<?php
 //blog-options.php - page for managing blog module options
 
 //create and output quick links
@@ -17,7 +17,7 @@ quickLinks($links);
 
 <main id="content">
 
-<?
+<?php
 
 //submit options if posted
 if(isset($_POST) && $_POST['page-title'] != ""){
@@ -104,7 +104,7 @@ buildForm($forminputs);
 <button class="full-width light-bg" style="margin-top:20px;" type="button" id="submitform"><?=$lang['Submit changes']?></button>
 </form>
 
-<?
+<?php
 
 //include necessary scripts
 require_once('includes/form-submit-js.php');

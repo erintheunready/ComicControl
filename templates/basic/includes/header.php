@@ -10,11 +10,11 @@
 <link href="<?=$ccsite->root?>templates/basic/styles.css" type="text/css" rel="stylesheet" />
 
 
-<title><?=$ccsite->sitetitle?> - <? $ccpage->displayTitle();  ?></title>
+<title><?=$ccsite->sitetitle?> - <?php $ccpage->displayTitle();  ?></title>
 <script src="<?=$ccsite->jquery?>"></script>
 <script src="<?=$ccsite->hammerjs?>"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<? $ccpage->displayMeta(); ?>
+<?php $ccpage->displayMeta(); ?>
 
 
 </head>

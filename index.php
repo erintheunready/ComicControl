@@ -1,9 +1,9 @@
-<? 
+<?php
 
 
 /* 
 COMICCONTROL
-Version 4.2.3
+Version 4.2.4
 1/21/2021
 Built by Erin Burt with help from others.
 Copyright 2012-2021 Erin Burt.

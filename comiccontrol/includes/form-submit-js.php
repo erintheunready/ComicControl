@@ -1,4 +1,4 @@
-<? //form-submit-js.php - outputs javascript for form submission functions ?>
+<?php //form-submit-js.php - outputs javascript for form submission functions ?>
 
 <script>
 

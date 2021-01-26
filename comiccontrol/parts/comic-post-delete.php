@@ -1,4 +1,4 @@
-<?
+<?php
 //comic-post-delete.php - handles deletion of comic posts
 
 //create and output quick links
@@ -22,7 +22,7 @@ quickLinks($links);
 
 <main id="content">
 
-<? 
+<?php 
 
 //get selected comic post
 $thiscomic = $ccpage->module->getPost(getSlug(4));
@@ -47,7 +47,7 @@ else{
 		//output success message
 		?>
 		<div class="msg success f-c"><?=str_replace("%s",$thiscomic['title'],$lang['%s has been deleted.'])?></div>
-		<?
+		<?php
 		
 		
 	}else{
@@ -55,7 +55,7 @@ else{
 		//prompt user to delete page ?>
 
 		<div class="msg prompt f-c"><?=str_replace("%s",$thiscomic['title'],$lang['Are you sure you want to delete %s? This action cannot be undone.'])?></div>
-		<?
+		<?php
 
 		echo '<div class="cc-btn-row">';
 		buildButton(

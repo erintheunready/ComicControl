@@ -1,9 +1,9 @@
-<? include('includes/install-header.php');  ?>
+<?php include('includes/install-header.php');  ?>
 
 <?=$ilang['thirdstep']?>
 
 <form action="" method="post">
-<?
+<?php
 
 $forminputs = array();
 array_push($forminputs,
@@ -48,7 +48,7 @@ buildForm($forminputs);
 
 ?>
 
-<? // close the form ?>
+<?php // close the form ?>
 <button class="full-width light-bg" style="margin-top:20px;" type="button" id="submitform"><?=$ilang['next']?></button>
 
 </form>
@@ -117,4 +117,4 @@ buildForm($forminputs);
 		
 	});
 	</script>
-<? include('includes/install-footer.php'); ?>
+<?php include('includes/install-footer.php'); ?>

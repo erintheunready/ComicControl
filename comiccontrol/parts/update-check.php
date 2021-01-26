@@ -1,4 +1,4 @@
-<?
+<?php
 
 //update-check.php
 //check version against master version

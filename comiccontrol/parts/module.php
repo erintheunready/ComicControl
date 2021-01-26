@@ -1,4 +1,4 @@
-<? 
+<?php 
 //module.php - switchboard for managing module actions
 
 //get the 'action' being performed

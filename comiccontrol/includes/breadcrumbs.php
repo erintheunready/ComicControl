@@ -1,7 +1,7 @@
-<? //breadcrumbs.php - outputs location header at top of backend pages ?>
+<?php //breadcrumbs.php - outputs location header at top of backend pages ?>
 
 <header id="navheader" class="dark-bg no-arrow">
-	<?
+	<?php
 		$currentpage = getSlug(1);
 		
 		//header adding for modules since they have a special title format and extra slug
@@ -69,7 +69,7 @@
 		else{
 		?>
 		<div class="header-block">
-		<?
+		<?php
 			//output the main title for the page
 			echo '';
 			switch($currentpage){
@@ -133,6 +133,6 @@
 		}
 	?>
 	
-	<? //output logout button for desktop version ?>
+	<?php //output logout button for desktop version ?>
 	<div class="header-block dark-bg" id="logout"><a href="<?=$ccurl?>logout"><?=$lang['Logout']?></a></div>
 </header>

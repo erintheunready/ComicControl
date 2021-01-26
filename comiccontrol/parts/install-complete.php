@@ -1,5 +1,5 @@
-<? include('includes/install-header.php');  ?>
+<?php include('includes/install-header.php');  ?>
 
 <?=$ilang['complete']?>
 
-<? include('includes/install-footer.php'); ?>
+<?php include('includes/install-footer.php'); ?>

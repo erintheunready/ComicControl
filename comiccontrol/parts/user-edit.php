@@ -1,4 +1,4 @@
-<? //user-edit.php - form for editing user info 
+<?php //user-edit.php - form for editing user info 
 
 if($ccuser->authlevel == 2){
 	//create and output quick links if top level user
@@ -19,10 +19,10 @@ if($ccuser->authlevel == 2){
 
 <main id="content">
 
-<? //include necessary libraries ?>
+<?php //include necessary libraries ?>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js" type="text/javascript" /></script>
 
-<? 
+<?php 
 //get selected user
 $query = "SELECT * FROM cc_" . $tableprefix . "users WHERE id=:id LIMIT 1";
 $stmt = $cc->prepare($query);
@@ -101,14 +101,14 @@ else{
 			//give success message
 			?>
 			<div class="msg success f-c"><?=$lang['Your changes were successfully saved.']?></div>
-			<?
+			<?php
 		}
 			
 		//output error message if failed
 		else{
 			?>
 			<div class="msg error f-c"><?=$lang['There was an error editing this user.  Please try again.']?></div>
-			<?
+			<?php
 		}
 			
 		
@@ -118,17 +118,17 @@ else{
 
 		<form action="" method="post" enctype="multipart/form-data">
 			
-			<? // image uploader area for avatar
+			<?php // image uploader area for avatar
 			if($thisuser['avatar'] != ""){
 			?>
 			<div class="currentfileholder"><button class="full-width dark-bg toggle-current-file"><span class="current-file-text"><?=$lang['View current avatar']?></span> <i class="fa fa-angle-down"></i></button>
 				<div class="currentfile"><img src="<?=$ccurl . 'avatars/' . $thisuser['avatar']?>" /></div>
 			</div>
-			<?
+			<?php
 			}
 			
 			buildImageInput($lang['Choose avatar image...'],false,$lang['tooltip-avatarimage']); ?>
-			<?
+			<?php
 				
 				//build array of form info
 				$forminputs = array();
@@ -275,7 +275,7 @@ else{
 		});
 		</script>
 
-		<? 
+		<?php 
 		//include relevant javascript
 		$imgfolder = "comiccontrol/avatars/";
 		include('includes/img-upload-js.php');

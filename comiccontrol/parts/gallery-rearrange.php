@@ -1,6 +1,6 @@
-<? //gallery-rearrange.php - handles rearranging images in a gallery ?>
+<?php //gallery-rearrange.php - handles rearranging images in a gallery ?>
 
-<?
+<?php
 
 //create and output quick links
 $links = array(
@@ -19,8 +19,8 @@ quickLinks($links);
 
 <main id="content">
 
-<? //save changes ?>
-<? if(isset($_POST['neworder']) && $_POST['neworder'] != ""){
+<?php //save changes ?>
+<?php if(isset($_POST['neworder']) && $_POST['neworder'] != ""){
 	
 	$neworder = $_POST['neworder'];
 	$neworder = explode('&',$neworder);
@@ -36,19 +36,19 @@ quickLinks($links);
 }
 ?>
 
-<? //include necessary libraries ?>
+<?php //include necessary libraries ?>
 <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
 
-<? //output rearrange form ?>
+<?php //output rearrange form ?>
 <p><?=$lang['Drag and drop images to rearrange them.  Click "Save Changes" to save the new order.']?></p>
 
 <form id="rearrange-form" action="" method="post">
 
 	<div id="image-list">
 
-		<?
+		<?php
 		
 			$query = "SELECT * FROM cc_" . $tableprefix . "galleries WHERE gallery=:gallery ORDER BY porder ASC";
 			$stmt = $cc->prepare($query);
@@ -63,7 +63,7 @@ quickLinks($links);
 
 	</div>
 	
-	<? //close out the form ?>
+	<?php //close out the form ?>
 	<button type="button" class="full-width light-bg" id="savechanges"><?=$lang['Save changes']?></button>
 
 </form>

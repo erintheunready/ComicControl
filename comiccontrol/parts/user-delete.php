@@ -1,4 +1,4 @@
-<? //user-delete.php - handles deletion of existing users
+<?php //user-delete.php - handles deletion of existing users
 
 //create and output quick links
 $links = array(
@@ -17,7 +17,7 @@ quickLinks($links);
 
 <main id="content">
 
-<?
+<?php
 
 //get selected user
 $query = "SELECT * FROM cc_" . $tableprefix . "users WHERE id=:id";
@@ -37,7 +37,7 @@ else{
 	if($thisuser['id'] == $ccuser->id){
 		?>
 		<div class="msg error f-c"><?=$lang['The logged in user cannot delete their own account.']?></div>
-		<?
+		<?php
 	}
 	else{
 		
@@ -50,7 +50,7 @@ else{
 			
 			<div class="msg success f-c"><?=$lang['This user has been deleted.']?></div>
 			
-			<?
+			<?php
 			
 			
 		}else{
@@ -58,7 +58,7 @@ else{
 			//give a prompt to confirm user confirmation ?>
 
 			<div class="msg prompt f-c"><?=$lang['Are you sure you want to delete this user? This action cannot be undone.']?></div>
-			<?
+			<?php
 			
 			echo '<div class="cc-btn-row">';
 			buildButton(

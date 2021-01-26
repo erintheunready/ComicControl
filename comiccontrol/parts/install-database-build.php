@@ -1,4 +1,4 @@
-<?
+<?php
 
 $dbhost = $_POST['install-dbhost'];
 $dbname = $_POST['install-dbname'];

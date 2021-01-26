@@ -1,6 +1,6 @@
-<? //gallery-options.php - handles options editing for gallery modules ?>
+<?php //gallery-options.php - handles options editing for gallery modules ?>
 
-<?
+<?php
 
 //create and output quick links
 $links = array(
@@ -19,7 +19,7 @@ quickLinks($links);
 
 <main id="content">
 
-<?
+<?php
 $forminputs = array();
 
 //submit options if posted
@@ -107,7 +107,7 @@ buildForm($forminputs);
 <button class="full-width light-bg" style="margin-top:20px;" type="button" id="submitform"><?=$lang['Submit changes']?></button>
 </form>
 
-<?
+<?php
 
 include('includes/form-submit-js.php');
 ?>

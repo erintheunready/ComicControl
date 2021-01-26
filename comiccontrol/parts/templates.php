@@ -1,6 +1,6 @@
 <div id="content">
 
-<?
+<?php
 
 if($ccuser->authlevel != 2){
 	echo '<div class="msg error f-c">' . $lang['You do not have permission to access this page.'] . '</div>';
@@ -31,7 +31,7 @@ if(isset($_POST) && $_POST['templatechange'] != ""){
 <p><?=$lang['Use the editor below to edit the code for your template files.  You can also use the dropdown to change to a different template file to edit.']?></p>
 
 
-<?
+<?php
 echo '<form name="templatechoose" action="" method="post" id="templatechoose">';
 
 //get available template files
@@ -95,7 +95,7 @@ $('form select').on('change',function(){
 </script>
 
 
-<?
+<?php
 
 }
 //function for recursing through directories and getting template files

@@ -1,4 +1,4 @@
-<?
+<?php
 
 $ilang['firststep'] = "<p>Welcome to ComicControl!</p><p>Let's get started.</p><p>First, we need some database information.  ComicControl requires access to a MySQL database.  For information on creating a database for ComicControl, please visit the <a href='http://comicctrl.com/getting-started#database'>guide on the support website.</a></p>";
 $ilang['dbbuilderror'] = "There was an error trying to connect to the database with the provided information.  Please try again.";

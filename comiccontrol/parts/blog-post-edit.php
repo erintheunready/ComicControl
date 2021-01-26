@@ -1,11 +1,11 @@
-<? //blog-post-edit.php - Handles editing of already created blog posts. ?>
+<?php //blog-post-edit.php - Handles editing of already created blog posts. ?>
 
-<? //include necessary libraries ?>
+<?php //include necessary libraries ?>
 <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js" type="text/javascript" /></script>
 
-<?
+<?php
 
 //create and output quick links
 $links = array(
@@ -28,7 +28,7 @@ quickLinks($links);
 
 <main id="content">
 
-<? 
+<?php 
 
 //get selected post
 $post = $ccpage->module->getPost(getSlug(4));
@@ -77,7 +77,7 @@ else{
 			//output success message
 			?>
 			<div class="msg success f-c"><?=str_replace('%s',$title,$lang['%s has been successfully edited.'])?></div>
-			<?		
+			<?php		
 			echo '<div class="cc-btn-row">';
 			buildButton(
 				"light-bg",
@@ -98,7 +98,7 @@ else{
 			
 			?>
 			<div class="msg error f-c"><?=$lang['There was an error editing your blog post.  Please try again.']?></div>
-			<?
+			<?php
 			
 		}
 		
@@ -117,9 +117,9 @@ else{
 
 		<form action="" method="post">
 				
-			<? //build the blog info form ?>
+			<?php //build the blog info form ?>
 			<div class="formcontain">
-				<?
+				<?php
 				
 					//build array of form info
 					$forminputs = array();
@@ -173,11 +173,11 @@ else{
 				?>
 			</div>
 			
-			<? // close the form ?>
+			<?php // close the form ?>
 			<button class="full-width light-bg" style="margin-top:20px;" type="button" id="submitform"><?=$lang['Submit changes']?></button>
 		</form>
 		
-		<? 
+		<?php 
 		//include relevant javascript
 		include('includes/form-submit-js.php');
 		include('includes/content-editor-js.php');

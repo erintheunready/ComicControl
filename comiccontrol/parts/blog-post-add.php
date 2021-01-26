@@ -1,14 +1,14 @@
-<?
+<?php
 //blog-post-add.php
 //handles adding new blog posts.
 ?>
 
-<? //include necessary libraries ?>
+<?php //include necessary libraries ?>
 <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js" type="text/javascript" /></script>
 
-<?
+<?php
 //create and output quick links
 $links = array(
 	array(
@@ -29,7 +29,7 @@ quickLinks($links);
 
 <main id="content">
 
-<? 
+<?php 
 
 //submit post if submitted
 if(isset($_POST) && $_POST['post-title'] != ""){
@@ -86,7 +86,7 @@ if(isset($_POST) && $_POST['post-title'] != ""){
 		//output success message
 		?>
 		<div class="msg success f-c"><?=str_replace('%s',$title,$lang['%s has been successfully added.'])?></div>
-		<?		
+		<?php		
 		
 		//give action buttons for this post
 		echo '<div class="cc-btn-row">';
@@ -107,7 +107,7 @@ if(isset($_POST) && $_POST['post-title'] != ""){
 	else{
 		?>
 		<div class="msg error f-c"><?=$lang['There was an error adding your blog post.  Please try again.']?></div>
-		<?
+		<?php
 	}
 	
 }else{
@@ -116,9 +116,9 @@ if(isset($_POST) && $_POST['post-title'] != ""){
 
 	<form action="" method="post">
 			
-		<? //build the blog info form ?>
+		<?php //build the blog info form ?>
 		<div class="formcontain">
-			<?
+			<?php
 			
 				//build array of form info
 				$forminputs = array();
@@ -169,11 +169,11 @@ if(isset($_POST) && $_POST['post-title'] != ""){
 			?>
 		</div>
 		
-		<? // close the form ?>
+		<?php // close the form ?>
 		<button class="full-width light-bg" style="margin-top:20px;" type="button" id="submitform"><?=$lang['Submit blog post']?></button>
 	</form>
 	
-	<? 
+	<?php 
 	//include relevant javascript
 	include('includes/form-submit-js.php');
 	include('includes/content-editor-js.php');

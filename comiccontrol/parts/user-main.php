@@ -1,14 +1,14 @@
-<? //user-main.php - main page for top-level users to manage users ?>
+<?php //user-main.php - main page for top-level users to manage users ?>
 
 <main id="content">
 
-<? //output button for adding users ?>
+<?php //output button for adding users ?>
 <div class="cc-btn-row"><a class="cc-btn light-bg" href="<?=$ccurl . 'users/add-user/'?>"><?=$lang['Add a user']?></a></div>
 
-<? //output list of users ?>
+<?php //output list of users ?>
 <div class="manage-container dark-bg">
 		<div class="row-container">
-		<?
+		<?php
 		
 		$query = "SELECT * FROM cc_" . $tableprefix . "users";
 		$stmt = $cc->prepare($query);

@@ -1,4 +1,4 @@
-<? //img-upload-js.php - outputs javascript for making AJAX requests for in-page image uploads ?>
+<?php //img-upload-js.php - outputs javascript for making AJAX requests for in-page image uploads ?>
 
 <script>
 
@@ -60,23 +60,23 @@ $('.hidefileinput').on('change',function(){
 				$imagearea.append($finalfile);
 				
 				//if a comic, put the high res filename in the form
-				<? if(getSlug(1) != "users" && getSlug(1) != "image-library"){ ?>$('.filenameholder').append('<input type="hidden" class="finalfile" name="image-highres" value="' + data.highres + '" />'); <? } ?>
+				<?php if(getSlug(1) != "users" && getSlug(1) != "image-library"){ ?>$('.filenameholder').append('<input type="hidden" class="finalfile" name="image-highres" value="' + data.highres + '" />'); <?php } ?>
 				
 				//if not an avatar, also put the thumbnail filename in the form as a hidden input
-				<? if(getSlug(1) != "users"){ ?>$('.filenameholder').append('<input type="hidden" class="finalfile" name="image-thumbnail" value="' + data.thumb + '" />'); <? } ?>
+				<?php if(getSlug(1) != "users"){ ?>$('.filenameholder').append('<input type="hidden" class="finalfile" name="image-thumbnail" value="' + data.thumb + '" />'); <?php } ?>
 				
 				//if not the image library, put the image in the page
-				<? if(getSlug(1) != "image-library"){ ?>
+				<?php if(getSlug(1) != "image-library"){ ?>
 				$imagearea.append('<img src="<?=$ccsite->root?><?=$imgfolder?>' + data.final + '" />');
 				$imagearea.find('img').on('load', function(){
 					$fileholder.find('.fileselect').html('<?=$lang['Change File']?>');
 					progress.css('display','none');
 					$imagearea.slideDown('slow');
 				});
-				<? }else{ ?>
+				<?php }else{ ?>
 				progress.css('display','none');
 				$('form').submit();
-				<? } ?>
+				<?php } ?>
 				
 				//remove old image if there
 				$('.currentfileholder').remove();

@@ -1,4 +1,4 @@
-<? //footer.php - outputs footer for backend pages 
+<?php //footer.php - outputs footer for backend pages 
 
 //include javascript for managing general jquery on the page
 ?>	

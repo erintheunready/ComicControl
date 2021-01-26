@@ -1,6 +1,6 @@
-<? //comic-storyline-rearrange.php - handles rearranging storylines ?>
+<?php //comic-storyline-rearrange.php - handles rearranging storylines ?>
 
-<?
+<?php
 
 //create and output quick links
 $links = array(
@@ -23,8 +23,8 @@ quickLinks($links);
 
 <main id="content">
 
-<? //save changes if form is submitted ?>
-<? if(isset($_POST['neworder']) && $_POST['neworder'] != ""){
+<?php //save changes if form is submitted ?>
+<?php if(isset($_POST['neworder']) && $_POST['neworder'] != ""){
 	
 	$neworder = $_POST['neworder'];
 	$neworder = explode('&',$neworder);
@@ -46,12 +46,12 @@ $storyline = 0;
 if(filter_var($ccpage->slugarr[4], FILTER_VALIDATE_INT)) $storyline = $ccpage->slugarr[4];
 ?>
 
-<? //include necessary libraries ?>
+<?php //include necessary libraries ?>
 <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
 
-<? //output rearrange form ?>
+<?php //output rearrange form ?>
 <p><?=$lang['Drag and drop storylines to rearrange them.  Click "Save Changes" to save the new order.']?></p>
 
 <form id="rearrange-form" action="" method="post">
@@ -59,7 +59,7 @@ if(filter_var($ccpage->slugarr[4], FILTER_VALIDATE_INT)) $storyline = $ccpage->s
 
 	<div id="storyline-list">
 
-		<?
+		<?php
 		
 			$query = "SELECT * FROM cc_" . $tableprefix . "comics_storyline WHERE parent=:parent ORDER BY sorder ASC";
 			$stmt = $cc->prepare($query);
@@ -74,7 +74,7 @@ if(filter_var($ccpage->slugarr[4], FILTER_VALIDATE_INT)) $storyline = $ccpage->s
 
 	</div>
 	
-	<? //close out the form ?>
+	<?php //close out the form ?>
 	<button type="button" class="full-width light-bg" id="savechanges"><?=$lang['Save changes']?></button>
 
 </form>

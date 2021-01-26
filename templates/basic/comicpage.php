@@ -1,4 +1,4 @@
-<?
+<?php
 //rss switch
 if($ccpage->subslug == "rss"){ 
 
@@ -16,23 +16,23 @@ if($ccpage->subslug == "rss"){
 		<p><?=str_replace('%l', $ccsite->root.$ccsite->relativepath.$ccpage->module->slug, $user_lang['You can read the newest page by going <a href="%l">here!</a>'])?></p>
 		<h1><?=$user_lang['Archive']?></h1>
 		<p><?=$user_lang['Select a page from the drop-down menu to start reading the comic.'];?></p>
-		<? $ccpage->module->displayDropdown(); ?><p><?=$lang['Or, you can select a chapter to start from:'];?></p>
-		<? $ccpage->module->displayChapters();
-			?></div><?
+		<?php $ccpage->module->displayDropdown(); ?><p><?=$lang['Or, you can select a chapter to start from:'];?></p>
+		<?php $ccpage->module->displayChapters();
+			?></div><?php
 	}
 	
 	//search
 	else if($ccpage->subslug == "search"){  
-	?><div id="text-area"><?
+	?><div id="text-area"><?php
 			$ccpage->module->search();
-		?></div><?	
+		?></div><?php	
 	}else{
-		?><div id="comic-area"><?
+		?><div id="comic-area"><?php
 		$ccpage->module->display();
 		$ccpage->module->navDisplay();
 		?></div>
 		<div id="text-area">
-		<?
+		<?php
 		$ccpage->module->displayAll();
 		//example case for including blog posts
 		
@@ -44,7 +44,7 @@ if($ccpage->subslug == "rss"){
 		*/
 
 			
-		?></div><?
+		?></div><?php
 	}
 	
 	//footer

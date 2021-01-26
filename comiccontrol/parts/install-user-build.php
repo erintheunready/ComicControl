@@ -1,4 +1,4 @@
-<?
+<?php
 
 //set values for the query 
 $username = $_POST['install-username'];

@@ -1,4 +1,4 @@
-<?
+<?php
 //module-options.php - outputs generic options for modules
 	
 //get available template files

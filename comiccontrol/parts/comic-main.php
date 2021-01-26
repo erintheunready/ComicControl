@@ -1,4 +1,4 @@
-<?
+<?php
 
 //comic-main.php - main page for comic modules
 
@@ -19,7 +19,7 @@ function listPages($pageArr){
 
 <main id="content">
 
-<?
+<?php
 
 //output buttons for going to comic module management pages
 echo '<div class="cc-btn-row">';
@@ -47,7 +47,7 @@ echo '</div>';
 <div class="cc-btn-row tall-row">
 	<div class="blue-bg row-col">
 		<div class="col-header dark-bg"><?=$lang['Recently published']?></div>
-		<ul> <?
+		<ul> <?php
 		$stmt = $cc->prepare("SELECT * FROM cc_" . $tableprefix . "comics WHERE comic=:comicid AND publishtime <= " . time() . " ORDER BY publishtime DESC LIMIT 5");
 		$stmt->execute(['comicid' => $ccpage->module->id]);
 		$recentpages = $stmt->fetchAll();
@@ -57,7 +57,7 @@ echo '</div>';
 	</div>
 	<div class="blue-bg row-col">
 		<div class="col-header dark-bg"><?=$lang['Publishing soon']?></div>
-		<ul><?
+		<ul><?php
 		$stmt = $cc->prepare("SELECT * FROM cc_" . $tableprefix . "comics WHERE comic=:comicid AND publishtime > " . time() . " ORDER BY publishtime ASC");
 		$stmt->execute(['comicid' => $ccpage->module->id]);
 		$nextpages = $stmt->fetchAll();

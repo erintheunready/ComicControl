@@ -1,9 +1,9 @@
-<? include('includes/install-header.php');  ?>
+<?php include('includes/install-header.php');  ?>
 
 <?=$ilang['secondstep']?>
 
 <form action="" method="post">
-<?
+<?php
 
 //get available display languages
 $stmt = $cc->prepare("SELECT * FROM cc_" . $tableprefix . "languages WHERE scope='admin'");
@@ -168,14 +168,14 @@ buildForm($forminputs);
 
 ?>
 
-<? // close the form ?>
+<?php // close the form ?>
 <button class="full-width light-bg" style="margin-top:20px;" type="button" id="submitform"><?=$ilang['next']?></button>
 
 </form>
-<?
+<?php
 
 //include relevant javascript
 include('includes/form-submit-js.php'); 
 
 ?>
-<? include('includes/install-footer.php'); ?>
+<?php include('includes/install-footer.php'); ?>

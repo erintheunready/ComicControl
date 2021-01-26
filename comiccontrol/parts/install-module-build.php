@@ -1,4 +1,4 @@
-<?
+<?php
 
 //if it's a comic, just make the slug comic
 if($_POST['install-moduletype'] == "comic") $slugfinal = "comic";

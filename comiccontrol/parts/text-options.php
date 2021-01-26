@@ -1,4 +1,4 @@
-<? //text-edit.php - handles editing text modules 
+<?php //text-edit.php - handles editing text modules 
 
 //create and output quick links
 $links = array(
@@ -12,7 +12,7 @@ quickLinks($links);
 ?>
 
 <main id="content">
-<?
+<?php
 $forminputs = array();
 
 //submit options if posted
@@ -57,7 +57,7 @@ buildForm($forminputs);
 <button class="full-width light-bg" style="margin-top:20px;" type="button" id="submitform"><?=$lang['Submit changes']?></button>
 </form>
 
-<?
+<?php
 
 //include relevant javascript
 include('includes/form-submit-js.php');

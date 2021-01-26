@@ -1,4 +1,4 @@
-<?
+<?php
 
 //users.php - switchboard for user management scripts
 
