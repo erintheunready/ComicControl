@@ -112,3 +112,8 @@
   #cc-comicbody{
     text-align:center;
   }
+  #cc-footer{
+    text-align:center;
+    padding:20px;
+    font-size:.8em;
+  }
