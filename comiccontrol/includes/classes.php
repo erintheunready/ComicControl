@@ -1503,7 +1503,7 @@ class CC_Blog extends CC_Module{
 		if($this->browsing){
 			
 			//set lowest post number for this page
-			$lowerlimit = ($ccpage->pagenum - 1) * $this->options['perpage'];
+			$lowerlimit = ($page - 1) * $this->options['perpage'];
 			if($lowerlimit < 0) $lowerlimit = 0;
 			
 			//get tagged posts if searching
