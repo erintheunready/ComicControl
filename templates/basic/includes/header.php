@@ -21,11 +21,11 @@
 <body>
     <div id="wrapper">
         <header id="header">
-            <a href="/" class="site-title"><?=$ccsite->sitetitle?></a>
+            <a href="<?=$ccsite->root?>" class="site-title"><?=$ccsite->sitetitle?></a>
         </header>
         <menu id="menu">
         <!-- Sample menu items -->
-            <a href="/">Home</a>
-            <a href="/comic/archive">Archive</a>
+            <a href="<?=$ccsite->root?>">Home</a>
+            <a href="<?=$ccsite->root?>comic/archive">Archive</a>
         </menu>
         <main id="content">

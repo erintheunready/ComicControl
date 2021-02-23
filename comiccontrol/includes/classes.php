@@ -235,12 +235,6 @@ class CC_Page{
 			if($slug == ""){
 				unset($this->slugarr[$key]);
 			}
-			$relativepathbits = explode('/',$ccsite->relativepath);
-			foreach($relativepathbits as $bit){
-				if($bit == $slug){
-					if(array_key_exists($key,$this->slugarr)) unset($this->slugarr[$key]);
-				}
-			}
 		}
 		
 		//check if it's the index page
