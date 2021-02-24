@@ -161,8 +161,8 @@ class StorylineContainer extends Container {
   }
 
   addStorylineButtons() {
-    return $(`<button class="cc-btn light-bg addstoryline" style="margin:0; box-sizing:border-box" onclick="window.location.href='/${this.state.ccroot}modules/${this.state.moduleSlug}/add-storyline/${this.state.storyline}'">${this.lang.addstoryline}</button>
-  <button class="cc-btn blue-bg rearrangestorylines" style="margin:0; box-sizing:border-box" onclick="window.location.href='/${this.state.ccroot}modules/${this.state.moduleSlug}/rearrange-storylines/${this.state.storyline}'">Rearrange these storylines</button>`);
+    return $(`<button class="cc-btn light-bg addstoryline" style="margin:0; box-sizing:border-box" onclick="window.location.href='${this.state.root}${this.state.ccroot}modules/${this.state.moduleSlug}/add-storyline/${this.state.storyline}'">${this.lang.addstoryline}</button>
+  <button class="cc-btn blue-bg rearrangestorylines" style="margin:0; box-sizing:border-box" onclick="window.location.href='${this.state.root}${this.state.ccroot}modules/${this.state.moduleSlug}/rearrange-storylines/${this.state.storyline}'">Rearrange these storylines</button>`);
   }
 
   formatStorylineRows() {
