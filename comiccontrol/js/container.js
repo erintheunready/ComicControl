@@ -196,12 +196,12 @@ class StorylineContainer extends Container {
 
   //button generating function
   formatButtons(row) {
-    let baseLink = `/${this.state.ccroot}modules/${this.state.moduleSlug}/`;
+    let baseLink = `${this.state.root}${this.state.ccroot}modules/${this.state.moduleSlug}/`;
     return `<a href="${baseLink}delete-post/${row.slug}">${this.lang.delete}</a><a href="${baseLink}edit-post/${row.slug}">${this.lang.edit}</a><a href="${this.state.root}${this.state.moduleSlug}/${row.slug}" target="_blank">${this.lang.preview}</a>`;
   }
 
   formatStorylineButtons(row) {
-    let baseLink = `/${this.state.ccroot}modules/${this.state.moduleSlug}/`;
+    let baseLink = `${this.state.root}${this.state.ccroot}modules/${this.state.moduleSlug}/`;
     return `<a class="next-arrow"><i class="fa fa-caret-right"></i></a><a href="${baseLink}delete-storyline/${row.id}">${this.lang.delete}</a><a href="${baseLink}edit-storyline/${row.id}">${this.lang.edit}</a>`;
   }
 }
@@ -280,7 +280,7 @@ class BlogContainer extends PageContainer {
 
   //button generating function
   formatButtons(row) {
-    let baseLink = `/${this.state.ccroot}modules/${this.state.moduleSlug}/`;
+    let baseLink = `${this.state.root}${this.state.ccroot}modules/${this.state.moduleSlug}/`;
     return `<a href="${baseLink}delete-post/${row.slug}">${this.lang.delete}</a><a href="${baseLink}edit-post/${row.slug}">${this.lang.edit}</a><a href="${this.state.root}${this.state.moduleSlug}/${row.slug}" target="_blank">${this.lang.preview}</a>`;
   }
   //row generating function
@@ -300,7 +300,7 @@ class GalleryContainer extends PageContainer {
 
   //button generating function
   formatButtons(row) {
-    let baseLink = `/${this.state.ccroot}modules/${this.state.moduleSlug}/`;
+    let baseLink = `${this.state.root}${this.state.ccroot}modules/${this.state.moduleSlug}/`;
     return `<a href="${baseLink}delete-image/${row.id}">${this.lang.delete}</a><a href="${baseLink}edit-image/${row.id}">${this.lang.edit}</a>`;
   }
   //row generating function
