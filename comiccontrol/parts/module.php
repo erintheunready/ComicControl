@@ -32,8 +32,6 @@ switch($ccpage->moduletype){
 			case "delete-post":
 				require_once('comic-post-delete.php');
 				break;
-			case "manage-storylines":
-				require_once('comic-storyline-manage.php');
 				break;
 			case "add-storyline":
 				require_once('comic-storyline-add.php');
