@@ -9,7 +9,7 @@ $links = array(
 		'text' => str_replace('%s',$ccpage->title,$lang['Return to managing %s'])
 	),
 	array(
-		'link' => $ccurl . $navslug.'/'.$ccpage->module->slug."/manage-storylines",
+		'link' => $ccurl . $navslug.'/'.$ccpage->module->slug."/manage-posts",
 		'text' => $lang['Edit a different storyline']
 	),
 	array(
@@ -74,7 +74,7 @@ else{
 		);
 		buildButton(
 			"dark-bg",
-			$ccurl . $navslug.'/'.$ccpage->module->slug."/manage-storylines",
+			$ccurl . $navslug.'/'.$ccpage->module->slug."/manage-posts",
 			$lang['No']
 		);
 		echo '</div>';
