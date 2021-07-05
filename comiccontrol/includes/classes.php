@@ -228,7 +228,7 @@ class CC_Page{
 		//pull apart URL and fill slugarr
 		$slug = substr($urlstr,(strlen($ccsite->relativepath)+1));
 		if(strpos($slug,'?')) $slug = substr($slug, 0, strpos($slug,'?'));
-		$slug = preg_replace('/[^a-zA-Z0-9\-\/%\.\?= ]/', '', $slug);
+		$slug = preg_replace('/[^a-zA-Z0-9\-\/%\.\?=\' ]/', '', $slug);
 		$this->slugarr = array();
 		$this->slugarr = explode("/",$slug);
 		foreach($this->slugarr as $key => $slug){
