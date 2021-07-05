@@ -1186,7 +1186,7 @@ class CC_Comic extends CC_Module{
 		?>
 		<script>
 		function changePage(slug){
-			window.location.href='<?=$ccsite->root.$ccsite->relativepath?>'+slug;
+			window.location.href='<?=$ccsite->root?>'+slug;
 		}
 		</script>
 		<select name="comic" onChange="changePage(this.value)"><option value=""><?=$user_lang['Select a comic...']?></option>
