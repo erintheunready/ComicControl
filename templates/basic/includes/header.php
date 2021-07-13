@@ -23,6 +23,7 @@
         <header id="header">
             <a href="<?=$ccsite->root?>" class="site-title"><?=$ccsite->sitetitle?></a>
         </header>
+        <div id="menu-click">MENU</div>
         <menu id="menu">
         <!-- Sample menu items -->
             <a href="<?=$ccsite->root?>">Home</a>

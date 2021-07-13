@@ -43,6 +43,9 @@
   #menu a {
     text-decoration: none;
   }
+  #menu-click{
+    display:none;
+  }
   #menu {
     text-align: center;
     background: #ccc;
@@ -116,4 +119,22 @@
     text-align:center;
     padding:20px;
     font-size:.8em;
+  }
+
+  @media screen and (max-width:700px){
+    #menu-click{
+      display:block;
+      background: #ccc;
+      padding:20px;
+      cursor:pointer;
+      text-align:center;
+      font-size:1.2em;
+    }
+    #menu{
+      display:block;
+      display:none;
+    }
+    #menu a{
+      display:block;
+    }
   }
