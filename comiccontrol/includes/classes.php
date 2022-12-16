@@ -1262,7 +1262,7 @@ class CC_Comic extends CC_Module{
 					}
 				
 					//display the chapter name
-					$stmt->execute(['storyline' => $arr['id']]);
+					$stmt->execute(['storyline' => $arr['id'],'comic' => $this->id]);
 					$pages = $stmt->fetchAll();
 					echo '<div class="cc-storyline-text"><div class="cc-storyline-header"><a href="' . $ccsite->root . $this->slug . '/' . $firstpage['slug'] . '">' . 
 					$arr['name'] . '</a></div>';
